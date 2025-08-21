@@ -1,3 +1,5 @@
+import PersonalStory from './components/PersonalStory';
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -60,6 +62,9 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px]"></div>
         </div>
       </section>
+
+      {/* Personal Story Section */}
+      <PersonalStory />
     </main>
   );
 }
