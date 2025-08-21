@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --background: hsl(220 25% 8%);
+  --foreground: hsl(210 15% 95%);
+  --accent: hsl(190 85% 55%);
+  
+  /* Supporting Colors */
+  --card: hsl(220 20% 12%);
+  --secondary: hsl(220 15% 20%);
+  --muted: hsl(210 10% 65%);
+  --destructive: hsl(0 84% 60%);
+  
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, hsl(220 25% 8%) 0%, hsl(220 20% 12%) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(190 85% 55%) 0%, hsl(180 90% 65%) 100%);
+  --gradient-text: linear-gradient(135deg, hsl(210 15% 95%) 0%, hsl(190 50% 80%) 100%);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent: var(--accent);
+  --color-card: var(--card);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-destructive: var(--destructive);
+  --font-sans: Inter, system-ui, -apple-system, sans-serif;
 }
 
 body {
-  background: var(--background);
+  background: var(--gradient-hero);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Smooth transitions for interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0;
+}
+
+.transition-all {
+  transition-duration: 400ms;
+}
+
+.transition-fast {
+  transition-duration: 200ms;
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 50px hsl(190 85% 55% / 0.3);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 30px hsl(190 85% 55% / 0.2);
+}
+
+/* Text gradients */
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
