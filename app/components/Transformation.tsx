@@ -39,7 +39,7 @@ export default function Transformation() {
             <span className="text-accent">Looks Like</span>
           </h2>
           <p className="text-xl text-muted max-w-3xl mx-auto">
-            Here's what happens when we transform your operations from manual chaos to automated clarity.
+            Here&apos;s what happens when we transform your operations from manual chaos to automated clarity.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function Transformation() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-400 mt-1">✗</span>
-                    <span className="text-muted">Critical processes live in one person's head</span>
+                    <span className="text-muted">Critical processes live in one person&apos;s head</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-400 mt-1">✗</span>
@@ -136,7 +136,7 @@ export default function Transformation() {
             <span className="text-accent">Business Owners</span>
           </h3>
           <p className="text-lg text-muted">
-            These aren't hypotheticals. These are actual transformations from the last 90 days.
+            These aren&apos;t hypotheticals. These are actual transformations from the last 90 days.
           </p>
         </div>
 
@@ -186,10 +186,10 @@ export default function Transformation() {
         {/* Bottom CTA */}
         <div className="text-center mt-16 lg:mt-20">
           <p className="text-xl text-muted mb-6">
-            Stop living in the "before." Start building your "after."
+            Stop living in the &quot;before.&quot; Start building your &quot;after.&quot;
           </p>
           <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-background bg-accent rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(190_85%_55%_/_0.4)]">
-            <span className="relative z-10">See How We'll Transform Your Business</span>
+            <span className="relative z-10">See How We&apos;ll Transform Your Business</span>
             <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
             <div className="absolute inset-0 bg-gradient-to-r from-accent to-[hsl(180_90%_65%)] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>

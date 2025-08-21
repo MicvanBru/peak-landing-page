@@ -35,7 +35,7 @@ export default function Credibility() {
           {/* Section Title */}
           <div className={`mb-16 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-              Here's What Nobody <span className="text-accent">Tells You</span>
+              Here&apos;s What Nobody <span className="text-accent">Tells You</span>
             </h2>
           </div>
 
@@ -53,20 +53,20 @@ export default function Credibility() {
                   </svg>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-6 text-muted">Most "automation experts"...</h3>
+                <h3 className="text-2xl font-bold mb-6 text-muted">Most &quot;automation experts&quot;...</h3>
                 
                 <div className="space-y-4">
                   <p className="text-lg text-foreground/70">
                     Have never actually run a business.
                   </p>
                   <p className="text-lg text-foreground/70">
-                    They've read all the books. Taken all the courses. Got all the certifications.
+                    They&apos;ve read all the books. Taken all the courses. Got all the certifications.
                   </p>
                   <p className="text-lg text-foreground/70">
                     They know the theory inside and out.
                   </p>
                   <p className="text-lg text-foreground/70 italic">
-                    They talk a good game about "10x productivity" and "scaling infinitely."
+                    They talk a good game about &quot;10x productivity&quot; and &quot;scaling infinitely.&quot;
                   </p>
                 </div>
               </div>
@@ -82,17 +82,17 @@ export default function Credibility() {
                   </svg>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-6 text-accent">But here's the truth...</h3>
+                <h3 className="text-2xl font-bold mb-6 text-accent">But here&apos;s the truth...</h3>
                 
                 <div className="space-y-4">
                   <p className="text-lg text-foreground/90 font-semibold">
-                    They've never felt that 3am panic when a key client threatens to leave.
+                    They&apos;ve never felt that 3am panic when a key client threatens to leave.
                   </p>
                   <p className="text-lg text-foreground/90 font-semibold">
-                    They've never had to choose between payroll and rent.
+                    They&apos;ve never had to choose between payroll and rent.
                   </p>
                   <p className="text-lg text-foreground/90 font-semibold">
-                    They've never watched their family eat dinner alone while they handle another "emergency."
+                    They&apos;ve never watched their family eat dinner alone while they handle another &quot;emergency.&quot;
                   </p>
                   <p className="text-xl text-accent font-bold mt-6">
                     I have.
@@ -110,7 +110,7 @@ export default function Credibility() {
               
               <div className="relative text-center space-y-6">
                 <p className="text-xl lg:text-2xl text-foreground/80 max-w-3xl mx-auto">
-                  That's why I don't build cute automations that save you 5 minutes.
+                  That&apos;s why I don&apos;t build cute automations that save you 5 minutes.
                 </p>
                 
                 {/* The Bold Statement */}

@@ -31,7 +31,7 @@ export default function Differentiation() {
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Why This Works When{" "}
-            <span className="text-accent">Other Stuff Doesn't</span>
+            <span className="text-accent">Other Stuff Doesn&apos;t</span>
           </h2>
         </motion.div>
 
@@ -55,7 +55,7 @@ export default function Differentiation() {
                   </div>
                   <div className="flex-1 flex items-center">
                     <div className="relative">
-                      <span className="text-6xl text-muted/20 absolute -left-2 -top-2">"</span>
+                      <span className="text-6xl text-muted/20 absolute -left-2 -top-2">&quot;</span>
                       <p className="text-lg md:text-xl text-muted/80 italic pl-6">
                         {comparison.them}
                       </p>
@@ -75,7 +75,7 @@ export default function Differentiation() {
                   </div>
                   <div className="flex-1 flex items-center">
                     <div className="relative">
-                      <span className="text-6xl text-accent/30 absolute -left-2 -top-2">"</span>
+                      <span className="text-6xl text-accent/30 absolute -left-2 -top-2">&quot;</span>
                       <p className="text-lg md:text-xl text-foreground font-medium pl-6">
                         {comparison.me}
                       </p>
@@ -103,7 +103,7 @@ export default function Differentiation() {
           <div className="absolute inset-0 bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 blur-3xl"></div>
           <div className="relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-accent/30 rounded-3xl p-12 text-center">
             <p className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
-              I don't sell templates.
+              I don&apos;t sell templates.
               <br />
               <span className="text-accent">I solve YOUR specific problems.</span>
               <br />

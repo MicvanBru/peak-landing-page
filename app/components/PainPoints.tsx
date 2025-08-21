@@ -42,7 +42,7 @@ export default function PainPoints() {
         <div className="max-w-3xl mx-auto">
           {/* Section Header */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-center mb-12">
-            You Know <span className="text-accent">Exactly</span> What I'm Talking About
+            You Know <span className="text-accent">Exactly</span> What I&apos;m Talking About
           </h2>
 
           {/* Pain Points List */}
@@ -78,11 +78,11 @@ export default function PainPoints() {
           {/* Closing Statement */}
           <div className={`text-center transition-all duration-700 delay-300 ${visible ? 'opacity-100' : 'opacity-0'}`}>
             <p className="text-xl text-foreground/80">
-              You didn't sign up for this. You wanted{" "}
+              You didn&apos;t sign up for this. You wanted{" "}
               <span className="text-accent font-semibold">freedom</span>.
             </p>
             <p className="text-xl text-foreground/80 mt-2">
-              Instead, you're <span className="text-accent font-semibold">chained to your desk</span>, 
+              Instead, you&apos;re <span className="text-accent font-semibold">chained to your desk</span>, 
               prisoner to something you created.
             </p>
           </div>

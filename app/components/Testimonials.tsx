@@ -72,7 +72,7 @@ export default function Testimonials() {
                 <div className="space-y-6">
                   {/* Quote */}
                   <p className="text-neutral-300 leading-relaxed text-lg italic">
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                   </p>
 
                   {/* Attribution */}
