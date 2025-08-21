@@ -1,5 +1,6 @@
 import PersonalStory from './components/PersonalStory';
 import PainPoints from './components/PainPoints';
+import Credibility from './components/Credibility';
 
 export default function Home() {
   return (
@@ -69,6 +70,9 @@ export default function Home() {
 
       {/* Pain Points Section */}
       <PainPoints />
+
+      {/* Credibility Section */}
+      <Credibility />
     </main>
   );
 }
