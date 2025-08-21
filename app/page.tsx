@@ -1,4 +1,5 @@
 import PersonalStory from './components/PersonalStory';
+import PainPoints from './components/PainPoints';
 
 export default function Home() {
   return (
@@ -65,6 +66,9 @@ export default function Home() {
 
       {/* Personal Story Section */}
       <PersonalStory />
+
+      {/* Pain Points Section */}
+      <PainPoints />
     </main>
   );
 }
