@@ -3,6 +3,7 @@ import PainPoints from './components/PainPoints';
 import Credibility from './components/Credibility';
 import Transformation from './components/Transformation';
 import Process from './components/Process';
+import Differentiation from './components/Differentiation';
 
 export default function Home() {
   return (
@@ -81,6 +82,9 @@ export default function Home() {
 
       {/* Process Section */}
       <Process />
+
+      {/* Differentiation Section */}
+      <Differentiation />
     </main>
   );
 }
