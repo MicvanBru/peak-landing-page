@@ -2,6 +2,7 @@ import PersonalStory from './components/PersonalStory';
 import PainPoints from './components/PainPoints';
 import Credibility from './components/Credibility';
 import Transformation from './components/Transformation';
+import Process from './components/Process';
 
 export default function Home() {
   return (
@@ -77,6 +78,9 @@ export default function Home() {
 
       {/* Transformation Section */}
       <Transformation />
+
+      {/* Process Section */}
+      <Process />
     </main>
   );
 }
