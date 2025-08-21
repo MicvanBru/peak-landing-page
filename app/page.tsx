@@ -4,6 +4,7 @@ import Credibility from './components/Credibility';
 import Transformation from './components/Transformation';
 import Process from './components/Process';
 import Differentiation from './components/Differentiation';
+import Testimonials from './components/Testimonials';
 
 export default function Home() {
   return (
@@ -85,6 +86,9 @@ export default function Home() {
 
       {/* Differentiation Section */}
       <Differentiation />
+
+      {/* Testimonials Section */}
+      <Testimonials />
     </main>
   );
 }
