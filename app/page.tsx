@@ -12,9 +12,9 @@ import TrustFooter from './components/TrustFooter';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden w-full">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center min-h-screen py-20">
             {/* Left Content */}

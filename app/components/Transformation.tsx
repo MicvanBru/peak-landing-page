@@ -82,14 +82,6 @@ export default function Transformation() {
               </div>
             </div>
 
-            {/* Arrow Indicator - Hidden on mobile */}
-            <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="bg-accent/20 backdrop-blur-sm rounded-full p-4 animate-pulse">
-                <svg className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </div>
-            </div>
 
             {/* TO Side - Solution State */}
             <div className="relative group">

@@ -29,12 +29,18 @@
   --font-sans: Inter, system-ui, -apple-system, sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: var(--gradient-hero);
   color: var(--foreground);
   font-family: var(--font-sans);
   min-height: 100vh;
   font-feature-settings: "rlig" 1, "calt" 1;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Smooth transitions for interactive elements */

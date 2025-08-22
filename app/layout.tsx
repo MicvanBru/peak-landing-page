@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   description: "I help business owners stop working 70-hour weeks by building the systems that do the work for them.",
   keywords: "business automation, systems, productivity, business owner, work-life balance",
   authors: [{ name: "Peak Systems" }],
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
   openGraph: {
     title: "You Built a Business to Be Free. Now It Owns You.",
     description: "I help business owners stop working 70-hour weeks by building the systems that do the work for them.",
