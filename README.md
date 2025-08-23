@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Peak Systems Landing Page
 
-## Getting Started
+A high-converting landing page for Peak Systems - a business automation consultancy that helps business owners reclaim their time through intelligent systems and automation.
 
-First, run the development server:
+## 🚀 Live Demo
+
+Visit the live site: [https://micvanbru.github.io/peak-landing-page/](https://micvanbru.github.io/peak-landing-page/)
+
+## 📋 Overview
+
+This landing page is designed to resonate with overwhelmed business owners who are working 70+ hour weeks and want to build systems that give them their life back. The narrative-driven design walks visitors through a journey from recognition of their pain points to understanding the solution.
+
+## 🎯 Key Features
+
+- **Story-driven narrative** - Opens with a relatable founder story that builds trust
+- **Interactive timeline** - Animated journey showing the transformation process
+- **Social proof** - Client testimonials and results showcased throughout
+- **Clear differentiation** - "Them vs Me" comparison highlighting unique approach
+- **Responsive design** - Fully optimized for all device sizes
+- **Performance optimized** - Built with Next.js for fast loading times
+- **Smooth animations** - Framer Motion for engaging scroll-triggered animations
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15.5
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: GitHub Pages with GitHub Actions
+- **Language**: TypeScript
+
+## 💻 Development
+
+### Prerequisites
+
+- Node.js 20 or higher
+- npm or yarn
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/MicvanBru/peak-landing-page.git
+
+# Navigate to project directory
+cd peak-landing-page
+
+# Install dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Start development server
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Open http://localhost:3000 in your browser
+```
 
-## Learn More
+### Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Create production build
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Preview production build locally
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Deployment
 
-## Deploy on Vercel
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment workflow:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Builds the Next.js app as static files
+2. Exports to the `out` directory
+3. Deploys to GitHub Pages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site is configured with the base path `/peak-landing-page` for GitHub Pages compatibility.
+
+## 📁 Project Structure
+
+```
+peak-landing-page/
+├── app/
+│   ├── layout.tsx       # Root layout with metadata
+│   ├── page.tsx         # Main landing page component
+│   └── globals.css      # Global styles and Tailwind imports
+├── components/
+│   └── sections/        # Individual page sections
+├── public/              # Static assets
+├── .github/
+│   └── workflows/       # GitHub Actions deployment workflow
+└── next.config.ts       # Next.js configuration
+```
+
+## 🎨 Key Sections
+
+1. **Hero** - Attention-grabbing headline with emotional hook
+2. **Story Timeline** - Interactive founder journey
+3. **Pain Points** - Recognition of common struggles
+4. **Transformation** - Before/after comparison
+5. **Differentiation** - Why this approach works
+6. **Process** - How the system works
+7. **Testimonials** - Client success stories
+8. **CTA** - Clear call-to-action throughout
+
+## 📝 License
+
+This project is private and proprietary.
+
+## 👤 Author
+
+Built for Peak Systems - Business Automation Consultancy
+
+---
+
+*Helping business owners stop working 70-hour weeks by building the systems that do the work for them.*
