@@ -20,19 +20,23 @@ export default function Home() {
             {/* Left Content */}
             <div className="space-y-8">
               {/* Main Headlines */}
-              <div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
-                  You Built a Business to Be{" "}
-                  <span className="text-accent">Free</span>.
-                </h1>
-                <p className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 text-foreground/90">
-                  Now It Owns You.
+              <div className="space-y-4">
+                <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-muted uppercase tracking-wider">
+                  Business Owners:
                 </p>
+                <h1 className="space-y-2">
+                  <span className="block text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+                    You Don&apos;t Need More Hours.
+                  </span>
+                  <span className="block text-5xl sm:text-6xl lg:text-8xl font-black tracking-tight">
+                    You Need <span className="text-accent uppercase">AI SYSTEMS</span>.
+                  </span>
+                </h1>
               </div>
 
               {/* Supporting Text */}
               <p className="text-lg lg:text-xl text-muted leading-relaxed max-w-2xl">
-                I help business owners stop working 70-hour weeks by building the systems that do the work for them.
+                We build custom AI systems that handle the repetitive work eating up your week
               </p>
 
               {/* CTA Button */}
