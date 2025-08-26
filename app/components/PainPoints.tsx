@@ -42,7 +42,7 @@ export default function PainPoints() {
         <div className="max-w-3xl mx-auto">
           {/* Section Header */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-center mb-12">
-            You Know <span className="text-accent">Exactly</span> What I&apos;m Talking About
+            Does This Sound Like <span className="text-accent">You?</span>
           </h2>
 
           {/* Pain Points List */}

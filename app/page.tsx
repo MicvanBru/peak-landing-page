@@ -1,4 +1,3 @@
-import PersonalStory from './components/PersonalStory';
 import PainPoints from './components/PainPoints';
 import Credibility from './components/Credibility';
 import Transformation from './components/Transformation';
@@ -36,7 +35,7 @@ export default function Home() {
 
               {/* Supporting Text */}
               <p className="text-lg lg:text-xl text-muted leading-relaxed max-w-2xl">
-                We build custom AI systems that handle the repetitive work eating up your week
+                Get 5-15 hours back weekly while your business runs without you
               </p>
 
               {/* CTA Button */}
@@ -77,8 +76,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Personal Story Section */}
-      <PersonalStory />
 
       {/* Pain Points Section */}
       <PainPoints />
