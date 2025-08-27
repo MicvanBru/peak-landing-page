@@ -4,13 +4,6 @@ import { motion } from 'framer-motion'
 
 const testimonials = [
   {
-    quote: "Billy has this incredible ability to see what you can't see. He identified bottlenecks in our business that were costing us thousands of hours and millions in revenue. The systems he built didn't just solve our problems – they transformed how we operate.",
-    name: "Sean Cannell",
-    credential: "Think Media",
-    initials: "SC",
-    accentColor: "from-cyan-400 to-cyan-500"
-  },
-  {
     quote: "We were doing the same repetitive tasks every single day. Billy came in, automated everything, and now what took my team 8 hours takes 30 minutes. It's not just about the time saved – it's about finally being able to focus on growth instead of maintenance.",
     name: "Anthony O'Neal",
     credential: "Financial Expert & Author",

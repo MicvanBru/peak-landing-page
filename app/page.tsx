@@ -1,4 +1,7 @@
 import PainPoints from './components/PainPoints';
+import SocialProof from './components/SocialProof';
+import StorySection from './components/StorySection';
+import TestimonialsSection from './components/testimonials/TestimonialsSection';
 import Credibility from './components/Credibility';
 import Transformation from './components/Transformation';
 import Process from './components/Process';
@@ -76,9 +79,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Social Proof Section */}
+      <SocialProof />
 
       {/* Pain Points Section */}
       <PainPoints />
+
+      {/* Story Section */}
+      <StorySection />
+
+      {/* New Testimonials Section */}
+      <TestimonialsSection />
 
       {/* Credibility Section */}
       <Credibility />
