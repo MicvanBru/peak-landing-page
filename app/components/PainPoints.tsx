@@ -24,14 +24,14 @@ export default function PainPoints() {
           <div className="mb-12">
             <div className="text-center space-y-4">
               <p className="text-xl lg:text-2xl text-foreground/90">
-                You're working <span className="font-bold text-accent">70+ hours a week</span>. 
+                You&apos;re working <span className="font-bold text-accent">70+ hours a week</span>. 
                 Not because the work requires it - because <span className="font-bold">everything runs through you</span>.
               </p>
               <p className="text-lg lg:text-xl text-foreground/80">
                 Every task. Every decision. Every question.
               </p>
               <p className="text-lg lg:text-xl font-semibold text-foreground">
-                You already know this isn't sustainable.
+                You already know this isn&apos;t sustainable.
               </p>
             </div>
           </div>
