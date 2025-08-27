@@ -134,7 +134,7 @@ const VideoLayout = ({ name, role, company, quote, videoUrl, videoPlatform, init
   };
 
   return (
-    <div className="relative bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300">
+    <div className="relative bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300 h-full flex flex-col">
       {/* Video Embed */}
       {videoUrl && (
         <div className="relative w-full aspect-video bg-black">
@@ -148,19 +148,19 @@ const VideoLayout = ({ name, role, company, quote, videoUrl, videoPlatform, init
       )}
       
       {/* Content */}
-      <div className="p-6">
+      <div className="p-8 flex flex-col flex-1">
         {/* Quote */}
-        <p className="text-neutral-300 leading-relaxed mb-4 italic">
+        <blockquote className="text-neutral-300 leading-relaxed text-base italic flex-1 mb-6">
           &quot;{quote}&quot;
-        </p>
+        </blockquote>
         
         {/* Attribution */}
-        <div className="flex items-center gap-3">
-          <div className={`w-10 h-10 bg-gradient-to-br ${accentColor || 'from-cyan-400 to-cyan-500'} rounded-full flex items-center justify-center font-bold text-black text-sm`}>
+        <div className="flex items-center gap-4 pt-4 border-t border-neutral-800">
+          <div className={`w-12 h-12 bg-gradient-to-br ${accentColor || 'from-cyan-400 to-cyan-500'} rounded-full flex items-center justify-center font-bold text-black`}>
             {initials || name.split(' ').map(n => n[0]).join('')}
           </div>
           <div>
-            <p className="text-white font-semibold">{name}</p>
+            <p className="text-white font-semibold text-lg">{name}</p>
             {(role || company) && (
               <p className="text-cyan-400 text-sm">
                 {role}{role && company ? ', ' : ''}{company}
@@ -186,10 +186,10 @@ const PictureLayout = ({ name, role, company, quote, image, initials, accentColo
             <img 
               src={image} 
               alt={name}
-              className="w-16 h-16 rounded-full object-cover border-2 border-cyan-500/30"
+              className="w-12 h-12 rounded-full object-cover border-2 border-cyan-500/30"
             />
           ) : (
-            <div className={`w-16 h-16 bg-gradient-to-br ${accentColor || 'from-cyan-400 to-cyan-500'} rounded-full flex items-center justify-center font-bold text-lg text-black`}>
+            <div className={`w-12 h-12 bg-gradient-to-br ${accentColor || 'from-cyan-400 to-cyan-500'} rounded-full flex items-center justify-center font-bold text-black`}>
               {initials || name.split(' ').map(n => n[0]).join('')}
             </div>
           )}
@@ -249,9 +249,9 @@ const TextLayout = ({ name, role, company, quote, initials, accentColor }: Testi
         </div>
       </div>
 
-      <div className="space-y-6 h-full flex flex-col">
+      <div className="h-full flex flex-col">
         {/* Quote */}
-        <blockquote className="text-neutral-300 leading-relaxed text-base italic flex-1">
+        <blockquote className="text-neutral-300 leading-relaxed text-base italic flex-1 mb-6">
           &quot;{quote}&quot;
         </blockquote>
 
