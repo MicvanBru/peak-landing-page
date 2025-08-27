@@ -7,7 +7,6 @@ import Transformation from './components/Transformation';
 import Process from './components/Process';
 import Differentiation from './components/Differentiation';
 import Objections from './components/Objections';
-import Testimonials from './components/Testimonials';
 import UrgencySection from './components/UrgencySection';
 import FinalCTA from '@/components/FinalCTA';
 import TrustFooter from './components/TrustFooter';
@@ -103,8 +102,6 @@ export default function Home() {
       {/* Differentiation Section */}
       <Differentiation />
 
-      {/* Testimonials Section */}
-      <Testimonials />
 
       {/* Objections Section */}
       <Objections />

@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/peak-landing-page" : "",
+  // Only use static export for production builds
+  ...(process.env.NODE_ENV === "production" && {
+    output: "export",
+    basePath: "/peak-landing-page",
+  }),
   images: {
     unoptimized: true,
   },

@@ -26,19 +26,6 @@ export default function TestimonialsSection() {
           </p>
         </motion.div>
 
-        {/* Featured Testimonial */}
-        {featuredTestimonial && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-20"
-          >
-            <FeaturedLayout {...featuredTestimonial} />
-          </motion.div>
-        )}
-
         {/* Other Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {otherTestimonials.map((testimonial, index) => (
