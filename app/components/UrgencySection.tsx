@@ -1,6 +1,6 @@
 export default function UrgencySection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#0a0f1f] via-[#0f1629] to-[#0a0f1f] py-32 px-5">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#0a0f1f] via-[#0f1629] to-[#0a0f1f] py-20 lg:py-32 px-5">
       {/* Top border glow */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
       

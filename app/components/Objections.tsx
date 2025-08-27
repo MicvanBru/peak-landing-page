@@ -29,11 +29,11 @@ export default function Objections() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-20 lg:py-32 relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             The Stuff You&apos;re Thinking
             <span className="block mt-2 text-accent">But Not Saying</span>
           </h2>

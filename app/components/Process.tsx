@@ -30,10 +30,10 @@ export default function Process() {
 
   if (!mounted) {
     return (
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-20 lg:py-32 relative overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
               How We <span className="text-accent">Actually</span> Do This
             </h2>
             <p className="text-xl text-muted max-w-3xl mx-auto">
@@ -46,7 +46,7 @@ export default function Process() {
   }
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-20 lg:py-32 relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -54,9 +54,9 @@ export default function Process() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
             How We <span className="text-accent">Actually</span> Do This
           </h2>
           <p className="text-xl text-muted max-w-3xl mx-auto">
@@ -178,7 +178,7 @@ export default function Process() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-20"
+          className="text-center mt-16"
         >
           <p className="text-xl text-muted mb-8">
             Ready to stop working for your business and start living your life?

@@ -28,7 +28,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black">
+    <section className="py-20 lg:py-32 px-6 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div

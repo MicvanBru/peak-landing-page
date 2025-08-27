@@ -28,7 +28,7 @@ export default function Credibility() {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative py-20 lg:py-32 overflow-hidden"
     >
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">

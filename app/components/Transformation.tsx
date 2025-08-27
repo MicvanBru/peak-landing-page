@@ -30,10 +30,10 @@ export default function Transformation() {
   ];
 
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    <section className="relative py-20 lg:py-32 overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             What This Actually{' '}
             <span className="text-accent">Looks Like</span>
@@ -44,7 +44,7 @@ export default function Transformation() {
         </div>
 
         {/* FROM/TO Transformation */}
-        <div className="mb-20 lg:mb-24">
+        <div className="mb-12">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
             {/* FROM Side - Pain State */}
             <div className="relative group">
@@ -122,7 +122,7 @@ export default function Transformation() {
         </div>
 
         {/* Real Results Section */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h3 className="text-3xl sm:text-4xl font-bold mb-4">
             Real Results from Real{' '}
             <span className="text-accent">Business Owners</span>
@@ -176,7 +176,7 @@ export default function Transformation() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16 lg:mt-20">
+        <div className="text-center mt-16">
           <p className="text-xl text-muted mb-6">
             Stop living in the &quot;before.&quot; Start building your &quot;after.&quot;
           </p>
