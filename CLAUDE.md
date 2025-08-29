@@ -46,6 +46,14 @@
 - Test build process after major changes (npm run dev, npm run build)
 - Maintain clean git history with descriptive commit messages
 
+### Common Issues & Fixes
+
+#### Next.js routes-manifest.json Error
+If you encounter the error: `ENOENT: no such file or directory, open '.next\routes-manifest.json'`
+- **Fix**: Run `npm run clean` then `npm run dev`
+- **Cause**: Corrupted .next cache directory (common on Windows/WSL)
+- **Prevention**: Use `npm run clean` whenever build cache issues occur
+
 ### Content Strategy
 - Focus on business owner pain points (working 70+ hour weeks, system chaos)
 - Emphasize time-saving and automation benefits consistently
