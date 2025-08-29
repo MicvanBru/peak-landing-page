@@ -6,18 +6,23 @@ import { motion } from 'framer-motion';
 const processSteps = [
   {
     number: '1',
-    title: 'Figure Out What\'s Killing Your Time',
-    description: 'We look at everything you\'re doing. Even the \'quick\' 2-minute tasks you do 50 times a day.',
+    title: 'Audit',
+    description: 'We Audit your time to identify where it\'s actually going and what\'s eating your week',
   },
   {
     number: '2',
-    title: 'Build Custom Systems That Actually Work',
-    description: 'Not templates. Not \'best practices.\' Stuff built specifically for how YOU work.',
+    title: 'Optimize',
+    description: 'We optimize your workflow to remove unnecessary steps and create a better way of working',
   },
   {
     number: '3',
-    title: 'Give You Your Life Back',
-    description: 'Your business runs. You do what you want. Novel concept, right?',
+    title: 'Build',
+    description: 'We Build the systems that handle everything automatically',
+  },
+  {
+    number: '4',
+    title: 'Relax',
+    description: 'Relax while systems do what you used to do manually',
   },
 ];
 
