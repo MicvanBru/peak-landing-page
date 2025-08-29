@@ -1,14 +1,16 @@
+import dynamic from 'next/dynamic';
 import PainPoints from './components/PainPoints';
 import SocialProof from './components/SocialProof';
 import StorySection from './components/StorySection';
-import TestimonialsSection from './components/testimonials/TestimonialsSection';
-import Credibility from './components/Credibility';
-import Process from './components/Process';
-import Differentiation from './components/Differentiation';
-import Objections from './components/Objections';
-import UrgencySection from './components/UrgencySection';
-import FinalCTA from '@/components/FinalCTA';
-import TrustFooter from './components/TrustFooter';
+
+const TestimonialsSection = dynamic(() => import('./components/testimonials/TestimonialsSection'), { ssr: true });
+const Credibility = dynamic(() => import('./components/Credibility'), { ssr: true });
+const Process = dynamic(() => import('./components/Process'), { ssr: true });
+const Differentiation = dynamic(() => import('./components/Differentiation'), { ssr: true });
+const Objections = dynamic(() => import('./components/Objections'), { ssr: true });
+const UrgencySection = dynamic(() => import('./components/UrgencySection'), { ssr: true });
+const FinalCTA = dynamic(() => import('@/components/FinalCTA'), { ssr: true });
+const TrustFooter = dynamic(() => import('./components/TrustFooter'), { ssr: true });
 
 export default function Home() {
   return (

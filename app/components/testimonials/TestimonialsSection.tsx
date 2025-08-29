@@ -1,10 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { testimonials, type Testimonial } from './testimonialData'
 
 export default function TestimonialsSection() {
-  const featuredTestimonial = testimonials.find(t => t.type === 'featured');
+  // const featuredTestimonial = testimonials.find(t => t.type === 'featured');
   const otherTestimonials = testimonials.filter(t => t.type !== 'featured');
   
   return (
@@ -73,6 +74,7 @@ export default function TestimonialsSection() {
 }
 
 // Featured Layout - Hero style similar to SocialProof
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const FeaturedLayout = ({ name, company, quote, initials, accentColor }: Testimonial) => (
   <div className="relative bg-neutral-900/80 backdrop-blur-sm border border-cyan-500/20 rounded-3xl p-8 lg:p-12 hover:border-cyan-500/40 transition-all duration-500">
     {/* Subtle glow effect */}
@@ -183,9 +185,11 @@ const PictureLayout = ({ name, role, company, quote, image, initials, accentColo
         {/* Avatar/Image */}
         <div className="flex-shrink-0">
           {image ? (
-            <img 
+            <Image 
               src={image} 
               alt={name}
+              width={48}
+              height={48}
               className="w-12 h-12 rounded-full object-cover border-2 border-cyan-500/30"
             />
           ) : (

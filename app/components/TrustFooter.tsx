@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 
 const trustPoints = [
@@ -16,22 +15,13 @@ export default function TrustFooter() {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           {/* Trust Indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
+          <div className="mb-12 animate-fade-in-up">
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               {trustPoints.map((point, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-3 group"
+                  className="flex items-start gap-3 group animate-fade-in-left"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex-shrink-0 mt-0.5">
                     <div className="w-6 h-6 rounded-full bg-cyan-500/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
@@ -41,22 +31,16 @@ export default function TrustFooter() {
                   <p className="text-gray-300 leading-relaxed">
                     {point}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Divider */}
           <div className="border-t border-gray-800 mb-8"></div>
 
           {/* Footer Bottom */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col md:flex-row justify-between items-center gap-4"
-          >
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in-delayed">
             <div className="text-center md:text-left">
               <p className="text-sm text-gray-400">
                 © {new Date().getFullYear()} Peak Systems. All rights reserved.
@@ -86,7 +70,7 @@ export default function TrustFooter() {
                 Success Stories
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

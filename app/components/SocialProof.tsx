@@ -1,18 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
 export default function SocialProof() {
   return (
     <section className="py-16 lg:py-20 px-6 bg-gradient-to-b from-black via-neutral-950 to-neutral-900">
       <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative"
-        >
+        <div className="relative animate-fade-in-up">
+        
           {/* Main testimonial card */}
           <div className="relative bg-card/80 backdrop-blur-sm border border-accent/20 rounded-3xl p-8 lg:p-12 hover:border-accent/40 transition-all duration-500">
             {/* Subtle glow effect */}
@@ -31,7 +24,7 @@ export default function SocialProof() {
             <div className="relative z-10 space-y-8">
               {/* Testimonial text */}
               <blockquote className="text-xl lg:text-2xl text-foreground leading-relaxed font-medium italic text-center">
-                "You can't imagine the impact to have an outside, intelligent perspective on your own systems and processes. Billy's ability to rethink systems, automate tasks, and cut down on extra time and work is really incredible. We're thankful for his help in streamlining our processes."
+                &ldquo;You can&apos;t imagine the impact to have an outside, intelligent perspective on your own systems and processes. Billy&apos;s ability to rethink systems, automate tasks, and cut down on extra time and work is really incredible. We&apos;re thankful for his help in streamlining our processes.&rdquo;
               </blockquote>
 
               {/* Attribution section */}
@@ -67,13 +60,8 @@ export default function SocialProof() {
           </div>
 
           {/* Trust indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex justify-center mt-8"
-          >
+          <div className="flex justify-center mt-8 animate-fade-in-up-delayed">
+          
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm border border-accent/20 rounded-full text-sm text-muted">
               <div className="flex items-center gap-1">
                 {[1, 2, 3, 4, 5].map((star) => (
@@ -89,8 +77,8 @@ export default function SocialProof() {
               </div>
               <span className="text-foreground font-semibold">Trusted by industry leaders</span>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   )
