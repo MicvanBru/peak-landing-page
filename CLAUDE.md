@@ -48,11 +48,46 @@
 
 ### Common Issues & Fixes
 
-#### Next.js routes-manifest.json Error
-If you encounter the error: `ENOENT: no such file or directory, open '.next\routes-manifest.json'`
-- **Fix**: Run `npm run clean` then `npm run dev`
-- **Cause**: Corrupted .next cache directory (common on Windows/WSL)
-- **Prevention**: Use `npm run clean` whenever build cache issues occur
+#### Next.js Cache Corruption (WSL2+Windows Issue)
+**Symptoms**: 
+- `ENOENT: no such file or directory, open '.next/server/app/page.js'`
+- `ENOENT: no such file or directory, open '.next\routes-manifest.json'` 
+- Build failures after code changes
+- White screen with no styling
+
+**Root Cause**: WSL2 accessing Windows filesystem (`/mnt/c/`) causes file system timing issues that corrupt Next.js incremental cache.
+
+**Quick Fix**:
+```bash
+npm run fix  # Automatically cleans cache and restarts
+```
+
+**Manual Fix**:
+```bash
+npm run clean    # Clear cache
+npm run dev      # Restart (now auto-cleans)
+```
+
+**Advanced Fixes**:
+```bash
+npm run clean:all     # Nuclear option - reinstalls everything
+./scripts/dev-recovery.sh  # Auto-recovery dev server
+```
+
+**New Scripts Available**:
+- `npm run dev` - Now automatically cleans cache before starting
+- `npm run dev:quick` - Skip cache cleaning (faster but riskier)  
+- `npm run dev:safe` - Force clean cache and restart
+- `npm run fix` - One-command fix for cache issues
+- `npm run clean:all` - Complete reset (cache + node_modules)
+
+**Prevention**: 
+- Use `npm run dev` (auto-cleaning) instead of `dev:quick`
+- Move project to WSL filesystem for 10-100x performance boost:
+  ```bash
+  cp -r "/mnt/c/Peak Systems/peak-landing-page" ~/peak-landing-page
+  ```
+- The project now has WSL2+Windows compatibility fixes in next.config.ts
 
 ### Content Strategy
 - Focus on business owner pain points (working 70+ hour weeks, system chaos)
