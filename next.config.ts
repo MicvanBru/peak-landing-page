@@ -25,13 +25,8 @@ const nextConfig: NextConfig = {
   
   // Development-only settings for WSL2 stability
   ...(process.env.NODE_ENV === "development" && {
-    // Reduce memory usage and improve stability
-    experimental: {
-      appDir: true,
-      typedRoutes: false,
-    },
-    // Disable SWC minification in dev to reduce crashes
-    swcMinify: false,
+    // Configure typed routes
+    typedRoutes: false,
   }),
 };
 
