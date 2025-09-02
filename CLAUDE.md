@@ -102,7 +102,7 @@ npm run clean:all     # Nuclear option - reinstalls everything
 - Target audience: Overwhelmed business owners working excessive hours
 - Core value proposition: Systems and automation that give time/life back  
 - Tone: Professional yet empathetic, results-focused, trustworthy
-- Differentiation: Personal approach vs. generic business consultants
+- Personal approach vs. generic business consultants
 
 ### Technical Architecture
 - Next.js 15 with App Router

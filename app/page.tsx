@@ -4,9 +4,8 @@ import SocialProof from './components/SocialProof';
 import StorySection from './components/StorySection';
 
 const TestimonialsSection = dynamic(() => import('./components/testimonials/TestimonialsSection'), { ssr: true });
-const Credibility = dynamic(() => import('./components/Credibility'), { ssr: true });
 const Process = dynamic(() => import('./components/Process'), { ssr: true });
-const Differentiation = dynamic(() => import('./components/Differentiation'), { ssr: true });
+const QualifyingSection = dynamic(() => import('./components/QualifyingSection'), { ssr: true });
 const Objections = dynamic(() => import('./components/Objections'), { ssr: true });
 const UrgencySection = dynamic(() => import('./components/UrgencySection'), { ssr: true });
 const FinalCTA = dynamic(() => import('@/components/FinalCTA'), { ssr: true });
@@ -101,16 +100,11 @@ export default function Home() {
       {/* New Testimonials Section */}
       <TestimonialsSection />
 
-      {/* Credibility Section */}
-      <Credibility />
-
-
       {/* Process Section */}
       <Process />
 
-      {/* Differentiation Section */}
-      <Differentiation />
-
+      {/* Qualifying Section - Is This For You? */}
+      <QualifyingSection />
 
       {/* Objections Section */}
       <Objections />

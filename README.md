@@ -100,10 +100,9 @@ peak-landing-page/
 2. **Story Timeline** - Interactive founder journey
 3. **Pain Points** - Recognition of common struggles
 4. **Transformation** - Before/after comparison
-5. **Differentiation** - Why this approach works
-6. **Process** - How the system works
-7. **Testimonials** - Client success stories
-8. **CTA** - Clear call-to-action throughout
+5. **Process** - 4-step framework to get your life back
+6. **Testimonials** - Client success stories
+7. **CTA** - Clear call-to-action throughout
 
 ## 📝 License
 
