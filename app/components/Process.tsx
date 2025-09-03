@@ -8,7 +8,7 @@ const processSteps = [
     number: "1",
     title: "Audit",
     description:
-      "We Audit your time to identify where it's actually going and what's eating your week",
+      "We audit your time to identify where it's actually going and what's eating your week",
     details:
       "Through detailed analysis of your daily operations, we map out exactly where your time disappears and identify the biggest bottlenecks holding you back from scaling your business.",
   },
@@ -23,7 +23,7 @@ const processSteps = [
   {
     number: "3",
     title: "Build",
-    description: "We Build the systems that handle everything automatically",
+    description: "We build the systems that handle everything automatically",
     details:
       "Custom automation systems are built specifically for your business, handling repetitive tasks and freeing you to focus on what only you can do.",
   },

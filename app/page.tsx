@@ -4,6 +4,7 @@ import SocialProof from './components/SocialProof';
 import StorySection from './components/StorySection';
 
 const TestimonialsSection = dynamic(() => import('./components/testimonials/TestimonialsSection'), { ssr: true });
+const TimeBackSection = dynamic(() => import('./components/TimeBackSection'), { ssr: true });
 const Process = dynamic(() => import('./components/Process'), { ssr: true });
 const QualifyingSection = dynamic(() => import('./components/QualifyingSection'), { ssr: true });
 const Objections = dynamic(() => import('./components/Objections'), { ssr: true });
@@ -99,6 +100,9 @@ export default function Home() {
 
       {/* New Testimonials Section */}
       <TestimonialsSection />
+
+      {/* How to Actually Get Your Time Back Section */}
+      <TimeBackSection />
 
       {/* Process Section */}
       <Process />
