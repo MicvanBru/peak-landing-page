@@ -6,12 +6,17 @@
     "dev": "npm run clean && next dev",
     "dev:quick": "next dev",
     "dev:safe": "rm -rf .next && next dev",
+    "dev:watch": "./scripts/dev-recovery.sh",
+    "dev:stable": "npm run cache:validate && npm run dev:quick",
     "build": "npm run clean && next build",
     "start": "next start",
     "lint": "eslint",
     "clean": "rm -rf .next",
+    "clean:cache": "rm -rf .next/cache",
     "clean:all": "rm -rf .next node_modules package-lock.json && npm install",
-    "fix": "npm run clean && npm run dev"
+    "fix": "npm run clean && npm run dev",
+    "cache:validate": "node scripts/validate-cache.js",
+    "recover": "pkill -f 'next dev' 2>/dev/null || true && npm run clean && npm run dev:quick"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",

@@ -25,60 +25,71 @@ export default function StorySection() {
     return () => observer.disconnect();
   }, []);
 
-  const storyParagraphs = [
+  const storyContent = [
     {
-      text: "Three years ago, I was running a YouTube agency with my wife. We had over 100,000 subscribers, three employees, and I was working 70-80 hour weeks just to keep everything running.",
+      type: 'section',
+      content: [
+        "Every task went through me, video editing, client management, finances, strategy, coordinating brand deals, tracking deliverables, and… well, you get the idea.",
+        "I was the bottleneck for everything.",
+        "I knew we needed systems. Every business book said so. But here's the problem nobody talks about: When you're drowning in work, you can't stop long enough to build the boat that would save you."
+      ],
       delay: 0
     },
     {
-      text: "I was the bottleneck for everything. Video editing, client management, finances, strategy - it all went through me. We were always one month from financial collapse, constantly in reaction mode.",
-      delay: 100
+      type: 'section',
+      header: 'When COVID hit, we lost 90% of our clients. The business collapsed.',
+      content: [
+        "I took a job at Think Media. And for the first time in years, I had room to breathe.",
+        "They had the same operational chaos I'd dealt with - content workflows, team coordination, project tracking. But now I had time to do something about it."
+      ],
+      delay: 200
     },
     {
-      text: "Then one day, leaving my mom's house, I started having what I thought was a heart attack. Couldn't breathe, chest crushing, convinced I was dying. Drove straight to the ER.",
-      delay: 200,
-      emphasis: true
-    },
-    {
-      text: "\"You're having a panic attack,\" the doctor said.",
-      delay: 300,
-      quote: true
-    },
-    {
-      text: "That should have been my wake-up call. It wasn't. I went back to work the next day.",
+      type: 'section',
+      header: 'I started building systems, but not the kind you\'re thinking of.',
+      content: [
+        "Not basic Zapier connections. Not simple templates. I built systems that handled the messy reality of how work actually flows - all the exceptions, edge cases, and \"but what if\" scenarios that make business complicated.",
+        "I'll show you exactly how they work in a minute, but...",
+        "Here's what happened: Tasks that took hours started happening automatically. Not just the simple stuff - complex multi-step processes that everyone said \"had to be done manually.\""
+      ],
       delay: 400
     },
     {
-      text: "When COVID hit, everything I'd feared happened. We lost 90% of our clients in three weeks. The business died. I went into debt trying to save it.",
-      delay: 500
+      type: 'section',
+      header: 'Now I work 20-40 hours a week by choice.',
+      content: [
+        "Not because I'm working less hard - because systems handle what used to eat up my life.",
+        "When my son was born, I was actually there. Not checking emails during labor. Not worried about what was breaking. Just present.",
+      ],
+      delay: 900
     },
     {
-      text: "But here's the thing - there was relief in that failure. The crushing anxiety lifted because there was nothing left to save.",
-      delay: 600,
-      insight: true
+      type: 'section',
+      header: 'But I had to know - would this work for other businesses too?',
+      content: [
+        "So I took what I'd built and started creating systems for other business owners. The process was straightforward:",
+        "• **Audit** where your time actually goes",
+        "• **Optimize** your workflow to work smarter", 
+        "• **Build** systems that run automatically",
+        "• **Relax** while systems handle the work"
+      ],
+      delay: 600
     },
     {
-      text: "I took a job at Think Media, and that's when everything clicked. I saw they were doing the same manual tasks I used to do. So I started building systems that did the things I didn't want to do, so I could spend my time doing what I was actually good at.",
-      delay: 700
+      type: 'section',
+      header: 'The results were consistent across every business.',
+      content: [],
+      delay: 800
     },
     {
-      text: "Within months, I went from working 45 hours to doing the same work in 15 hours.",
-      delay: 800,
-      highlight: true
-    },
-    {
-      text: "That's when I realized: It wasn't about working harder or hiring more people. It was about building systems to handle the work that was eating my time.",
-      delay: 900,
-      insight: true
-    },
-    {
-      text: "I rebuilt my own business using this approach. Now I work 30-40 hours by choice. The business makes more money with less stress. And when my son was born, I was actually there - not checking emails during labor, not worried about what was breaking. Just present.",
+      type: 'section',
+      header: 'Every business owner I work with says the same thing:',
+      content: [
+        "\"I can't believe we used to do this manually.\"",
+        "I get it. Three years ago, I was doing everything manually too.",
+        "The difference is, now I know exactly how to fix it. And more importantly, I can build the systems that fix it for you."
+      ],
       delay: 1000
-    },
-    {
-      text: "Now we build these same systems for other business owners. Because I know what it's like when your business owns you. And I know exactly how to flip that equation.",
-      delay: 1100,
-      conclusion: true
     }
   ];
 
@@ -91,8 +102,8 @@ export default function StorySection() {
         <div className="max-w-4xl mx-auto">
           {/* Section Title */}
           <div className={`mb-16 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-              How I Went From <span className="text-accent">45 Hours</span> to <span className="text-accent">15</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+              Three years ago, I was working <span className="text-accent">70+ hours a week</span> running my agency... and I thought that was <span className="text-accent">just how business worked.</span>
             </h2>
           </div>
 
@@ -103,9 +114,9 @@ export default function StorySection() {
               {/* Subtle accent line on the left */}
               <div className="absolute left-0 top-12 bottom-12 w-1 bg-gradient-to-b from-transparent via-accent/30 to-transparent rounded-full"></div>
               
-              {/* Story paragraphs */}
-              <div className="space-y-6 relative">
-                {storyParagraphs.map((paragraph, index) => (
+              {/* Story content */}
+              <div className="space-y-10 relative">
+                {storyContent.map((section, index) => (
                   <div
                     key={index}
                     className={`transition-all duration-700 ${
@@ -114,41 +125,21 @@ export default function StorySection() {
                         : 'opacity-0 translate-y-8'
                     }`}
                     style={{ 
-                      transitionDelay: visible ? `${paragraph.delay}ms` : '0ms' 
+                      transitionDelay: visible ? `${section.delay}ms` : '0ms' 
                     }}
                   >
-                    {paragraph.quote ? (
-                      <blockquote className="pl-6 border-l-4 border-accent/50 py-2">
-                        <p className="text-xl lg:text-2xl text-accent font-semibold italic">
-                          {paragraph.text}
-                        </p>
-                      </blockquote>
-                    ) : paragraph.emphasis ? (
-                      <p className="text-lg lg:text-xl text-foreground/90 font-semibold">
-                        {paragraph.text}
-                      </p>
-                    ) : paragraph.highlight ? (
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-accent/10 blur-2xl"></div>
-                        <p className="relative text-xl lg:text-2xl text-accent font-bold text-center py-4">
-                          {paragraph.text}
-                        </p>
+                    {section.type === 'section' && (
+                      <div className="space-y-4">
+                        <h3 className="text-xl lg:text-2xl font-bold text-foreground leading-tight">
+                          {section.header}
+                        </h3>
+                        {section.content && section.content.map((paragraph, pIndex) => (
+                          <p key={pIndex} className="text-lg text-foreground/80 leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}>
+                          </p>
+                        ))}
                       </div>
-                    ) : paragraph.insight ? (
-                      <p className="text-lg lg:text-xl text-foreground font-medium bg-gradient-to-r from-transparent via-accent/5 to-transparent py-4 px-2 rounded-lg">
-                        {paragraph.text}
-                      </p>
-                    ) : paragraph.conclusion ? (
-                      <div className="mt-8 pt-8 border-t border-muted/20">
-                        <p className="text-lg lg:text-xl text-foreground/90 font-semibold">
-                          {paragraph.text}
-                        </p>
-                      </div>
-                    ) : (
-                      <p className="text-lg lg:text-xl text-foreground/80 leading-relaxed">
-                        {paragraph.text}
-                      </p>
                     )}
+                    
                   </div>
                 ))}
               </div>
