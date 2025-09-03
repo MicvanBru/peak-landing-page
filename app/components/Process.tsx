@@ -3,6 +3,12 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+// Centralized text content
+const sectionContent = {
+  heading: <>The Process is <span className="text-accent">Simple</span></>,
+  subheading: "", // Removed the "No magic. No BS." text
+};
+
 const processSteps = [
   {
     number: "1",
@@ -50,11 +56,8 @@ export default function Process() {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-              How We <span className="text-accent">Actually</span> Do This
+              {sectionContent.heading}
             </h2>
-            <p className="text-xl text-muted max-w-3xl mx-auto">
-              No magic. No BS. Just a proven process that works.
-            </p>
           </div>
         </div>
       </section>
@@ -73,11 +76,13 @@ export default function Process() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-            How We <span className="text-accent">Actually</span> Do This
+            {sectionContent.heading}
           </h2>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
-            No magic. No BS. Just a proven process that works.
-          </p>
+          {sectionContent.subheading && (
+            <p className="text-xl text-muted max-w-3xl mx-auto">
+              {sectionContent.subheading}
+            </p>
+          )}
         </motion.div>
 
         {/* Process Steps */}
