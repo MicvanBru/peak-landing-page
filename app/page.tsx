@@ -1,17 +1,17 @@
 import dynamic from 'next/dynamic';
-import PainPoints from './components/PainPoints';
-import SocialProof from './components/SocialProof';
-import StorySection from './components/StorySection';
+import PainPoints from '@/components/sections/PainPoints';
+import SocialProof from '@/components/sections/SocialProof';
+import StorySection from '@/components/sections/StorySection';
 
-const TestimonialsSection = dynamic(() => import('./components/testimonials/TestimonialsSection'), { ssr: true });
-const TimeBackSection = dynamic(() => import('./components/TimeBackSection'), { ssr: true });
-const WhatWeDoSection = dynamic(() => import('./components/WhatWeDoSection'), { ssr: true });
-const Process = dynamic(() => import('./components/Process'), { ssr: true });
-const QualifyingSection = dynamic(() => import('./components/QualifyingSection'), { ssr: true });
-const Objections = dynamic(() => import('./components/Objections'), { ssr: true });
-const UrgencySection = dynamic(() => import('./components/UrgencySection'), { ssr: true });
-const FinalCTA = dynamic(() => import('@/components/FinalCTA'), { ssr: true });
-const TrustFooter = dynamic(() => import('./components/TrustFooter'), { ssr: true });
+const TestimonialsSection = dynamic(() => import('@/components/testimonials/TestimonialsSection'), { ssr: true });
+const TimeBackSection = dynamic(() => import('@/components/sections/TimeBackSection'), { ssr: true });
+const WhatWeDoSection = dynamic(() => import('@/components/sections/WhatWeDoSection'), { ssr: true });
+const Process = dynamic(() => import('@/components/sections/Process'), { ssr: true });
+const QualifyingSection = dynamic(() => import('@/components/sections/QualifyingSection'), { ssr: true });
+const Objections = dynamic(() => import('@/components/sections/Objections'), { ssr: true });
+const UrgencySection = dynamic(() => import('@/components/sections/UrgencySection'), { ssr: true });
+const FinalCTA = dynamic(() => import('@/components/ui/FinalCTA'), { ssr: true });
+const TrustFooter = dynamic(() => import('@/components/sections/TrustFooter'), { ssr: true });
 
 export default function Home() {
   return (

@@ -47,7 +47,7 @@ export default function WhatWeDoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="space-y-3 mb-12 max-w-3xl mx-auto"
+          className="space-y-2 mb-12 max-w-3xl mx-auto"
         >
           {benefits.map((benefit, index) => (
             <motion.div

@@ -28,7 +28,7 @@ export default function PainPoints() {
                 className="flex items-start gap-4 p-2 rounded-lg hover:bg-card/50 transition-colors duration-200"
               >
                 {/* Simple bullet */}
-                <div className="w-2 h-2 rounded-full bg-destructive mt-2.5 flex-shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
                 
                 {/* Pain point text */}
                 <p className="text-lg text-foreground/85">
