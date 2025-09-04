@@ -29,15 +29,16 @@ export default function Objections() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="py-32 lg:py-40 relative overflow-hidden diagonal-cut-top mesh-gradient-1"
+             style={{ background: 'linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%)' }}>
       <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             The Stuff You&apos;re Thinking
-            <span className="block mt-2 text-accent">But Not Saying</span>
+            <span className="block mt-2 gradient-text-animated">But Not Saying</span>
           </h2>
-          <p className="text-lg lg:text-xl text-muted max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
             Let&apos;s address the elephant in the room. Here&apos;s what&apos;s really on your mind.
           </p>
         </div>
@@ -69,7 +70,7 @@ export default function Objections() {
                       </h3>
                       <div className={`
                         mt-1 transition-transform duration-300 text-2xl
-                        ${openIndex === index ? 'rotate-45 text-accent' : 'text-muted'}
+                        ${openIndex === index ? 'rotate-45 text-accent' : 'text-gray-300'}
                       `}>
                         +
                       </div>
@@ -83,7 +84,7 @@ export default function Objections() {
                         : 'grid-rows-[0fr] opacity-0'}
                     `}>
                       <div className="overflow-hidden">
-                        <p className="text-muted leading-relaxed lg:text-lg">
+                        <p className="text-gray-300 leading-relaxed lg:text-lg">
                           {item.answer}
                         </p>
                       </div>
@@ -97,7 +98,7 @@ export default function Objections() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <p className="text-lg text-muted mb-8">
+          <p className="text-lg text-gray-300 mb-8">
             Still have questions? Let&apos;s talk about your specific situation.
           </p>
           <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-background bg-accent rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(190_85%_55%_/_0.4)]">
@@ -107,10 +108,10 @@ export default function Objections() {
         </div>
       </div>
 
-      {/* Background Elements */}
+      {/* Decorative elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 -left-32 w-64 h-64 bg-accent/5 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/2 -left-32 w-64 h-64 bg-cyan-400/5 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400/5 rounded-full blur-[120px]"></div>
       </div>
     </section>
   );

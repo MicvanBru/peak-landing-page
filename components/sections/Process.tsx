@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Button from '@/components/ui/Button';
 
 // Centralized text content
 const sectionContent = {
-  heading: <>The Process is <span className="text-accent">Simple</span></>,
+  heading: <>The Process is <span className="gradient-text-animated">Simple</span></>,
   subheading: "", // Removed the "No magic. No BS." text
 };
 
@@ -65,7 +66,8 @@ export default function Process() {
   }
 
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="py-32 lg:py-40 relative overflow-hidden diagonal-cut-top mesh-gradient-1"
+             style={{ background: 'linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%)' }}>
       <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -79,7 +81,7 @@ export default function Process() {
             {sectionContent.heading}
           </h2>
           {sectionContent.subheading && (
-            <p className="text-xl text-muted max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               {sectionContent.subheading}
             </p>
           )}
@@ -100,8 +102,8 @@ export default function Process() {
                 <motion.div
                   className={`bg-surface/30 backdrop-blur-sm rounded-2xl border transition-all duration-300 cursor-pointer ${
                     activeStep === index
-                      ? "border-accent/50 shadow-[0_0_30px_hsl(190_85%_55%_/_0.15)]"
-                      : "border-accent/10 hover:border-accent/30"
+                      ? "border-cyan-400/50 shadow-[0_0_30px_hsl(190_85%_55%_/_0.15)]"
+                      : "border-cyan-400/10 hover:border-cyan-400/30"
                   }`}
                   whileHover={{ scale: 1.01 }}
                   onClick={() =>
@@ -113,21 +115,21 @@ export default function Process() {
                       {/* Number Badge */}
                       <div className="flex-shrink-0">
                         <div className="relative">
-                          <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 rounded-full bg-accent/20 border-2 border-accent/30 flex items-center justify-center">
-                            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-accent">
+                          <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 rounded-full bg-cyan-400/20 border-2 border-cyan-400/30 flex items-center justify-center">
+                            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-cyan-400">
                               {step.number}
                             </span>
                           </div>
-                          <div className="absolute inset-0 bg-accent/20 rounded-full blur-xl opacity-50"></div>
+                          <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-xl opacity-50"></div>
                         </div>
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-accent to-cyan-400 bg-clip-text text-transparent">
+                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-cyan-400">
                           {step.title}
                         </h3>
-                        <p className="text-base sm:text-lg lg:text-xl text-muted leading-relaxed mb-4">
+                        <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mb-4">
                           {step.description}
                         </p>
 
@@ -140,8 +142,8 @@ export default function Process() {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                             className="overflow-hidden"
                           >
-                            <div className="pt-6 mt-6 border-t border-accent/20">
-                              <p className="text-base lg:text-lg text-muted leading-relaxed">
+                            <div className="pt-6 mt-6 border-t border-cyan-400/20">
+                              <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
                                 {step.details}
                               </p>
                             </div>
@@ -149,7 +151,7 @@ export default function Process() {
                         )}
 
                         {/* Click indicator */}
-                        <div className="flex items-center gap-2 mt-4 text-sm text-accent/70">
+                        <div className="flex items-center gap-2 mt-4 text-sm text-cyan-400/70">
                           <span>
                             Click to{" "}
                             {activeStep === index ? "collapse" : "expand"}
@@ -179,7 +181,7 @@ export default function Process() {
                 {/* Connecting Line */}
                 {index < processSteps.length - 1 && (
                   <div className="flex justify-center py-6">
-                    <div className="w-[2px] h-8 bg-gradient-to-b from-accent/50 to-accent/20"></div>
+                    <div className="w-[2px] h-8 bg-gradient-to-b from-cyan-400/50 to-cyan-400/20"></div>
                   </div>
                 )}
               </motion.div>
@@ -195,25 +197,19 @@ export default function Process() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <p className="text-xl text-muted mb-8">
+          <p className="text-xl text-gray-300 mb-8">
             Ready to stop working for your business and start living your life?
           </p>
-          <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-background bg-accent rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(190_85%_55%_/_0.4)]">
-            <span className="relative z-10">
-              Let&apos;s Talk About Your Freedom
-            </span>
-            <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-accent to-[hsl(180_90%_65%)] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </button>
+          <Button variant="primary" size="md" showArrow>
+            Let&apos;s Talk About Your Freedom
+          </Button>
         </motion.div>
       </div>
 
-      {/* Background decoration */}
+      {/* Decorative elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/2 -translate-y-1/2 -right-48 w-96 h-96 bg-accent/5 rounded-full blur-[120px]"></div>
-        <div className="absolute top-1/2 -translate-y-1/2 -left-48 w-96 h-96 bg-accent/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/2 -translate-y-1/2 -right-48 w-96 h-96 bg-cyan-400/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/2 -translate-y-1/2 -left-48 w-96 h-96 bg-cyan-400/5 rounded-full blur-[120px]"></div>
       </div>
     </section>
   );

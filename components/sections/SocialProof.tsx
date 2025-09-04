@@ -10,12 +10,13 @@ export default function SocialProof() {
   // Fallback if no featured testimonial found
   if (!featuredTestimonial) return null
   return (
-    <section className="py-16 lg:py-20 px-6 bg-gradient-to-b from-black via-neutral-950 to-neutral-900">
+    <section className="py-32 lg:py-40 px-6 diagonal-cut-top relative"
+             style={{ background: 'linear-gradient(135deg, hsl(220 25% 8%) 0%, hsl(220 20% 12%) 100%)' }}>
       <div className="max-w-4xl mx-auto">
         <div className="relative animate-fade-in-up">
         
           {/* Main testimonial card */}
-          <div className="relative bg-card/80 backdrop-blur-sm border border-accent/20 rounded-3xl p-8 lg:p-12 hover:border-accent/40 transition-all duration-500">
+          <div className="glass-card glass-card-hover rounded-3xl p-8 lg:p-12 light-beam relative z-20">
             {/* Subtle glow effect */}
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/5 to-accent/10 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             

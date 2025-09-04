@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import PainPoints from '@/components/sections/PainPoints';
 import SocialProof from '@/components/sections/SocialProof';
 import StorySection from '@/components/sections/StorySection';
+import { FloatingOrbs } from '@/components/ui/FloatingElements';
 
 const TestimonialsSection = dynamic(() => import('@/components/testimonials/TestimonialsSection'), { ssr: true });
 const TimeBackSection = dynamic(() => import('@/components/sections/TimeBackSection'), { ssr: true });
@@ -15,11 +16,14 @@ const TrustFooter = dynamic(() => import('@/components/sections/TrustFooter'), {
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden w-full">
+    <main className="min-h-screen w-full overflow-x-hidden relative">
+      {/* Global Floating Elements */}
+      <FloatingOrbs />
+      {/* Hero Section - Modern Dynamic */}
+      <section className="relative overflow-hidden w-full py-32 lg:py-40 mesh-gradient-1"
+               style={{ background: 'linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%)' }}>
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center min-h-screen py-20">
+          <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center min-h-screen">
             {/* Left Content */}
             <div className="space-y-8">
               {/* Main Headlines */}
@@ -28,26 +32,29 @@ export default function Home() {
                   Business Owners:
                 </p>
                 <h1 className="space-y-2">
-                  <span className="block text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+                  <span className="block text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
                     You Don&apos;t Need More Hours.
                   </span>
-                  <span className="block text-5xl sm:text-6xl lg:text-8xl font-black tracking-tight">
-                    You Need <span className="text-accent uppercase">AI SYSTEMS</span>.
+                  <span className="block text-5xl sm:text-6xl lg:text-8xl font-black tracking-tight text-white">
+                    You Need <span className="gradient-text-animated uppercase">AI SYSTEMS</span>.
                   </span>
                 </h1>
               </div>
 
               {/* Supporting Text */}
-              <p className="text-lg lg:text-xl text-muted leading-relaxed max-w-2xl">
+              <p className="text-lg lg:text-xl text-gray-400 leading-relaxed max-w-2xl">
                 Get 5-15 hours back weekly while your business runs without you
               </p>
 
               {/* CTA Buttons */}
               <div className="space-y-4">
-                <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-background bg-accent rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(190_85%_55%_/_0.4)] glow-cyan-sm">
+                <button className="group relative inline-flex items-center justify-center px-10 py-6 text-xl font-bold text-black rounded-2xl glow-magnetic ripple-effect gpu-accelerated"
+                        style={{ 
+                          background: 'linear-gradient(135deg, var(--accent-cyan) 0%, hsl(180 90% 65%) 50%, var(--accent-purple) 100%)',
+                          backgroundSize: '200% 100%'
+                        }}>
                   <span className="relative z-10">Get Your Life Back</span>
-                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-accent to-[hsl(180_90%_65%)] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="ml-3 transition-transform duration-300 group-hover:translate-x-2 text-2xl">→</span>
                 </button>
                 
                 <div className="text-center">
@@ -83,10 +90,11 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Subtle background pattern */}
+        {/* Decorative elements */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 -left-4 w-72 h-72 bg-accent/10 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px]"></div>
+          <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-400/5 rounded-full blur-[150px]"></div>
+          <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-cyan-400/10 rounded-full blur-[150px]"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-64 bg-gradient-to-r from-cyan-400/2 via-transparent to-blue-500/2 rounded-full blur-3xl"></div>
         </div>
       </section>
 

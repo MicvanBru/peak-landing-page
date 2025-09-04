@@ -1,6 +1,7 @@
 export default function UrgencySection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#0a0f1f] via-[#0f1629] to-[#0a0f1f] py-20 lg:py-32 px-5">
+    <section className="relative overflow-hidden diagonal-cut-top mesh-gradient-2 py-32 lg:py-40 px-6"
+             style={{ background: 'linear-gradient(135deg, hsl(220 20% 12%) 0%, hsl(220 25% 8%) 100%)' }}>
       {/* Top border glow */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
       
@@ -21,10 +22,16 @@ export default function UrgencySection() {
             We can build them for you, or you can keep doing everything manually for another year.
           </p>
           
-          <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-400 urgency-glow">
+          <p className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text-animated urgency-glow">
             Your call.
           </p>
         </div>
+      </div>
+      
+      {/* Decorative elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/3 -left-48 w-96 h-96 bg-cyan-400/8 rounded-full blur-[150px]"></div>
+        <div className="absolute bottom-1/3 -right-48 w-96 h-96 bg-cyan-400/5 rounded-full blur-[150px]"></div>
       </div>
     </section>
   );

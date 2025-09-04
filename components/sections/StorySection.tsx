@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Button from '@/components/ui/Button';
 
 export default function StorySection() {
   const [visible, setVisible] = useState(false);
@@ -96,21 +97,22 @@ export default function StorySection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-20 lg:py-32 overflow-hidden"
+      className="relative py-32 lg:py-40 overflow-hidden diagonal-cut-top mesh-gradient-1"
+      style={{ background: 'linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%)' }}
     >
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Section Title */}
           <div className={`mb-16 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-              Three years ago, I was working <span className="text-accent">70+ hours a week</span> running my agency... and I thought that was <span className="text-accent">just how business worked.</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+              Three years ago, I was working <span className="gradient-text-animated">70+ hours a week</span> running my agency... and I thought that was <span className="gradient-text-animated">just how business worked.</span>
             </h2>
           </div>
 
           {/* Story Content */}
           <div className="relative">
             {/* Background card with subtle gradient */}
-            <div className="relative bg-card/30 backdrop-blur-sm border border-muted/10 rounded-3xl p-8 lg:p-12">
+            <div className="glass-card glass-card-hover rounded-3xl p-8 lg:p-12 light-beam relative z-20">
               {/* Subtle accent line on the left */}
               <div className="absolute left-0 top-12 bottom-12 w-1 bg-gradient-to-b from-transparent via-accent/30 to-transparent rounded-full"></div>
               
@@ -130,11 +132,11 @@ export default function StorySection() {
                   >
                     {section.type === 'section' && (
                       <div className="space-y-4">
-                        <h3 className="text-xl lg:text-2xl font-bold text-foreground leading-tight">
+                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
                           {section.header}
                         </h3>
                         {section.content && section.content.map((paragraph, pIndex) => (
-                          <p key={pIndex} className="text-lg text-foreground/80 leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}>
+                          <p key={pIndex} className="text-lg lg:text-xl text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}>
                           </p>
                         ))}
                       </div>
@@ -149,14 +151,12 @@ export default function StorySection() {
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`} style={{ transitionDelay: visible ? '1200ms' : '0ms' }}>
                 <div className="text-center">
-                  <p className="text-xl text-foreground/90 mb-6">
-                    Ready to get <span className="font-bold text-accent">your</span> life back?
+                  <p className="text-xl text-white mb-6">
+                    Ready to get <span className="font-bold text-cyan-400">your</span> life back?
                   </p>
-                  <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-background bg-accent rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(190_85%_55%_/_0.4)] glow-cyan-sm">
-                    <span className="relative z-10">Start Your Transformation</span>
-                    <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-accent to-[hsl(180_90%_65%)] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </button>
+                  <Button variant="primary" size="md" showArrow>
+                    Start Your Transformation
+                  </Button>
                 </div>
               </div>
             </div>
@@ -188,10 +188,10 @@ export default function StorySection() {
         </div>
       </div>
 
-      {/* Background decorative elements - subtle */}
+      {/* Decorative elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-accent/2 rounded-full blur-[150px]"></div>
-        <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-accent/3 rounded-full blur-[150px]"></div>
+        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-400/3 rounded-full blur-[150px]"></div>
+        <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-cyan-400/5 rounded-full blur-[150px]"></div>
       </div>
     </section>
   );

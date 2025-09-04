@@ -13,7 +13,8 @@ export default function WhatWeDoSection() {
   ]
 
   return (
-    <section className="py-20 lg:py-32 px-6 bg-gradient-to-b from-black via-neutral-950 to-neutral-900">
+    <section className="py-32 lg:py-40 px-6 relative overflow-hidden diagonal-cut-top mesh-gradient-2"
+             style={{ background: 'linear-gradient(135deg, hsl(220 20% 12%) 0%, hsl(220 25% 8%) 100%)' }}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
@@ -23,8 +24,8 @@ export default function WhatWeDoSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
-            This is <span className="text-accent">EXACTLY</span> what we do:
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8">
+            This is <span className="gradient-text-animated">EXACTLY</span> what we do:
           </h2>
         </motion.div>
 
@@ -37,7 +38,7 @@ export default function WhatWeDoSection() {
           className="text-center mb-12"
         >
           <p className="text-xl lg:text-2xl font-bold text-white leading-relaxed">
-            We give you back <span className="text-accent">5-15+ hours every week</span> so you can:
+            We give you back <span className="gradient-text-animated">5-15+ hours every week</span> so you can:
           </p>
         </motion.div>
 
@@ -56,17 +57,17 @@ export default function WhatWeDoSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-              className="flex items-start gap-4 p-2 rounded-lg hover:bg-neutral-800/30 transition-colors duration-200"
+              className="flex items-start gap-4 p-2 rounded-lg hover:bg-gray-800/30 transition-colors duration-200"
             >
               {/* Checkmark icon */}
               <div className="flex-shrink-0 mt-1">
-                <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
               
               {/* Benefit text */}
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg lg:text-xl text-gray-300 leading-relaxed">
                 {benefit}
               </p>
             </motion.div>
@@ -81,12 +82,18 @@ export default function WhatWeDoSection() {
           transition={{ duration: 0.7, delay: 1.2 }}
           className="text-center"
         >
-          <div className="bg-neutral-900/50 backdrop-blur-sm border border-accent/20 rounded-2xl p-8 lg:p-10">
+          <div className="bg-gray-900/50 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 lg:p-10">
             <p className="text-xl lg:text-2xl text-white leading-relaxed">
-              <span className="text-accent font-bold">And the best part?</span> You don&apos;t have to learn a single automation tool or how to code. We build it, test it, and hand it over, ready to work.
+              <span className="gradient-text-animated font-bold">And the best part?</span> You don&apos;t have to learn a single automation tool or how to code. We build it, test it, and hand it over, ready to work.
             </p>
           </div>
         </motion.div>
+      </div>
+      
+      {/* Decorative elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/3 -left-48 w-96 h-96 bg-cyan-400/4 rounded-full blur-[150px]"></div>
+        <div className="absolute bottom-1/3 -right-48 w-96 h-96 bg-cyan-400/6 rounded-full blur-[150px]"></div>
       </div>
     </section>
   )

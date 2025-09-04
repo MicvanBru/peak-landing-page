@@ -21,7 +21,8 @@ const notForYouPoints = [
 
 export default function QualifyingSection() {
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="py-32 lg:py-40 relative overflow-hidden diagonal-cut-top mesh-gradient-2"
+             style={{ background: 'linear-gradient(135deg, hsl(220 20% 12%) 0%, hsl(220 25% 8%) 100%)' }}>
       <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -31,10 +32,10 @@ export default function QualifyingSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-            Is This For <span className="text-accent">You?</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            Is This For <span className="gradient-text-animated">You?</span>
           </h2>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
             Let&apos;s be honest about whether we&apos;re a good fit
           </p>
         </motion.div>
@@ -66,7 +67,7 @@ export default function QualifyingSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <p className="text-xl text-muted mb-8">
+          <p className="text-xl text-gray-300 leading-relaxed mb-8">
             If you checked more green than red, we should talk.
           </p>
           <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-background bg-accent rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(190_85%_55%_/_0.4)]">
@@ -81,11 +82,14 @@ export default function QualifyingSection() {
         </motion.div>
       </div>
 
+      {/* Subtle cyan overlay */}
+      <div className="absolute inset-0 bg-cyan-400/2 -z-10"></div>
+      
       {/* Background Decorations */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 -z-20 overflow-hidden">
         {/* Animated Orbs */}
         <motion.div 
-          className="absolute top-1/4 -left-32 w-64 h-64 bg-accent/10 rounded-full blur-[100px]"
+          className="absolute top-1/4 -left-32 w-64 h-64 bg-cyan-400/10 rounded-full blur-[100px]"
           animate={{ 
             x: [0, 30, 0],
             y: [0, -20, 0],
@@ -97,7 +101,7 @@ export default function QualifyingSection() {
           }}
         />
         <motion.div 
-          className="absolute bottom-1/4 -right-32 w-64 h-64 bg-destructive/10 rounded-full blur-[100px]"
+          className="absolute bottom-1/4 -right-32 w-64 h-64 bg-red-500/10 rounded-full blur-[100px]"
           animate={{ 
             x: [0, -30, 0],
             y: [0, 20, 0],
@@ -110,7 +114,7 @@ export default function QualifyingSection() {
         />
         
         {/* Static Glows */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl h-96 bg-gradient-to-r from-accent/5 via-transparent to-destructive/5 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl h-96 bg-gradient-to-r from-cyan-400/5 via-transparent to-red-500/5 rounded-full blur-[150px]" />
       </div>
     </section>
   );

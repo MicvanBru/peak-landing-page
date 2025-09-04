@@ -73,7 +73,8 @@ export default function TestimonialsSection() {
   };
   
   return (
-    <section className="py-20 lg:py-32 px-6 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black">
+    <section className="py-32 lg:py-40 px-6 relative overflow-hidden diagonal-cut-top mesh-gradient-2"
+             style={{ background: 'linear-gradient(135deg, hsl(220 20% 12%) 0%, hsl(220 25% 8%) 100%)' }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -83,10 +84,10 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Real Results From Real People
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Real Results From <span className="gradient-text-animated">Real People</span>
           </h2>
-          <p className="text-xl text-cyan-400 font-semibold">
+          <p className="text-xl text-gray-300 leading-relaxed">
             Business Owners Who Got Their Lives Back
           </p>
         </motion.div>
@@ -200,6 +201,15 @@ export default function TestimonialsSection() {
             </p>
           </div>
         </motion.div>
+      </div>
+      
+      {/* Subtle cyan overlay */}
+      <div className="absolute inset-0 bg-cyan-400/2 -z-10"></div>
+      
+      {/* Decorative elements */}
+      <div className="absolute inset-0 -z-20">
+        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-cyan-400/8 rounded-full blur-[150px]"></div>
+        <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-cyan-400/6 rounded-full blur-[150px]"></div>
       </div>
     </section>
   )

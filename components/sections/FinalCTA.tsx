@@ -13,7 +13,8 @@ export default function FinalCTA() {
   };
 
   return (
-    <section className="py-32 px-6 bg-gradient-to-b from-gray-900 via-gray-950 to-black relative overflow-hidden">
+    <section className="py-40 lg:py-48 px-6 diagonal-cut-top relative overflow-hidden mesh-gradient-2"
+             style={{ background: 'linear-gradient(135deg, var(--secondary-bg) 0%, var(--primary-bg) 100%)' }}>
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />
@@ -29,9 +30,9 @@ export default function FinalCTA() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 pulse-gentle">
             You&apos;ve Got{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            <span className="gradient-text-animated">
               Two Options
             </span>
           </h2>
@@ -78,18 +79,15 @@ export default function FinalCTA() {
         >
           <button
             onClick={scrollToContact}
-            className="group relative inline-flex items-center gap-3 px-10 py-6 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xl font-bold rounded-full overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-cyan-500/50"
+            className="group relative inline-flex items-center gap-4 px-12 py-8 text-2xl font-black rounded-3xl glow-magnetic ripple-effect gpu-accelerated text-black"
+            style={{ 
+              background: 'linear-gradient(135deg, var(--accent-cyan) 0%, hsl(180 90% 65%) 25%, var(--accent-purple) 50%, hsl(180 90% 65%) 75%, var(--accent-cyan) 100%)',
+              backgroundSize: '300% 100%',
+              animation: 'gradientShift 3s ease-in-out infinite'
+            }}
           >
-            {/* Animated background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Shimmer effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-            </div>
-            
             <span className="relative z-10">I&apos;m Done Wasting My Life - Let&apos;s Talk</span>
-            <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+            <ArrowRight className="w-8 h-8 relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
           </button>
 
           <motion.p
