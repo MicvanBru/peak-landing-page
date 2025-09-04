@@ -10,7 +10,7 @@ const Process = dynamic(() => import('@/components/sections/Process'), { ssr: tr
 const QualifyingSection = dynamic(() => import('@/components/sections/QualifyingSection'), { ssr: true });
 const Objections = dynamic(() => import('@/components/sections/Objections'), { ssr: true });
 const UrgencySection = dynamic(() => import('@/components/sections/UrgencySection'), { ssr: true });
-const FinalCTA = dynamic(() => import('@/components/ui/FinalCTA'), { ssr: true });
+const FinalCTA = dynamic(() => import('@/components/sections/FinalCTA'), { ssr: true });
 const TrustFooter = dynamic(() => import('@/components/sections/TrustFooter'), { ssr: true });
 
 export default function Home() {

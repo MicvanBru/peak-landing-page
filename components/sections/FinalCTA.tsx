@@ -65,25 +65,25 @@ export default function FinalCTA() {
                 <ul className="space-y-4 text-gray-500">
                   <li className="flex items-start gap-3">
                     <span className="text-red-500/50 mt-1">•</span>
-                    <span>Stay buried in repetitive tasks that drain your soul</span>
+                    <span>Continue doing the same repetitive tasks every week</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500/50 mt-1">•</span>
-                    <span>Watch weeks turn into months with no progress</span>
+                    <span>Stay the bottleneck for every decision</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500/50 mt-1">•</span>
-                    <span>Keep telling yourself &quot;someday&quot; while competitors pull ahead</span>
+                    <span>Keep working 70+ hours thinking it&apos;ll get better</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500/50 mt-1">•</span>
-                    <span>Continue losing 30+ hours every single week</span>
+                    <span>Lose another 5-15 hours every single week</span>
                   </li>
                 </ul>
 
                 <div className="mt-8 p-4 bg-red-500/5 border border-red-500/20 rounded-lg">
                   <p className="text-sm text-red-400/80 italic">
-                    Result: Nothing changes. Time keeps slipping away.
+                    Result: Another year passes. Nothing changes.
                   </p>
                 </div>
               </div>
@@ -118,31 +118,31 @@ export default function FinalCTA() {
                 </div>
 
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
-                  Let me build the systems that actually fix this
+                  Get the systems built
                 </h3>
 
                 <ul className="space-y-4 text-gray-300">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span>Reclaim 30+ hours every week starting next month</span>
+                    <span>Stop doing manual work that systems should handle</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span>Finally focus on the work that actually matters</span>
+                    <span>Get back 5-15 hours every week</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span>Watch your business run itself while you sleep</span>
+                    <span>Focus on strategy and growth instead of operations</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span>Join 100+ people who already made the switch</span>
+                    <span>Let automation handle the repetitive stuff</span>
                   </li>
                 </ul>
 
                 <div className="mt-8 p-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-lg">
                   <p className="text-sm text-cyan-300 font-medium">
-                    Result: Everything changes. You get your life back.
+                    Result: You work reasonable hours. Your business still runs.
                   </p>
                 </div>
               </div>
