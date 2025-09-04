@@ -207,7 +207,7 @@ export default function TestimonialsSection() {
 
 // Featured Layout - Hero style similar to SocialProof
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const FeaturedLayout = ({ name, company, quote, initials, accentColor }: Testimonial) => (
+const FeaturedLayout = ({ name, company, quote, initials, accentColor, image }: Testimonial) => (
   <div className="relative bg-neutral-900/80 backdrop-blur-sm border border-cyan-500/20 rounded-3xl p-8 lg:p-12 hover:border-cyan-500/40 transition-all duration-500">
     {/* Subtle glow effect */}
     <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/5 to-cyan-500/10 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -230,9 +230,19 @@ const FeaturedLayout = ({ name, company, quote, initials, accentColor }: Testimo
       {/* Attribution section */}
       <div className="flex flex-col items-center space-y-4">
         <div className="relative">
-          <div className={`w-20 h-20 bg-gradient-to-br ${accentColor || 'from-cyan-500 to-cyan-600'} rounded-full flex items-center justify-center border-2 border-cyan-500/30 font-bold text-2xl text-black`}>
-            {initials}
-          </div>
+          {image ? (
+            <Image 
+              src={image} 
+              alt={name}
+              width={80}
+              height={80}
+              className="w-20 h-20 rounded-full object-cover border-2 border-cyan-500/30"
+            />
+          ) : (
+            <div className={`w-20 h-20 bg-gradient-to-br ${accentColor || 'from-cyan-500 to-cyan-600'} rounded-full flex items-center justify-center border-2 border-cyan-500/30 font-bold text-2xl text-black`}>
+              {initials || name.split(' ').map(n => n[0]).join('')}
+            </div>
+          )}
           <div className="absolute inset-0 rounded-full bg-cyan-500/20 blur-md opacity-50"></div>
         </div>
 
@@ -373,7 +383,7 @@ const PictureLayout = ({ name, role, company, quote, image, initials, accentColo
 )
 
 // Text Layout - Clean card design for text-only testimonials
-const TextLayout = ({ name, role, company, quote, initials, accentColor }: Testimonial) => (
+const TextLayout = ({ name, role, company, quote, initials, accentColor, image }: Testimonial) => (
   <div className="relative group h-full">
     <div className="relative bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl p-8 h-full hover:border-cyan-500/30 transition-all duration-300">
       {/* Quote Mark */}
@@ -393,9 +403,19 @@ const TextLayout = ({ name, role, company, quote, initials, accentColor }: Testi
 
         {/* Attribution */}
         <div className="flex items-center gap-4 pt-4 border-t border-neutral-800">
-          <div className={`w-12 h-12 bg-gradient-to-br ${accentColor || 'from-cyan-400 to-cyan-500'} rounded-full flex items-center justify-center font-bold text-black`}>
-            {initials || name.split(' ').map(n => n[0]).join('')}
-          </div>
+          {image ? (
+            <Image 
+              src={image} 
+              alt={name}
+              width={48}
+              height={48}
+              className="w-12 h-12 rounded-full object-cover border-2 border-cyan-500/30"
+            />
+          ) : (
+            <div className={`w-12 h-12 bg-gradient-to-br ${accentColor || 'from-cyan-400 to-cyan-500'} rounded-full flex items-center justify-center font-bold text-black`}>
+              {initials || name.split(' ').map(n => n[0]).join('')}
+            </div>
+          )}
           <div>
             <p className="text-white font-semibold text-lg">{name}</p>
             {(role || company) && (

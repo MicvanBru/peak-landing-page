@@ -1,6 +1,14 @@
 'use client'
 
+import Image from 'next/image'
+import { testimonials } from '../testimonials/testimonialData'
+
 export default function SocialProof() {
+  // Get the featured testimonial from our single source of truth
+  const featuredTestimonial = testimonials.find(t => t.type === 'featured')
+  
+  // Fallback if no featured testimonial found
+  if (!featuredTestimonial) return null
   return (
     <section className="py-16 lg:py-20 px-6 bg-gradient-to-b from-black via-neutral-950 to-neutral-900">
       <div className="max-w-4xl mx-auto">
@@ -24,16 +32,26 @@ export default function SocialProof() {
             <div className="relative z-10 space-y-8">
               {/* Testimonial text */}
               <blockquote className="text-xl lg:text-2xl text-foreground leading-relaxed font-medium italic text-center">
-                &ldquo;You can&apos;t imagine the impact to have an outside, intelligent perspective on your own systems and processes. Billy&apos;s ability to rethink systems, automate tasks, and cut down on extra time and work is really incredible. We&apos;re thankful for his help in streamlining our processes.&rdquo;
+                &ldquo;{featuredTestimonial.quote}&rdquo;
               </blockquote>
 
               {/* Attribution section */}
               <div className="flex flex-col items-center space-y-4">
-                {/* Profile picture placeholder */}
+                {/* Profile picture */}
                 <div className="relative">
-                  <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/30 rounded-full flex items-center justify-center border-2 border-accent/30">
-                    <div className="text-accent text-sm font-semibold">Photo</div>
-                  </div>
+                  {featuredTestimonial.image ? (
+                    <Image 
+                      src={featuredTestimonial.image} 
+                      alt={featuredTestimonial.name}
+                      width={80}
+                      height={80}
+                      className="w-20 h-20 rounded-full object-cover border-2 border-accent/30"
+                    />
+                  ) : (
+                    <div className={`w-20 h-20 bg-gradient-to-br ${featuredTestimonial.accentColor || 'from-accent/20 to-accent/30'} rounded-full flex items-center justify-center border-2 border-accent/30 font-bold text-xl text-black`}>
+                      {featuredTestimonial.initials || featuredTestimonial.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                  )}
                   {/* Subtle glow around avatar */}
                   <div className="absolute inset-0 rounded-full bg-accent/20 blur-md opacity-50"></div>
                 </div>
@@ -41,11 +59,13 @@ export default function SocialProof() {
                 {/* Name and credential */}
                 <div className="text-center">
                   <p className="text-2xl font-bold text-foreground mb-1">
-                    Sean Cannell
+                    {featuredTestimonial.name}
                   </p>
-                  <p className="text-lg text-accent font-semibold">
-                    Think Media
-                  </p>
+                  {featuredTestimonial.company && (
+                    <p className="text-lg text-accent font-semibold">
+                      {featuredTestimonial.company}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
