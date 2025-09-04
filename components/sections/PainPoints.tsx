@@ -36,7 +36,7 @@ export default function PainPoints() {
                 <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
                 
                 {/* Pain point text */}
-                <p className="text-lg text-gray-400">
+                <p className="text-lg text-gray-300">
                   {point}
                 </p>
               </div>

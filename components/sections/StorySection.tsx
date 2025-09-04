@@ -136,7 +136,7 @@ export default function StorySection() {
                           {section.header}
                         </h3>
                         {section.content && section.content.map((paragraph, pIndex) => (
-                          <p key={pIndex} className="text-lg lg:text-xl text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}>
+                          <p key={pIndex} className="text-lg lg:text-xl text-gray-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}>
                           </p>
                         ))}
                       </div>
@@ -147,7 +147,7 @@ export default function StorySection() {
               </div>
 
               {/* Bottom CTA - subtle but present */}
-              <div className={`mt-12 pt-8 border-t border-muted/20 transition-all duration-700 ${
+              <div className={`mt-12 pt-8 border-t border-gray-700/20 transition-all duration-700 ${
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`} style={{ transitionDelay: visible ? '1200ms' : '0ms' }}>
                 <div className="text-center">
@@ -162,29 +162,6 @@ export default function StorySection() {
             </div>
           </div>
 
-          {/* Trust indicators - subtle social proof */}
-          <div className={`mt-12 flex flex-wrap justify-center gap-8 transition-all duration-700 ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`} style={{ transitionDelay: visible ? '1300ms' : '0ms' }}>
-            <div className="flex items-center gap-2 text-muted">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-              </svg>
-              <span className="text-sm">Verified Story</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span className="text-sm">Real Results</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span className="text-sm">3 Years Later</span>
-            </div>
-          </div>
         </div>
       </div>
 

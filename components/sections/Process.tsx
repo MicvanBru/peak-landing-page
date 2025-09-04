@@ -45,7 +45,6 @@ const processSteps = [
 
 export default function Process() {
   const [mounted, setMounted] = useState(false);
-  const [activeStep, setActiveStep] = useState<number | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -87,103 +86,61 @@ export default function Process() {
           )}
         </motion.div>
 
-        {/* Process Steps */}
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-12">
+        {/* Process Steps - 2x2 Grid Layout */}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
             {processSteps.map((step, index) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative"
               >
-                <motion.div
-                  className={`bg-surface/30 backdrop-blur-sm rounded-2xl border transition-all duration-300 cursor-pointer ${
-                    activeStep === index
-                      ? "border-cyan-400/50 shadow-[0_0_30px_hsl(190_85%_55%_/_0.15)]"
-                      : "border-cyan-400/10 hover:border-cyan-400/30"
-                  }`}
-                  whileHover={{ scale: 1.01 }}
-                  onClick={() =>
-                    setActiveStep(activeStep === index ? null : index)
-                  }
-                >
-                  <div className="p-6 sm:p-8 lg:p-10">
-                    <div className="flex items-start gap-4 sm:gap-6">
-                      {/* Number Badge */}
-                      <div className="flex-shrink-0">
-                        <div className="relative">
-                          <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 rounded-full bg-cyan-400/20 border-2 border-cyan-400/30 flex items-center justify-center">
-                            <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-cyan-400">
-                              {step.number}
-                            </span>
-                          </div>
-                          <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-xl opacity-50"></div>
-                        </div>
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-cyan-400">
-                          {step.title}
-                        </h3>
-                        <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed mb-4">
-                          {step.description}
-                        </p>
-
-                        {/* Expanded Content */}
-                        {activeStep === index && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="overflow-hidden"
-                          >
-                            <div className="pt-6 mt-6 border-t border-cyan-400/20">
-                              <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-                                {step.details}
-                              </p>
-                            </div>
-                          </motion.div>
-                        )}
-
-                        {/* Click indicator */}
-                        <div className="flex items-center gap-2 mt-4 text-sm text-cyan-400/70">
-                          <span>
-                            Click to{" "}
-                            {activeStep === index ? "collapse" : "expand"}
+                <div className="glass-card glass-card-hover rounded-2xl p-6 lg:p-8 h-full">
+                  {/* Number Badge */}
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="flex-shrink-0">
+                      <div className="relative">
+                        <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-cyan-400/20 border-2 border-cyan-400/30 flex items-center justify-center">
+                          <span className="text-lg lg:text-xl font-bold text-cyan-400">
+                            {step.number}
                           </span>
-                          <motion.svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            className="transition-transform duration-200"
-                            animate={{ rotate: activeStep === index ? 180 : 0 }}
-                          >
-                            <path
-                              d="M6 9l6 6 6-6"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </motion.svg>
                         </div>
+                        <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-xl opacity-50"></div>
                       </div>
                     </div>
+                    
+                    <div className="flex-1">
+                      <h3 className="text-xl lg:text-2xl font-bold mb-3 gradient-text-animated">
+                        {step.title}
+                      </h3>
+                      <p className="text-base lg:text-lg text-gray-300 leading-relaxed mb-4">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                </motion.div>
 
-                {/* Connecting Line */}
-                {index < processSteps.length - 1 && (
-                  <div className="flex justify-center py-6">
-                    <div className="w-[2px] h-8 bg-gradient-to-b from-cyan-400/50 to-cyan-400/20"></div>
+                  {/* Details */}
+                  <div className="pl-16">
+                    <p className="text-sm lg:text-base text-gray-400 leading-relaxed">
+                      {step.details}
+                    </p>
                   </div>
-                )}
+
+                  {/* Visual connectors for grid */}
+                  {index < 2 && (
+                    <div className="hidden md:block absolute -bottom-4 left-1/2 -translate-x-1/2">
+                      <div className="w-8 h-[2px] bg-gradient-to-r from-cyan-400/50 to-cyan-400/20"></div>
+                    </div>
+                  )}
+                  {index % 2 === 0 && index < 2 && (
+                    <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2">
+                      <div className="h-8 w-[2px] bg-gradient-to-b from-cyan-400/50 to-cyan-400/20"></div>
+                    </div>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>

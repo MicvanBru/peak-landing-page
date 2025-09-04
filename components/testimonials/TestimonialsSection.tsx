@@ -185,7 +185,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-16"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-full">
+          <div className="inline-flex items-center gap-3 px-6 py-3 glass-card rounded-full">
             <div className="flex -space-x-2">
               {[1, 2, 3, 4, 5].map((i) => (
                 <div
@@ -196,7 +196,7 @@ export default function TestimonialsSection() {
                 </div>
               ))}
             </div>
-            <p className="text-neutral-400 text-sm">
+            <p className="text-gray-300 text-sm">
               <span className="text-white font-semibold">100+ businesses</span> transformed and counting
             </p>
           </div>
@@ -288,7 +288,7 @@ const VideoLayout = ({ name, role, company, quote, videoUrl, videoPlatform, init
   };
 
   return (
-    <div className="relative bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300 h-full flex flex-col">
+    <div className="glass-card glass-card-hover rounded-2xl overflow-hidden h-full flex flex-col">
       {/* Video Embed */}
       {videoUrl && (
         <div className="relative w-full aspect-video bg-black">
@@ -329,7 +329,7 @@ const VideoLayout = ({ name, role, company, quote, videoUrl, videoPlatform, init
 
 // Picture Layout - Half/half design for image testimonials
 const PictureLayout = ({ name, role, company, quote, image, initials, accentColor, results }: Testimonial) => (
-  <div className="relative bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl p-8 hover:border-cyan-500/30 transition-all duration-300 group h-full">
+  <div className="glass-card glass-card-hover rounded-2xl p-8 group h-full">
     {/* Content Container */}
     <div className="flex flex-col h-full">
       {/* Profile Section */}
@@ -395,7 +395,7 @@ const PictureLayout = ({ name, role, company, quote, image, initials, accentColo
 // Text Layout - Clean card design for text-only testimonials
 const TextLayout = ({ name, role, company, quote, initials, accentColor, image }: Testimonial) => (
   <div className="relative group h-full">
-    <div className="relative bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl p-8 h-full hover:border-cyan-500/30 transition-all duration-300">
+    <div className="glass-card glass-card-hover rounded-2xl p-8 h-full">
       {/* Quote Mark */}
       <div className="absolute -top-4 left-8">
         <div className={`w-8 h-8 bg-gradient-to-br ${accentColor || 'from-cyan-400 to-cyan-500'} rounded-full flex items-center justify-center`}>
