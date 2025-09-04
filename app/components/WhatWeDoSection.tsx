@@ -47,7 +47,7 @@ export default function WhatWeDoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="space-y-4 mb-12 max-w-3xl mx-auto"
+          className="space-y-3 mb-12 max-w-3xl mx-auto"
         >
           {benefits.map((benefit, index) => (
             <motion.div
@@ -56,7 +56,7 @@ export default function WhatWeDoSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-              className="flex items-start gap-4 p-3 rounded-lg hover:bg-neutral-800/30 transition-colors duration-200"
+              className="flex items-start gap-4 p-2 rounded-lg hover:bg-neutral-800/30 transition-colors duration-200"
             >
               {/* Checkmark icon */}
               <div className="flex-shrink-0 mt-1">

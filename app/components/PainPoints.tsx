@@ -21,11 +21,11 @@ export default function PainPoints() {
           </div>
 
           {/* Pain Points List */}
-          <div className="space-y-2 max-w-3xl mx-auto">
+          <div className="space-y-3 max-w-3xl mx-auto">
             {painPoints.map((point, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 p-3 rounded-lg hover:bg-card/50 transition-colors duration-200"
+                className="flex items-start gap-4 p-2 rounded-lg hover:bg-card/50 transition-colors duration-200"
               >
                 {/* Simple bullet */}
                 <div className="w-2 h-2 rounded-full bg-destructive mt-2.5 flex-shrink-0" />
