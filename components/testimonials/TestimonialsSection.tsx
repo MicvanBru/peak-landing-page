@@ -136,7 +136,7 @@ export default function TestimonialsSection() {
                   goToNext();
                 }
               }}
-              className={`grid gap-8 cursor-grab active:cursor-grabbing ${
+              className={`grid gap-8 cursor-grab active:cursor-grabbing min-h-[400px] ${
                 itemsPerPage === 1 ? 'grid-cols-1' :
                 itemsPerPage === 2 ? 'grid-cols-1 md:grid-cols-2' :
                 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'

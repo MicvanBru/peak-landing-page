@@ -27,7 +27,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 'anthony-oneal',
     name: 'Anthony Oneal',
-    quote: "This has been a massive help to our team. We were struggling with the same repetitive tasks day in and day out. But since working with Billy and his team, we've been able to speed up our processes and finish more tasks and content in less time. They helped us cut down on extra work by automating and streamlining our workflows. I can't recommend this enough to anyone looking to save their time, optimize their business processes, and productivity so they can focus on what matters.",
+    quote: "This has been a massive help to our team. We were struggling with the same  tasks everyday. But since working with Billy and his team, we've been able to get more done in less time. They helped us cut down on extra work by automating and streamlining our workflows. I can't recommend this enough to anyone looking to save their time, optimize their business processes, and productivity so they can focus on the things that actually grow their busienss.",
     type: 'text',
     initials: 'AO',
     accentColor: 'from-cyan-400 to-cyan-500',
@@ -36,7 +36,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 'vitaly-novok',
     name: 'Vitaly Novok',
-    quote: "Billy has an incredible way of looking at a business and seeing exactly where systems can solve problems. He built automation that gave me back hours every week while teaching me the process. I genuinely feel more equipped to systematize my business moving forward.",
+    quote: "Billy has an incredible way of looking at a business and seeing exactly where systems can solve problems. He built systems that gave me back hours every week while teaching me the process. I genuinely feel more equipped to systematize my business moving forward.",
     type: 'text',
     initials: 'VN',
     accentColor: 'from-cyan-400 to-cyan-500',
