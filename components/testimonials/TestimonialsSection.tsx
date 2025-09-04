@@ -1,12 +1,76 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import { testimonials, type Testimonial } from './testimonialData'
 
 export default function TestimonialsSection() {
   // const featuredTestimonial = testimonials.find(t => t.type === 'featured');
   const otherTestimonials = testimonials.filter(t => t.type !== 'featured');
+  
+  // Carousel state
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  
+  // Responsive items per page
+  const getItemsPerPage = () => {
+    if (typeof window === 'undefined') return 3;
+    if (window.innerWidth < 768) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  };
+  
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+  
+  // Update items per page on resize
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(getItemsPerPage());
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  // Calculate pagination
+  const totalPages = Math.ceil(otherTestimonials.length / itemsPerPage);
+  const maxIndex = totalPages - 1;
+  
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isAutoPlaying || totalPages <= 1) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
+    }, 6000); // 6 seconds
+    
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, maxIndex, totalPages]);
+  
+  // Navigation functions
+  const goToPrevious = () => {
+    setCurrentIndex(prev => (prev <= 0 ? maxIndex : prev - 1));
+    setIsAutoPlaying(false);
+  };
+  
+  const goToNext = () => {
+    setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
+    setIsAutoPlaying(false);
+  };
+  
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+    setIsAutoPlaying(false);
+  };
+  
+  // Get current testimonials for display
+  const getCurrentTestimonials = () => {
+    const startIndex = currentIndex * itemsPerPage;
+    return otherTestimonials.slice(startIndex, startIndex + itemsPerPage);
+  };
   
   return (
     <section className="py-20 lg:py-32 px-6 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black">
@@ -27,21 +91,89 @@ export default function TestimonialsSection() {
           </p>
         </motion.div>
 
-        {/* Other Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {otherTestimonials.map((testimonial, index) => (
+        {/* Testimonials Carousel */}
+        <div 
+          className="relative overflow-hidden pt-6 pb-6"
+          onMouseEnter={() => setIsAutoPlaying(false)}
+          onMouseLeave={() => setIsAutoPlaying(true)}
+        >
+          {/* Navigation Arrows */}
+          {totalPages > 1 && (
+            <>
+              <button
+                onClick={goToPrevious}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 bg-neutral-900/80 backdrop-blur-sm border border-cyan-500/30 rounded-full text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-110 group"
+                aria-label="Previous testimonials"
+              >
+                <ChevronLeft className="w-6 h-6 group-hover:translate-x-[-2px] transition-transform duration-200" />
+              </button>
+              <button
+                onClick={goToNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 bg-neutral-900/80 backdrop-blur-sm border border-cyan-500/30 rounded-full text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-110 group"
+                aria-label="Next testimonials"
+              >
+                <ChevronRight className="w-6 h-6 group-hover:translate-x-[2px] transition-transform duration-200" />
+              </button>
+            </>
+          )}
+          
+          {/* Testimonials Container */}
+          <div className="px-12">
             <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              key={currentIndex}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(_, info) => {
+                const threshold = 100;
+                if (info.offset.x > threshold && currentIndex > 0) {
+                  goToPrevious();
+                } else if (info.offset.x < -threshold && currentIndex < maxIndex) {
+                  goToNext();
+                }
+              }}
+              className={`grid gap-8 cursor-grab active:cursor-grabbing ${
+                itemsPerPage === 1 ? 'grid-cols-1' :
+                itemsPerPage === 2 ? 'grid-cols-1 md:grid-cols-2' :
+                'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+              }`}
             >
-              {testimonial.type === 'video' && <VideoLayout {...testimonial} />}
-              {testimonial.type === 'picture' && <PictureLayout {...testimonial} />}
-              {testimonial.type === 'text' && <TextLayout {...testimonial} />}
+              {getCurrentTestimonials().map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  {testimonial.type === 'video' && <VideoLayout {...testimonial} />}
+                  {testimonial.type === 'picture' && <PictureLayout {...testimonial} />}
+                  {testimonial.type === 'text' && <TextLayout {...testimonial} />}
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+          
+          {/* Dots Indicator */}
+          {totalPages > 1 && (
+            <div className="flex justify-center gap-3 mt-12">
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? 'bg-cyan-500 scale-125 shadow-lg shadow-cyan-500/50'
+                      : 'bg-neutral-600 hover:bg-neutral-500 hover:scale-110'
+                  }`}
+                  aria-label={`Go to testimonial group ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Trust Indicator */}
