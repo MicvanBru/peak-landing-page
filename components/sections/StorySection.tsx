@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { Button } from '@/components/buttons';
+import { ArrowRight } from 'lucide-react';
 
 export default function StorySection() {
   const [visible, setVisible] = useState(false);
@@ -61,7 +63,7 @@ export default function StorySection() {
         "Not because I'm working less hard - because systems handle what used to eat up my life.",
         "When my son was born, I was actually there. Not checking emails during labor. Not worried about what was breaking. Just present.",
       ],
-      delay: 900
+      delay: 600
     },
     {
       type: 'section',
@@ -73,13 +75,13 @@ export default function StorySection() {
         "• **Build** systems that run automatically",
         "• **Relax** while systems handle the work"
       ],
-      delay: 600
+      delay: 800
     },
     {
       type: 'section',
       header: 'The results were consistent across every business.',
       content: [],
-      delay: 800
+      delay: 900
     },
     {
       type: 'section',
@@ -152,11 +154,14 @@ export default function StorySection() {
                   <p className="text-xl text-foreground/90 mb-6">
                     Ready to get <span className="font-bold text-accent">your</span> life back?
                   </p>
-                  <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-background bg-accent rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(190_85%_55%_/_0.4)] glow-cyan-sm">
-                    <span className="relative z-10">Start Your Transformation</span>
-                    <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-accent to-[hsl(180_90%_65%)] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </button>
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    scrollTo="contact-form"
+                    icon={ArrowRight}
+                  >
+                    Start Your Transformation
+                  </Button>
                 </div>
               </div>
             </div>

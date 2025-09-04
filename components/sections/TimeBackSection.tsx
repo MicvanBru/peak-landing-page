@@ -1,6 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Button } from '@/components/buttons'
+import { MessageCircle } from 'lucide-react'
 
 export default function TimeBackSection() {
   return (
@@ -16,7 +18,7 @@ export default function TimeBackSection() {
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             How to <span className="text-accent">ACTUALLY</span> Get Your Time Back{' '}
-            <span className="block mt-2">Without Hiring More People</span>
+            <span className="block lg:inline mt-2 lg:mt-0">Without Hiring More People</span>
           </h2>
         </motion.div>
 
@@ -92,12 +94,16 @@ export default function TimeBackSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-neutral-900/50 backdrop-blur-sm border border-accent/20 rounded-full">
+          <Button
+            variant="ghost"
+            size="sm" 
+            scrollTo="contact-form"
+            icon={MessageCircle}
+            className="inline-flex items-center gap-3"
+          >
             <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-            <p className="text-neutral-300 text-sm">
-              <span className="text-white font-semibold">Ready to get your time back?</span> Let&apos;s talk about your systems.
-            </p>
-          </div>
+            Ready to get your time back? Let&apos;s talk about your systems.
+          </Button>
         </motion.div>
       </div>
     </section>
