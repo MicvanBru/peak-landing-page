@@ -87,12 +87,25 @@ peak-landing-page/
 │   ├── page.tsx         # Main landing page component
 │   └── globals.css      # Global styles and Tailwind imports
 ├── components/
-│   └── sections/        # Individual page sections
+│   ├── sections/        # Page-specific sections
+│   ├── shared/          # Reusable components (used 2+ places)
+│   └── testimonials/    # Feature modules (complex, self-contained)
 ├── public/              # Static assets
 ├── .github/
 │   └── workflows/       # GitHub Actions deployment workflow
 └── next.config.ts       # Next.js configuration
 ```
+
+### Component Organization
+
+**Simple rules for component placement:**
+- **Is it used in multiple places?** → `components/shared/`
+- **Is it a page section?** → `components/sections/`
+- **Is it a complex feature module?** → Own folder (e.g., `components/testimonials/`)
+
+**Reusable Components:**
+- `OptionCard` - Styled cards for positive/negative comparisons
+- More components added to `shared/` as patterns emerge
 
 ## 🎨 Key Sections
 

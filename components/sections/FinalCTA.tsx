@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, X, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import OptionCard from '@/components/shared/OptionCard';
 
 export default function FinalCTA() {
   const scrollToContact = () => {
@@ -38,116 +39,33 @@ export default function FinalCTA() {
 
         {/* Options Container */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {/* Option 1 - Negative */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-red-900/30 rounded-2xl p-8 h-full relative overflow-hidden group">
-              {/* Subtle negative pulse effect */}
-              <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center">
-                    <X className="w-6 h-6 text-red-500" />
-                  </div>
-                  <span className="text-red-500 font-semibold text-lg">Option 1</span>
-                </div>
-
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-400 mb-6 leading-tight">
-                  Keep doing what you&apos;re doing
-                </h3>
-
-                <ul className="space-y-4 text-gray-500">
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500/50 mt-1">•</span>
-                    <span>Continue doing the same repetitive tasks every week</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500/50 mt-1">•</span>
-                    <span>Stay the bottleneck for every decision</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500/50 mt-1">•</span>
-                    <span>Keep working 70+ hours thinking it&apos;ll get better</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-red-500/50 mt-1">•</span>
-                    <span>Lose another 5-15 hours every single week</span>
-                  </li>
-                </ul>
-
-                <div className="mt-8 p-4 bg-red-500/5 border border-red-500/20 rounded-lg">
-                  <p className="text-sm text-red-400/80 italic">
-                    Result: Another year passes. Nothing changes.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Option 2 - Positive */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
-          >
-            <div className="bg-gradient-to-br from-cyan-950/20 to-blue-950/20 border-2 border-cyan-500/50 rounded-2xl p-8 h-full relative overflow-hidden group transform hover:scale-[1.02] transition-transform duration-300">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              {/* Animated border glow */}
-              <div className="absolute inset-0 rounded-2xl">
-                <div className="absolute inset-[-2px] bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-50 blur-sm transition-opacity duration-500" />
-              </div>
-              
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center">
-                    <CheckCircle2 className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 font-semibold text-lg">
-                    Option 2
-                  </span>
-                </div>
-
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
-                  Get the systems built
-                </h3>
-
-                <ul className="space-y-4 text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span>Stop doing manual work that systems should handle</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span>Get back 5-15 hours every week</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span>Focus on strategy and growth instead of operations</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                    <span>Let automation handle the repetitive stuff</span>
-                  </li>
-                </ul>
-
-                <div className="mt-8 p-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-lg">
-                  <p className="text-sm text-cyan-300 font-medium">
-                    Result: You work reasonable hours. Your business still runs.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <OptionCard
+            variant="negative"
+            title="Keep doing what you're doing"
+            optionNumber="Option 1"
+            delay={0.2}
+            points={[
+              "Continue doing the same repetitive tasks every week",
+              "Stay the bottleneck for every decision",
+              "Keep working 70+ hours thinking it'll get better",
+              "Lose another 5-15 hours every single week"
+            ]}
+            result="Another year passes. Nothing changes."
+          />
+          
+          <OptionCard
+            variant="positive"
+            title="Get the systems built"
+            optionNumber="Option 2"
+            delay={0.3}
+            points={[
+              "Stop doing manual work that systems should handle",
+              "Get back 5-15 hours every week",
+              "Focus on strategy and growth instead of operations",
+              "Let automation handle the repetitive stuff"
+            ]}
+            result="You work reasonable hours. Your business still runs."
+          />
         </div>
 
         {/* Main CTA */}

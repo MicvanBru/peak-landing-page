@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import OptionCard from '@/components/shared/OptionCard';
 
 const forYouPoints = [
   "You make over $300K profit but are working too many hours",
@@ -40,131 +41,21 @@ export default function QualifyingSection() {
 
         {/* Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
-          {/* For You Column */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
-            {/* Card Container */}
-            <div className="relative h-full">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-cyan-500/5 to-transparent rounded-2xl blur-xl" />
-              
-              {/* Card Content */}
-              <div className="relative bg-card/40 backdrop-blur-sm border border-accent/20 rounded-2xl p-8 lg:p-10 h-full hover:border-accent/30 transition-all duration-300">
-                {/* Header */}
-                <div className="mb-8">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-accent mb-2">
-                    THIS IS FOR YOU IF:
-                  </h3>
-                  <div className="h-1 w-20 bg-gradient-to-r from-accent to-cyan-400 rounded-full" />
-                </div>
-
-                {/* Points List */}
-                <div className="space-y-4">
-                  {forYouPoints.map((point, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                      className="group flex items-start gap-4 p-3 rounded-lg hover:bg-accent/5 transition-all duration-200"
-                    >
-                      {/* Checkmark Icon */}
-                      <div className="flex-shrink-0 mt-0.5">
-                        <div className="relative">
-                          <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200">
-                            <svg 
-                              className="w-5 h-5 text-accent group-hover:scale-110 transition-transform duration-200" 
-                              fill="none" 
-                              viewBox="0 0 24 24" 
-                              stroke="currentColor" 
-                              strokeWidth={3}
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <div className="absolute inset-0 bg-accent/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                        </div>
-                      </div>
-                      
-                      {/* Text */}
-                      <p className="text-lg text-foreground/90 leading-relaxed">
-                        {point}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Not For You Column */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
-            {/* Card Container */}
-            <div className="relative h-full">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-destructive/10 via-red-500/5 to-transparent rounded-2xl blur-xl" />
-              
-              {/* Card Content */}
-              <div className="relative bg-card/40 backdrop-blur-sm border border-destructive/20 rounded-2xl p-8 lg:p-10 h-full hover:border-destructive/30 transition-all duration-300">
-                {/* Header */}
-                <div className="mb-8">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-destructive mb-2">
-                    THIS IS NOT FOR YOU IF:
-                  </h3>
-                  <div className="h-1 w-20 bg-gradient-to-r from-destructive to-red-400 rounded-full" />
-                </div>
-
-                {/* Points List */}
-                <div className="space-y-4">
-                  {notForYouPoints.map((point, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                      className="group flex items-start gap-4 p-3 rounded-lg hover:bg-destructive/5 transition-all duration-200"
-                    >
-                      {/* X Icon */}
-                      <div className="flex-shrink-0 mt-0.5">
-                        <div className="relative">
-                          <div className="w-8 h-8 rounded-full bg-destructive/20 flex items-center justify-center group-hover:bg-destructive/30 transition-colors duration-200">
-                            <svg 
-                              className="w-5 h-5 text-destructive group-hover:scale-110 transition-transform duration-200" 
-                              fill="none" 
-                              viewBox="0 0 24 24" 
-                              stroke="currentColor" 
-                              strokeWidth={3}
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                          </div>
-                          <div className="absolute inset-0 bg-destructive/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                        </div>
-                      </div>
-                      
-                      {/* Text */}
-                      <p className="text-lg text-foreground/90 leading-relaxed">
-                        {point}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <OptionCard
+            variant="positive"
+            title="THIS IS FOR YOU IF:"
+            delay={0.2}
+            points={forYouPoints}
+            result="If you checked more green than red, we should talk."
+          />
+          
+          <OptionCard
+            variant="negative"
+            title="THIS IS NOT FOR YOU IF:"
+            delay={0.2}
+            points={notForYouPoints}
+            result="We probably won't be a good fit."
+          />
         </div>
 
         {/* Bottom Message */}
