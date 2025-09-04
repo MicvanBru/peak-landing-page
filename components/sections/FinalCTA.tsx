@@ -1,16 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import OptionCard from '@/components/shared/OptionCard';
+import { Button } from '@/components/buttons';
 
 export default function FinalCTA() {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact-form');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="py-32 px-6 bg-gradient-to-b from-gray-900 via-gray-950 to-black relative overflow-hidden">
@@ -76,9 +71,11 @@ export default function FinalCTA() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center"
         >
-          <button
-            onClick={scrollToContact}
-            className="group relative inline-flex items-center gap-3 px-10 py-6 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xl font-bold rounded-full overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-cyan-500/50"
+          <Button
+            variant="gradient"
+            size="xl"
+            scrollTo="contact-form"
+            className="relative group"
           >
             {/* Animated background */}
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -89,8 +86,7 @@ export default function FinalCTA() {
             </div>
             
             <span className="relative z-10">I&apos;m Done Wasting My Life - Let&apos;s Talk</span>
-            <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
+          </Button>
 
           <motion.p
             initial={{ opacity: 0 }}

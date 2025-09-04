@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/buttons'
-import { MessageCircle } from 'lucide-react'
 
 export default function TimeBackSection() {
   return (
@@ -98,7 +97,6 @@ export default function TimeBackSection() {
             variant="ghost"
             size="sm" 
             scrollTo="contact-form"
-            icon={MessageCircle}
             className="inline-flex items-center gap-3"
           >
             <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>

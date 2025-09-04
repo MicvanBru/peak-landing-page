@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import PainPoints from '@/components/sections/PainPoints';
 import SocialProof from '@/components/sections/SocialProof';
 import StorySection from '@/components/sections/StorySection';
+import { Button } from '@/components/buttons';
 
 const TestimonialsSection = dynamic(() => import('@/components/testimonials/TestimonialsSection'), { ssr: true });
 const TimeBackSection = dynamic(() => import('@/components/sections/TimeBackSection'), { ssr: true });
@@ -44,11 +45,13 @@ export default function Home() {
 
               {/* CTA Buttons */}
               <div className="space-y-4">
-                <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-background bg-accent rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(190_85%_55%_/_0.4)] glow-cyan-sm">
-                  <span className="relative z-10">Get Your Life Back</span>
-                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-accent to-[hsl(180_90%_65%)] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </button>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  scrollTo="contact-form"
+                >
+                  Get Your Life Back
+                </Button>
                 
                 <div className="text-center">
                   <a 

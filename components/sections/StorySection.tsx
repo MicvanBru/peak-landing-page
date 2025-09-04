@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/buttons';
-import { ArrowRight } from 'lucide-react';
 
 export default function StorySection() {
   const [visible, setVisible] = useState(false);
@@ -158,7 +157,6 @@ export default function StorySection() {
                     variant="primary"
                     size="lg"
                     scrollTo="contact-form"
-                    icon={ArrowRight}
                   >
                     Start Your Transformation
                   </Button>

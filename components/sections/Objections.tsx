@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Calendar } from 'lucide-react';
 import { Button } from '@/components/buttons';
 
 const objections = [
@@ -106,7 +105,6 @@ export default function Objections() {
             variant="primary"
             size="lg"
             href="https://calendly.com/peak-systems"
-            icon={Calendar}
           >
             Schedule a Conversation
           </Button>
