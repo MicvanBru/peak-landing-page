@@ -6,13 +6,37 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import { testimonials, type Testimonial } from './testimonialData'
 
+// Expandable text component for long testimonials
+const ExpandableText = ({ text, maxLength = 280 }: { text: string; maxLength?: number }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  if (text.length <= maxLength) {
+    return <span>{text}</span>;
+  }
+  
+  const truncatedText = text.slice(0, maxLength) + '...';
+  
+  return (
+    <>
+      <span>{isExpanded ? text : truncatedText}</span>
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="ml-2 text-cyan-400 hover:text-cyan-300 font-medium underline transition-colors duration-200"
+      >
+        {isExpanded ? 'Read less' : 'Read more'}
+      </button>
+    </>
+  );
+};
+
 export default function TestimonialsSection() {
   // const featuredTestimonial = testimonials.find(t => t.type === 'featured');
   const otherTestimonials = testimonials.filter(t => t.type !== 'featured');
   
   // Carousel state
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false);
+  const [autoPlaySpeed] = useState(6000); // Configurable speed in milliseconds
   
   // Responsive items per page
   const getItemsPerPage = () => {
@@ -45,10 +69,10 @@ export default function TestimonialsSection() {
     
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
-    }, 6000); // 6 seconds
+    }, autoPlaySpeed); // Configurable speed
     
     return () => clearInterval(interval);
-  }, [isAutoPlaying, maxIndex, totalPages]);
+  }, [isAutoPlaying, maxIndex, totalPages, autoPlaySpeed]);
   
   // Navigation functions
   const goToPrevious = () => {
@@ -136,7 +160,7 @@ export default function TestimonialsSection() {
                   goToNext();
                 }
               }}
-              className={`grid gap-8 cursor-grab active:cursor-grabbing min-h-[400px] ${
+              className={`grid gap-8 cursor-grab active:cursor-grabbing min-h-[350px] ${
                 itemsPerPage === 1 ? 'grid-cols-1' :
                 itemsPerPage === 2 ? 'grid-cols-1 md:grid-cols-2' :
                 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
@@ -186,17 +210,26 @@ export default function TestimonialsSection() {
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-full">
             <div className="flex -space-x-2">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full border-2 border-neutral-900 flex items-center justify-center text-xs font-bold text-black"
-                >
-                  {i}
+              {testimonials.slice(0, 5).map((testimonial) => (
+                <div key={testimonial.id} className="w-8 h-8 rounded-full border-2 border-neutral-900 overflow-hidden">
+                  {testimonial.image ? (
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className={`w-full h-full bg-gradient-to-br ${testimonial.accentColor || 'from-cyan-400 to-cyan-500'} flex items-center justify-center text-xs font-bold text-black`}>
+                      {testimonial.initials || testimonial.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
             <p className="text-neutral-400 text-sm">
-              <span className="text-white font-semibold">100+ businesses</span> transformed and counting
+              <span className="text-white font-semibold">30+ businesses</span> transformed and counting
             </p>
           </div>
         </motion.div>
@@ -295,7 +328,7 @@ const VideoLayout = ({ name, role, company, quote, videoUrl, videoPlatform, init
       <div className="p-8 flex flex-col flex-1">
         {/* Quote */}
         <blockquote className="text-neutral-300 leading-relaxed text-base italic flex-1 mb-6">
-          &quot;{quote}&quot;
+          &quot;<ExpandableText text={quote} />&quot;
         </blockquote>
         
         {/* Attribution */}
@@ -353,10 +386,10 @@ const PictureLayout = ({ name, role, company, quote, image, initials, accentColo
       </div>
 
       {/* Quote */}
-      <blockquote className="flex-1 relative">
+      <blockquote className="flex-1 relative overflow-hidden">
         <div className="absolute -top-2 -left-2 text-cyan-500/30 text-4xl font-bold">&ldquo;</div>
         <p className="text-neutral-300 leading-relaxed text-base italic relative z-10">
-          {quote}
+          <ExpandableText text={quote} />
         </p>
       </blockquote>
 
@@ -398,7 +431,7 @@ const TextLayout = ({ name, role, company, quote, initials, accentColor, image }
       <div className="h-full flex flex-col">
         {/* Quote */}
         <blockquote className="text-neutral-300 leading-relaxed text-base italic flex-1 mb-6">
-          &quot;{quote}&quot;
+          &quot;<ExpandableText text={quote} />&quot;
         </blockquote>
 
         {/* Attribution */}

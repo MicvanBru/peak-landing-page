@@ -94,13 +94,11 @@ export default function TimeBackSection() {
           className="text-center mt-12"
         >
           <Button
-            variant="ghost"
-            size="sm" 
+            variant="primary"
+            size="lg" 
             scrollTo="contact-form"
-            className="inline-flex items-center gap-3"
           >
-            <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-            Ready to get your time back? Let&apos;s talk about your systems.
+            Get Your Time Back Now
           </Button>
         </motion.div>
       </div>
