@@ -111,16 +111,17 @@ export function CalculatorResults({ results, timeHorizon }: CalculatorResultsPro
       </div>
 
       {/* Call to Action */}
-      <div className="text-center mt-8">
+      <div className="text-center mt-8 space-y-4">
         <Button
           variant="primary"
           size="lg"
-          scrollTo="contact-form"
+          href="/systems-audit"
+          asLink
         >
           Get Your Custom Automation Plan
         </Button>
-        <p className="text-sm text-muted mt-3">
-          See exactly how we&apos;ll build this automation for your business
+        <p className="text-sm text-muted">
+          Start with a free 30-minute systems audit to see exactly how we&apos;ll build this automation for your business
         </p>
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/buttons'
+import Link from 'next/link'
 
 export default function TimeBackSection() {
   return (
@@ -49,6 +50,13 @@ export default function TimeBackSection() {
                 Every week, you&apos;re doing the same 20+ tasks that a system should handle. Project updates, file distribution, team coordination, client communication - all of it eating{' '}
                 <span className="text-accent font-semibold">5-15 hours you&apos;ll never get back</span>.
               </p>
+              <p className="text-sm text-neutral-400">
+                Want to see exactly how much time you&apos;re losing?{' '}
+                <Link href="/calculator" className="text-accent hover:text-accent/80 underline transition-colors">
+                  Use our ROI calculator
+                </Link>
+                {' '}to calculate the real cost.
+              </p>
             </div>
 
             {/* The "Normal" Solution */}
@@ -91,7 +99,7 @@ export default function TimeBackSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-12"
+          className="text-center mt-12 space-y-4"
         >
           <Button
             variant="primary"
@@ -101,6 +109,16 @@ export default function TimeBackSection() {
           >
             See What&apos;s Possible in Your Business
           </Button>
+          <div>
+            <Button
+              variant="ghost"
+              size="md"
+              href="/calculator"
+              asLink
+            >
+              Calculate Your Time Savings
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>

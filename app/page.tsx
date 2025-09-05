@@ -4,6 +4,8 @@ import SocialProof from '@/components/sections/SocialProof';
 import StorySection from '@/components/sections/StorySection';
 import { Button } from '@/components/buttons';
 import HeroMedia from '@/components/HeroMedia';
+import FAQSchema, { homepageFAQs } from '@/components/seo/FAQSchema';
+import StructuredData from '@/components/seo/StructuredData';
 
 // Easy configuration - just change this URL to switch between video/image
 const HERO_MEDIA = {
@@ -35,7 +37,10 @@ const TrustFooter = dynamic(() => import('@/components/sections/TrustFooter'), {
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full overflow-x-hidden">
+    <>
+      <StructuredData page="home" />
+      <FAQSchema faqs={homepageFAQs} page="Homepage" />
+      <main className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative overflow-hidden w-full">
         <div className="container mx-auto px-6 lg:px-8">
@@ -132,6 +137,7 @@ export default function Home() {
 
       {/* Trust Indicators Footer */}
       <TrustFooter />
-    </main>
+      </main>
+    </>
   );
 }

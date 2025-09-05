@@ -6,6 +6,9 @@ import { Button } from '@/components/buttons';
 import { useState } from 'react';
 import { testimonials } from '@/components/testimonials/testimonialData';
 import CompactTestimonialCard from './components/CompactTestimonialCard';
+import FAQSchema, { systemsAuditFAQs } from '@/components/seo/FAQSchema';
+import StructuredData from '@/components/seo/StructuredData';
+import Breadcrumbs, { systemsAuditBreadcrumbs } from '@/components/seo/Breadcrumbs';
 
 const auditDeliverables = [
   {
@@ -53,7 +56,11 @@ export default function SystemsAuditPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <main className="min-h-screen w-full overflow-x-hidden">
+    <>
+      <StructuredData page="systems-audit" />
+      <FAQSchema faqs={systemsAuditFAQs} page="Systems Audit" />
+      <Breadcrumbs items={systemsAuditBreadcrumbs} currentPage="Free Systems Audit" />
+      <main className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative overflow-hidden w-full py-12 lg:py-20">
         <div className="container mx-auto px-6 lg:px-8">
@@ -281,6 +288,7 @@ export default function SystemsAuditPage() {
         </div>
       </section>
 
-    </main>
+      </main>
+    </>
   );
 }

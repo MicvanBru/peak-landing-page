@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { useROICalculator } from './hooks/useROICalculator';
 import { CalculatorForm } from './components/CalculatorForm';
 import { CalculatorResults } from './components/CalculatorResults';
+import FAQSchema, { calculatorFAQs } from '@/components/seo/FAQSchema';
+import StructuredData from '@/components/seo/StructuredData';
+import Breadcrumbs, { calculatorBreadcrumbs } from '@/components/seo/Breadcrumbs';
 
 export default function CalculatorPage() {
   const [taskFrequency, setTaskFrequency] = useState('10');
@@ -26,9 +29,13 @@ export default function CalculatorPage() {
   });
 
   return (
-    <div className="min-h-screen" style={{
-      background: 'linear-gradient(135deg, hsl(270 25% 8%) 0%, hsl(270 20% 12%) 100%)'
-    }}>
+    <>
+      <StructuredData page="calculator" />
+      <FAQSchema faqs={calculatorFAQs} page="ROI Calculator" />
+      <Breadcrumbs items={calculatorBreadcrumbs} currentPage="ROI Calculator" />
+      <div className="min-h-screen" style={{
+        background: 'linear-gradient(135deg, hsl(270 25% 8%) 0%, hsl(270 20% 12%) 100%)'
+      }}>
       <div className="container mx-auto px-6 py-8 lg:py-12">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -84,6 +91,7 @@ export default function CalculatorPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

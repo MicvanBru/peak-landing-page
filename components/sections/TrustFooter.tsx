@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 
 
 export default function TrustFooter() {
@@ -20,23 +22,29 @@ export default function TrustFooter() {
             </div>
 
             <div className="flex items-center gap-6">
-              <a
-                href="#contact"
-                className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+              <Link
+                href="/systems-audit"
+                className="text-sm text-gray-400 hover:text-accent transition-colors"
               >
-                Contact
+                Free Audit
+              </Link>
+              <Link
+                href="/calculator"
+                className="text-sm text-gray-400 hover:text-accent transition-colors"
+              >
+                ROI Calculator
+              </Link>
+              <a
+                href="#testimonials"
+                className="text-sm text-gray-400 hover:text-accent transition-colors"
+              >
+                Success Stories
               </a>
               <a
                 href="#process"
-                className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                className="text-sm text-gray-400 hover:text-accent transition-colors"
               >
                 How It Works
-              </a>
-              <a
-                href="#testimonials"
-                className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
-              >
-                Success Stories
               </a>
             </div>
           </div>
