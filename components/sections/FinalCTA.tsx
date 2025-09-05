@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
 import OptionCard from '@/components/shared/OptionCard';
 import { Button } from '@/components/buttons';
 
@@ -108,18 +107,6 @@ export default function FinalCTA() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-gray-500"
           >
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-cyan-500" />
-              <span>100% Custom Built</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-cyan-500" />
-              <span>You Own Everything</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-cyan-500" />
-              <span>30-Day Support</span>
-            </div>
           </motion.div>
         </motion.div>
       </div>

@@ -35,8 +35,7 @@ export default function Objections() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            The Stuff You&apos;re Thinking
-            <span className="block mt-2 text-accent">But Not Saying</span>
+            <span className="block mt-2 text-accent">FAQs</span>
           </h2>
           <p className="text-lg lg:text-xl text-muted max-w-2xl mx-auto">
             Let&apos;s address the elephant in the room. Here&apos;s what&apos;s really on your mind.
@@ -106,7 +105,7 @@ export default function Objections() {
             size="lg"
             href="https://calendly.com/peak-systems"
           >
-            Schedule a Conversation
+            I&apos;m Ready to Work Less &amp; Make More
           </Button>
         </div>
       </div>

@@ -7,18 +7,21 @@ import HeroMedia from '@/components/HeroMedia';
 
 // Easy configuration - just change this URL to switch between video/image
 const HERO_MEDIA = {
-  url: "https://www.youtube.com/watch?v=fkj7xcikTkY" // Your YouTube video
+  url: "" // Leave empty to hide media section, or add YouTube URL or image URL
   // caption: "Business transformation in action" // Remove or add caption if needed
 };
 
 // Examples of different media types:
-// For YouTube video:
+// To show YouTube video:
 // url: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
 // url: "https://youtu.be/YOUR_VIDEO_ID" 
 
-// For image:
+// To show image:
 // url: "https://your-domain.com/hero-image.jpg"
 // url: "/images/hero.png" (for local images in public folder)
+
+// To hide media section entirely:
+// url: "" (empty string - page looks clean without media)
 
 const TestimonialsSection = dynamic(() => import('@/components/testimonials/TestimonialsSection'), { ssr: true });
 const TimeBackSection = dynamic(() => import('@/components/sections/TimeBackSection'), { ssr: true });
@@ -65,33 +68,25 @@ export default function Home() {
                 href="/systems-audit"
                 asLink
               >
-                Book Your Systems Audit
+                Get My Time Back
               </Button>
-              
-              <div>
-                <a 
-                  href="/systems-audit" 
-                  className="inline-flex items-center text-muted hover:text-accent transition-colors duration-300 text-sm"
-                >
-                  Book Your Free Systems Audit 
-                  <span className="ml-1">→</span>
-                </a>
-              </div>
             </div>
 
-            {/* Video/Image Section */}
-            <div className="relative mt-12 w-full max-w-4xl mx-auto">
-              <div className="relative">
-                {/* Video/Image container with 16:9 aspect ratio for video or square for image */}
-                <div className="relative w-full aspect-video max-w-3xl mx-auto">
-                  {/* Animated background glow */}
-                  <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-[100px] animate-pulse"></div>
-                  
-                  {/* Dynamic Video/Image - configured at top of file */}
-                  <HeroMedia {...HERO_MEDIA} />
+            {/* Video/Image Section - Only show if URL is provided */}
+            {HERO_MEDIA.url && (
+              <div className="relative mt-12 w-full max-w-4xl mx-auto">
+                <div className="relative">
+                  {/* Video/Image container with 16:9 aspect ratio for video or square for image */}
+                  <div className="relative w-full aspect-video max-w-3xl mx-auto">
+                    {/* Animated background glow */}
+                    <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-[100px] animate-pulse"></div>
+                    
+                    {/* Dynamic Video/Image - configured at top of file */}
+                    <HeroMedia {...HERO_MEDIA} />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
 

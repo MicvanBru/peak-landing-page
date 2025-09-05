@@ -67,16 +67,13 @@ export default function QualifyingSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <p className="text-xl text-muted mb-8">
-            If you checked more green than red, we should talk.
-          </p>
           <Button
             variant="primary"
             size="lg"
             href="/systems-audit"
             asLink
           >
-            Book Your Systems Audit
+            Start Building Your First System Now
           </Button>
         </motion.div>
       </div>
