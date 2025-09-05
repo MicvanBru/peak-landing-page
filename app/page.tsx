@@ -3,6 +3,22 @@ import PainPoints from '@/components/sections/PainPoints';
 import SocialProof from '@/components/sections/SocialProof';
 import StorySection from '@/components/sections/StorySection';
 import { Button } from '@/components/buttons';
+import HeroMedia from '@/components/HeroMedia';
+
+// Easy configuration - just change this URL to switch between video/image
+const HERO_MEDIA = {
+  url: "https://www.youtube.com/watch?v=fkj7xcikTkY" // Your YouTube video
+  // caption: "Business transformation in action" // Remove or add caption if needed
+};
+
+// Examples of different media types:
+// For YouTube video:
+// url: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+// url: "https://youtu.be/YOUR_VIDEO_ID" 
+
+// For image:
+// url: "https://your-domain.com/hero-image.jpg"
+// url: "/images/hero.png" (for local images in public folder)
 
 const TestimonialsSection = dynamic(() => import('@/components/testimonials/TestimonialsSection'), { ssr: true });
 const TimeBackSection = dynamic(() => import('@/components/sections/TimeBackSection'), { ssr: true });
@@ -20,67 +36,59 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden w-full">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center min-h-screen py-20">
-            {/* Left Content */}
-            <div className="space-y-8">
-              {/* Main Headlines */}
-              <div className="space-y-4">
-                <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-muted uppercase tracking-wider">
-                  Business Owners:
-                </p>
-                <h1 className="space-y-2">
-                  <span className="block text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-                    You Don&apos;t Need More Hours.
-                  </span>
-                  <span className="block text-5xl sm:text-6xl lg:text-8xl font-black tracking-tight">
-                    You Need <span className="text-accent uppercase">AI SYSTEMS</span>.
-                  </span>
-                </h1>
-              </div>
-
-              {/* Supporting Text */}
-              <p className="text-lg lg:text-xl text-muted leading-relaxed max-w-2xl">
-                Get 5-15 hours back weekly while your business runs without you
+          <div className="flex flex-col items-center text-center min-h-screen justify-center py-20 space-y-8">
+            {/* Main Headlines */}
+            <div className="space-y-4">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-muted uppercase tracking-wider">
+                Business Owners:
               </p>
+              <h1 className="space-y-2">
+                <span className="block text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+                  You Don&apos;t Need More Hours.
+                </span>
+                <span className="block text-5xl sm:text-6xl lg:text-8xl font-black tracking-tight">
+                  You Need <span className="text-accent uppercase">AI SYSTEMS</span>.
+                </span>
+              </h1>
+            </div>
 
-              {/* CTA Buttons */}
-              <div className="space-y-4">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  href="/systems-audit"
-                  asLink
+            {/* Supporting Text */}
+            <p className="text-lg lg:text-xl text-muted leading-relaxed max-w-2xl">
+              Get 5-15 hours back weekly while your business runs without you
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="space-y-4 flex flex-col items-center">
+              <Button
+                variant="primary"
+                size="lg"
+                href="/systems-audit"
+                asLink
+              >
+                Book Your Systems Audit
+              </Button>
+              
+              <div>
+                <a 
+                  href="/systems-audit" 
+                  className="inline-flex items-center text-muted hover:text-accent transition-colors duration-300 text-sm"
                 >
-                  Book Your Systems Audit
-                </Button>
-                
-                <div className="text-center">
-                  <a 
-                    href="/systems-audit" 
-                    className="inline-flex items-center text-muted hover:text-accent transition-colors duration-300 text-sm"
-                  >
-                    Book Your Free Systems Audit 
-                    <span className="ml-1">→</span>
-                  </a>
-                </div>
+                  Book Your Free Systems Audit 
+                  <span className="ml-1">→</span>
+                </a>
               </div>
             </div>
 
-            {/* Right Visual Element */}
-            <div className="relative hidden lg:block">
+            {/* Video/Image Section */}
+            <div className="relative mt-12 w-full max-w-4xl mx-auto">
               <div className="relative">
-                {/* Placeholder for visual element - can be replaced with actual graphic/image */}
-                <div className="relative w-full aspect-square max-w-md mx-auto">
+                {/* Video/Image container with 16:9 aspect ratio for video or square for image */}
+                <div className="relative w-full aspect-video max-w-3xl mx-auto">
                   {/* Animated background glow */}
-                  <div className="absolute inset-0 bg-accent/20 rounded-full blur-[100px] animate-pulse"></div>
+                  <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-[100px] animate-pulse"></div>
                   
-                  {/* Hero image placeholder - replace with actual image */}
-                  <div className="relative z-10 w-full h-full rounded-2xl bg-card/50 backdrop-blur-sm border border-accent/20 flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <div className="text-6xl font-bold text-accent mb-4">[HERO IMAGE]</div>
-                      <p className="text-muted text-sm">Business owner working late</p>
-                    </div>
-                  </div>
+                  {/* Dynamic Video/Image - configured at top of file */}
+                  <HeroMedia {...HERO_MEDIA} />
                 </div>
               </div>
             </div>
