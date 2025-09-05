@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/buttons'
-import Link from 'next/link'
 
 export default function TimeBackSection() {
   return (
@@ -22,76 +21,74 @@ export default function TimeBackSection() {
           </h2>
         </motion.div>
 
-        {/* Main Content Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative bg-neutral-900/50 backdrop-blur-sm border border-accent/20 rounded-3xl p-8 lg:p-12 hover:border-accent/40 transition-all duration-500"
-        >
-          {/* Subtle glow effect */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/5 to-accent/10 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          
-          <div className="relative z-10 space-y-8">
-            {/* The Secret */}
-            <div className="text-center">
-              <p className="text-xl lg:text-2xl text-white leading-relaxed mb-4">
-                The secret to working less while growing your business is simple:
-              </p>
-              <p className="text-2xl lg:text-3xl font-bold text-accent">
-                Stop doing repetitive work manually.
-              </p>
-            </div>
+        {/* Content Flow */}
+        <div className="max-w-3xl mx-auto space-y-12">
+          {/* The Secret */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-center"
+          >
+            <p className="text-xl lg:text-2xl text-white leading-relaxed mb-6">
+              The secret to working less while growing your business is simple:
+            </p>
+            <p className="text-3xl lg:text-4xl font-bold text-accent">
+              Stop doing repetitive work manually.
+            </p>
+          </motion.div>
 
-            {/* Problem Statement */}
-            <div className="bg-neutral-800/30 rounded-2xl p-6 lg:p-8 border border-neutral-700/50">
-              <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed mb-4">
-                Every week, you&apos;re doing the same 20+ tasks that a system should handle. Project updates, file distribution, team coordination, client communication - all of it eating{' '}
-                <span className="text-accent font-semibold">5-15 hours you&apos;ll never get back</span>.
-              </p>
-              <p className="text-sm text-neutral-400">
-                Want to see exactly how much time you&apos;re losing?{' '}
-                <Link href="/calculator" className="text-accent hover:text-accent/80 underline transition-colors">
-                  Use our ROI calculator
-                </Link>
-                {' '}to calculate the real cost.
-              </p>
-            </div>
+          {/* Problem Statement */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="text-center"
+          >
+            <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed">
+              Every week, you&apos;re doing the same 20+ tasks that a system should handle. Project updates, file distribution, team coordination, client communication - all of it eating{' '}
+              <span className="text-accent font-bold">5-15 hours you&apos;ll never get back</span>.
+            </p>
+          </motion.div>
 
-            {/* The "Normal" Solution */}
-            <div className="space-y-4">
-              <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed">
-                The best way to fix this is to spend months learning automation tools, testing different platforms, and building systems yourself.
-              </p>
-              <p className="text-lg lg:text-xl text-white font-semibold">
-                But you don&apos;t have months. You barely have minutes.
-              </p>
-            </div>
+          {/* The "Normal" Solution */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="text-center space-y-4"
+          >
+            <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed">
+              The best way to fix this is to spend months learning automation tools, testing different platforms, and building systems yourself.
+            </p>
+            <p className="text-xl lg:text-2xl text-white font-bold">
+              But you don&apos;t have months. You barely have minutes.
+            </p>
+          </motion.div>
 
-            {/* Our Solution */}
-            <div className="relative">
-              <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-accent to-cyan-400 rounded-full"></div>
-              <div className="pl-8">
-                <p className="text-2xl lg:text-3xl font-bold text-accent mb-6">
-                  That&apos;s why we build the systems for you.
-                </p>
-                <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed">
-                  Our custom AI systems handle the repetitive work that&apos;s eating your week. Not basic templates. Not simple N8N or Zapier automations.{' '}
-                  <span className="text-white font-semibold">Real systems built for how YOUR business actually works</span>.
-                </p>
-              </div>
+          {/* Our Solution */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.8 }}
+            className="text-center space-y-6"
+          >
+            <div className="relative inline-block">
+              <div className="absolute -left-2 -right-2 -top-2 -bottom-2 bg-gradient-to-r from-accent/20 to-transparent rounded-lg blur-sm"></div>
+              <p className="relative text-3xl lg:text-4xl font-bold text-accent">
+                That&apos;s why we build the systems for you.
+              </p>
             </div>
-
-            {/* Decorative elements */}
-            <div className="absolute top-4 right-4 opacity-10">
-              <div className="w-32 h-32 bg-gradient-to-br from-accent to-transparent rounded-full blur-3xl"></div>
-            </div>
-            <div className="absolute bottom-4 left-4 opacity-5">
-              <div className="w-24 h-24 bg-gradient-to-br from-accent to-transparent rounded-full blur-2xl"></div>
-            </div>
-          </div>
-        </motion.div>
+            <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
+              Our custom AI systems handle the repetitive work that&apos;s eating your week. Not basic templates. Not simple N8N or Zapier automations.{' '}
+              <span className="text-white font-bold">Real systems built for how YOUR business actually works</span>.
+            </p>
+          </motion.div>
+        </div>
 
         {/* Bottom CTA */}
         <motion.div
@@ -109,16 +106,7 @@ export default function TimeBackSection() {
           >
             See What&apos;s Possible in Your Business
           </Button>
-          <div>
-            <Button
-              variant="ghost"
-              size="md"
-              href="/calculator"
-              asLink
-            >
-              Calculate Your Time Savings
-            </Button>
-          </div>
+
         </motion.div>
       </div>
     </section>

@@ -75,7 +75,7 @@ export const homepageFAQs: FAQ[] = [
   },
   {
     question: "How much does business automation typically cost?",
-    answer: "Most automation solutions pay for themselves within 30-60 days. When you're paying yourself $50-200/hour to do tasks that cost $5-50/hour to automate, the ROI is immediate. Use our calculator to see your specific savings."
+    answer: "Most automation solutions pay for themselves within 30-60 days. When you're paying yourself $50-200/hour to do tasks that cost $5-50/hour to automate, the ROI is immediate and substantial."
   },
   {
     question: "What if the systems break or need updates?",
