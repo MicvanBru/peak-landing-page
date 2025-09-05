@@ -73,9 +73,10 @@ export default function QualifyingSection() {
           <Button
             variant="primary"
             size="lg"
-            scrollTo="contact-form"
+            href="/systems-audit"
+            asLink
           >
-            See If You Qualify
+            Book Your Systems Audit
           </Button>
         </motion.div>
       </div>

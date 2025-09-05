@@ -48,17 +48,18 @@ export default function Home() {
                 <Button
                   variant="primary"
                   size="lg"
-                  scrollTo="contact-form"
+                  href="/systems-audit"
+                  asLink
                 >
-                  Get Your Life Back
+                  Book Your Systems Audit
                 </Button>
                 
                 <div className="text-center">
                   <a 
-                    href="/calculator" 
+                    href="/systems-audit" 
                     className="inline-flex items-center text-muted hover:text-accent transition-colors duration-300 text-sm"
                   >
-                    Calculate Your ROI from Automation 
+                    Book Your Free Systems Audit 
                     <span className="ml-1">→</span>
                   </a>
                 </div>

@@ -202,9 +202,10 @@ export default function Process() {
           <Button
             variant="primary"
             size="lg"
-            scrollTo="contact-form"
+            href="/systems-audit"
+            asLink
           >
-            Let&apos;s Talk About Your Freedom
+            Book Your Systems Audit
           </Button>
         </motion.div>
       </div>

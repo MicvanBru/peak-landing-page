@@ -96,9 +96,10 @@ export default function TimeBackSection() {
           <Button
             variant="primary"
             size="lg" 
-            scrollTo="contact-form"
+            href="/systems-audit"
+            asLink
           >
-            Get Your Time Back Now
+            Book Your Systems Audit
           </Button>
         </motion.div>
       </div>

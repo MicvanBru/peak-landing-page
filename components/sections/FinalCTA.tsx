@@ -74,7 +74,8 @@ export default function FinalCTA() {
           <Button
             variant="gradient"
             size="xl"
-            scrollTo="contact-form"
+            href="/systems-audit"
+            asLink
             className="relative group"
           >
             {/* Animated background */}

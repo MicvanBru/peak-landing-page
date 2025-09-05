@@ -25,8 +25,8 @@ const auditDeliverables = [
   }
 ];
 
-// Select 3 most relevant testimonials for schedule page
-const schedulePageTestimonials = testimonials.filter(t => 
+// Select 3 most relevant testimonials for systems audit page
+const systemsAuditTestimonials = testimonials.filter(t => 
   ['sean-cannell', 'anthony-oneal', 'vitaly-novok'].includes(t.id)
 );
 
@@ -49,7 +49,7 @@ const faqs = [
   }
 ];
 
-export default function SchedulePage() {
+export default function SystemsAuditPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
@@ -87,8 +87,8 @@ export default function SchedulePage() {
         </div>
       </section>
 
-      {/* Calendar Section */}
-      <section id="calendar-section" className="py-20 px-6 bg-card/20">
+      {/* Booking Section */}
+      <section id="booking-section" className="py-20 px-6 bg-card/20">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -101,7 +101,7 @@ export default function SchedulePage() {
               Pick Your Time
             </h2>
             <p className="text-lg text-muted">
-              Choose a time that works for you. We'll handle the rest.
+              Choose a time that works for you. We&apos;ll handle the rest.
             </p>
           </motion.div>
 
@@ -140,10 +140,10 @@ export default function SchedulePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              What You'll Get in Your <span className="text-accent">Systems Audit</span>
+              What You&apos;ll Get in Your <span className="text-accent">Systems Audit</span>
             </h2>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              A focused 30-minute call where we identify exactly what's eating your time
+              A focused 30-minute call where we identify exactly what&apos;s eating your time
             </p>
           </motion.div>
 
@@ -192,7 +192,7 @@ export default function SchedulePage() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {schedulePageTestimonials.map((testimonial, index) => (
+            {systemsAuditTestimonials.map((testimonial, index) => (
               <CompactTestimonialCard 
                 key={testimonial.id}
                 testimonial={testimonial}
@@ -272,7 +272,7 @@ export default function SchedulePage() {
               <Button
                 variant="ghost"
                 size="md"
-                scrollTo="calendar-section"
+                scrollTo="booking-section"
               >
                 Back to Calendar
               </Button>
@@ -281,8 +281,6 @@ export default function SchedulePage() {
         </div>
       </section>
 
-      {/* Script for calendar embed */}
-      <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" />
     </main>
   );
 }

@@ -156,9 +156,10 @@ export default function StorySection() {
                   <Button
                     variant="primary"
                     size="lg"
-                    scrollTo="contact-form"
+                    href="/systems-audit"
+                    asLink
                   >
-                    Start Your Transformation
+                    Book Your Systems Audit
                   </Button>
                 </div>
               </div>

@@ -47,7 +47,7 @@ export default function CompactTestimonialCard({ testimonial, index }: CompactTe
       </div>
       
       <blockquote className="text-muted text-sm leading-relaxed">
-        "{testimonial.quote}"
+        &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
     </motion.div>
   );
