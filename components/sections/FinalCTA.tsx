@@ -99,15 +99,6 @@ export default function FinalCTA() {
             <span className="block mt-2 text-gray-500">No fluff. No sales BS.</span>
           </motion.p>
 
-          {/* Trust badges */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-gray-500"
-          >
-          </motion.div>
         </motion.div>
       </div>
     </section>
