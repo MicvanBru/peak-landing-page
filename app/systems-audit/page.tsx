@@ -8,7 +8,6 @@ import { testimonials } from '@/components/testimonials/testimonialData';
 import CompactTestimonialCard from './components/CompactTestimonialCard';
 import FAQSchema, { systemsAuditFAQs } from '@/components/seo/FAQSchema';
 import StructuredData from '@/components/seo/StructuredData';
-import Breadcrumbs, { systemsAuditBreadcrumbs } from '@/components/seo/Breadcrumbs';
 
 const auditDeliverables = [
   {
@@ -59,7 +58,6 @@ export default function SystemsAuditPage() {
     <>
       <StructuredData page="systems-audit" />
       <FAQSchema faqs={systemsAuditFAQs} page="Systems Audit" />
-      <Breadcrumbs items={systemsAuditBreadcrumbs} currentPage="Free Systems Audit" />
       <main className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative overflow-hidden w-full py-12 lg:py-20">
@@ -122,14 +120,20 @@ export default function SystemsAuditPage() {
             <div className="min-h-[600px] lg:min-h-[800px]">
               <iframe 
                 src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ" 
+                width="100%"
+                height="800"
                 style={{
-                  width: '100%',
                   border: 'none',
-                  overflow: 'hidden',
-                  minHeight: '600px'
+                  width: '100%',
+                  minHeight: '600px',
+                  maxWidth: '100%'
                 }} 
+                frameBorder="0"
                 scrolling="no" 
-                id="EGim70hSvPx7y3CSIkuZ_1757090146049"
+                loading="eager"
+                allow="payment"
+                title="Book Your Free Systems Audit"
+                id="booking-calendar"
               />
             </div>
           </motion.div>
