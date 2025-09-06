@@ -117,20 +117,19 @@ export default function SystemsAuditPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="bg-card/50 backdrop-blur-sm rounded-3xl p-8 border border-secondary hover:border-accent/20 transition-all duration-300"
           >
-            <div>
+            <div className="min-h-[700px]">
               <iframe 
                 src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ" 
                 width="100%"
-                height="600"
+                height="100%"
                 style={{
                   border: 'none',
                   width: '100%',
-                  minHeight: '400px',
-                  height: '100%',
+                  minHeight: '700px',
                   maxWidth: '100%'
                 }} 
                 frameBorder="0"
-                scrolling="auto" 
+                scrolling="no" 
                 loading="eager"
                 allow="payment"
                 title="Book Your Free Systems Audit"
