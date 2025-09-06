@@ -121,11 +121,11 @@ export default function SystemsAuditPage() {
               <iframe 
                 src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ" 
                 width="100%"
-                height="800"
+                height="1000"
                 style={{
                   border: 'none',
                   width: '100%',
-                  minHeight: '600px',
+                  minHeight: '600',
                   maxWidth: '100%'
                 }} 
                 frameBorder="0"

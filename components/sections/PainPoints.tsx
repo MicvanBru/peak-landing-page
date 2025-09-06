@@ -1,5 +1,7 @@
 'use client';
 
+import Button from '@/components/buttons/Button';
+
 const painPoints = [
   "Can't take a day off without everything backing up",
   "Doing the same tasks every week that should be automated",
@@ -36,6 +38,19 @@ export default function PainPoints() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-12">
+            <Button
+              href="/system-audit"
+              asLink
+              variant="primary"
+              size="lg"
+              className="text-black shadow-2xl"
+            >
+              Get My Time Back Now
+            </Button>
           </div>
         </div>
       </div>

@@ -7,30 +7,6 @@
   "background_color": "#0f0f23",
   "theme_color": "#8b5cf6",
   "orientation": "portrait-primary",
-  "icons": [
-    {
-      "src": "/icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "/icons/icon-maskable-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/icons/icon-maskable-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ],
   "categories": ["business", "productivity", "automation"],
   "lang": "en-US",
   "dir": "ltr",
@@ -39,25 +15,13 @@
       "name": "Book Free Systems Audit",
       "short_name": "Book Audit",
       "description": "Schedule your free 30-minute systems audit",
-      "url": "/systems-audit",
-      "icons": [
-        {
-          "src": "/icons/shortcut-audit.png",
-          "sizes": "96x96"
-        }
-      ]
+      "url": "/systems-audit"
     },
     {
       "name": "ROI Calculator",
       "short_name": "Calculator",
       "description": "Calculate your automation ROI",
-      "url": "/calculator",
-      "icons": [
-        {
-          "src": "/icons/shortcut-calculator.png",
-          "sizes": "96x96"
-        }
-      ]
+      "url": "/calculator"
     }
   ]
 }

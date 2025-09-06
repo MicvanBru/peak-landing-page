@@ -103,7 +103,7 @@ export default function Objections() {
           <Button
             variant="primary"
             size="lg"
-            href="https://calendly.com/peak-systems"
+            href="/systems-audit"
           >
             I&apos;m Ready to Work Less &amp; Make More
           </Button>
