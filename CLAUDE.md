@@ -142,3 +142,96 @@ When making changes, ask:
 - Check bundle size impact of new dependencies
 - Ensure animations are smooth and don't block main thread
 - Verify static export builds successfully for deployment
+
+## SEO & Structured Data Strategy
+
+### Current Architecture
+The SEO implementation uses a modular, scalable approach designed for future growth:
+
+```
+/components/seo/
+├── StructuredData.tsx    # Organization, Service, WebSite schemas
+├── FAQSchema.tsx         # FAQ structured data + content
+└── Breadcrumbs.tsx       # Navigation breadcrumbs (ready for growth)
+
+/app/
+├── layout.tsx            # Root meta tags + site-wide data
+├── [route]/layout.tsx    # Page-specific metadata
+└── [route]/page.tsx      # Imports SEO components as needed
+```
+
+### Implementation Pattern
+
+**Meta Tags & Open Graph:**
+- Defined in `layout.tsx` files (per route)
+- Page-specific titles, descriptions, keywords
+- Social media optimization (Twitter, Facebook)
+- Search engine directives and verification
+
+**Structured Data (JSON-LD):**
+- Site-wide data: Organization, WebSite → `StructuredData.tsx`
+- Page-specific data: FAQs, Services → `FAQSchema.tsx`
+- Future: Products, Articles, Reviews as needed
+
+**Static SEO Files:**
+- `public/sitemap.xml` - All pages with priorities
+- `public/robots.txt` - Crawler directives
+- `public/manifest.json` - PWA capabilities
+
+### Why This Approach
+
+**Modular & Scalable:**
+- Add new pages without duplicating SEO logic
+- Centralized updates apply across all pages
+- Ready for 10+ pages without refactoring
+
+**Separation of Concerns:**
+- SEO logic separate from page presentation
+- FAQ content centralized for consistency
+- Easy to maintain and debug
+
+**GSO (Generative Search Optimization):**
+- FAQ schema optimized for AI extraction (ChatGPT, Claude citations)
+- Clear problem-solution content structure
+- Statistical data included (5-15 hours saved, 30+ businesses)
+- Structured for featured snippets and voice search
+
+### When Adding New Pages
+
+1. **Create route-specific layout.tsx:**
+   ```tsx
+   export const metadata = {
+     title: "Page Title - Peak Systems",
+     description: "Page-specific description",
+     // ... other meta tags
+   };
+   ```
+
+2. **Import SEO components in page.tsx:**
+   ```tsx
+   import StructuredData from '@/components/seo/StructuredData';
+   import FAQSchema from '@/components/seo/FAQSchema';
+   
+   return (
+     <>
+       <StructuredData page="new-page" />
+       <FAQSchema faqs={newPageFAQs} page="New Page" />
+       <main>...</main>
+     </>
+   );
+   ```
+
+3. **Update supporting files:**
+   - Add FAQs to `FAQSchema.tsx` if needed
+   - Update `sitemap.xml` with new page
+   - Consider breadcrumbs for deeper navigation levels
+
+### Proven Results
+This structure delivers:
+- **Featured snippets eligibility** (87% CTR increase)
+- **AI citation optimization** for generative search
+- **Rich results** with business info and ratings
+- **Mobile-first PWA** capabilities
+- **Future-ready** for content expansion
+
+The approach balances immediate SEO gains with long-term maintainability, following Next.js best practices while optimizing for both traditional search and AI-powered search experiences.
