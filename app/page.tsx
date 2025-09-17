@@ -9,7 +9,7 @@ import StructuredData from '@/components/seo/StructuredData';
 
 // Easy configuration - just change this URL to switch between video/image
 const HERO_MEDIA = {
-  url: "" // Leave empty to hide media section, or add YouTube URL or image URL
+  url: "https://channel-crafters.s3.us-east-2.amazonaws.com/How+Business+Owners+Are+Making+MORE+Money+by+Working+LESS+(Copy+This).mp4" // S3 hosted video with full autoplay control
   // caption: "Business transformation in action" // Remove or add caption if needed
 };
 
@@ -65,18 +65,6 @@ export default function Home() {
               Get 5-15 hours back weekly while your business runs without you
             </p>
 
-            {/* CTA Buttons */}
-            <div className="space-y-4 flex flex-col items-center">
-              <Button
-                variant="primary"
-                size="lg"
-                href="/systems-audit"
-                asLink
-              >
-                Get My Time Back
-              </Button>
-            </div>
-
             {/* Video/Image Section - Only show if URL is provided */}
             {HERO_MEDIA.url && (
               <div className="relative mt-12 w-full max-w-4xl mx-auto">
@@ -92,6 +80,18 @@ export default function Home() {
                 </div>
               </div>
             )}
+
+            {/* CTA Button - positioned after video for better engagement flow */}
+            <div className="mt-12 flex flex-col items-center">
+              <Button
+                variant="primary"
+                size="lg"
+                href="/systems-audit"
+                asLink
+              >
+                Get My Time Back
+              </Button>
+            </div>
           </div>
         </div>
 
