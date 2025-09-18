@@ -69,7 +69,7 @@ export default function OptionCard({
               )}
             </div>
             {optionNumber && (
-              <span className={`font-semibold text-lg ${
+              <span className={`font-semibold text-fluid-base ${
                 isPositive 
                   ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400' 
                   : 'text-red-500'
@@ -80,7 +80,7 @@ export default function OptionCard({
           </div>
 
           {/* Title */}
-          <h3 className={`text-2xl md:text-3xl font-bold mb-6 leading-tight ${
+          <h3 className={`text-fluid-xl font-bold mb-6 leading-tight ${
             isPositive ? 'text-white' : 'text-gray-400'
           }`}>
             {title}
@@ -95,7 +95,7 @@ export default function OptionCard({
                 ) : (
                   <span className="text-red-500/50 mt-1">•</span>
                 )}
-                <span className={isPositive ? 'text-gray-300' : 'text-gray-500'}>
+                <span className={`text-fluid-base ${isPositive ? 'text-gray-300' : 'text-gray-500'}`}>
                   {point}
                 </span>
               </li>
@@ -108,7 +108,7 @@ export default function OptionCard({
               ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-cyan-500/30' 
               : 'bg-red-500/5 border-red-500/20'
           }`}>
-            <p className={`text-sm font-medium ${
+            <p className={`text-base font-medium ${
               isPositive ? 'text-cyan-300' : 'text-red-400/80'
             } ${isPositive ? '' : 'italic'}`}>
               Result: {result}

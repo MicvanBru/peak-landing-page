@@ -7,7 +7,7 @@ import { Button } from '@/components/buttons';
 export default function FinalCTA() {
 
   return (
-    <section className="py-32 px-6 bg-gradient-to-b from-gray-900 via-gray-950 to-black relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 via-gray-950 to-black relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl" />
@@ -23,7 +23,7 @@ export default function FinalCTA() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+          <h2 className="text-fluid-2xl lg:text-fluid-3xl font-bold text-white mb-6">
             You&apos;ve Got{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
               Two Options
@@ -93,7 +93,7 @@ export default function FinalCTA() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-6 text-lg text-gray-400 max-w-2xl mx-auto"
+            className="mt-6 text-fluid-base text-gray-400 max-w-3xl mx-auto px-4"
           >
             30 minutes. I&apos;ll show you exactly what&apos;s possible. 
             <span className="block mt-2 text-gray-500">No fluff. No sales BS.</span>

@@ -26,10 +26,10 @@ const variantStyles = {
 }
 
 const sizeStyles = {
-  sm: 'px-3 py-2 text-xs sm:px-4 sm:text-sm rounded-lg',
-  md: 'px-4 py-3 text-sm sm:px-6 sm:text-base rounded-xl',
-  lg: 'px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg rounded-xl',
-  xl: 'px-8 py-4 text-lg sm:px-10 sm:py-6 sm:text-xl rounded-2xl'
+  sm: 'px-3 py-2 text-xs sm:px-4 sm:text-sm rounded-lg min-h-[44px]',
+  md: 'px-4 py-3 text-sm sm:px-6 sm:text-base rounded-xl min-h-[44px]',
+  lg: 'px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg rounded-xl min-h-[44px]',
+  xl: 'px-8 py-4 text-fluid-base sm:px-10 sm:py-6 sm:text-fluid-lg rounded-2xl min-h-[48px]'
 }
 
 export default function Button({
