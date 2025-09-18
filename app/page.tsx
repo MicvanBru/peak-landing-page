@@ -61,7 +61,7 @@ export default function Home() {
             </div>
 
             {/* Supporting Text */}
-            <p className="text-lg lg:text-xl text-muted leading-relaxed max-w-2xl">
+            <p className="text-fluid-lg text-muted leading-relaxed max-w-4xl px-4 sm:px-6">
               Get 5-15 hours back weekly while your business runs without you
             </p>
 

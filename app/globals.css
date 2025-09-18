@@ -27,6 +27,27 @@
   --color-muted: var(--muted);
   --color-destructive: var(--destructive);
   --font-sans: Inter, system-ui, -apple-system, sans-serif;
+  
+  /* Mobile Responsiveness - 2025 Standards */
+  /* 8px Grid System */
+  --spacing-xs: 0.5rem;    /* 8px */
+  --spacing-sm: 1rem;      /* 16px - Mobile base padding */
+  --spacing-md: 1.5rem;    /* 24px - Tablet padding */
+  --spacing-lg: 2rem;      /* 32px - Desktop padding */
+  --spacing-xl: 2.5rem;    /* 40px */
+  --spacing-2xl: 3rem;     /* 48px */
+  
+  /* Touch Target Sizes */
+  --touch-target-min: 44px;    /* Minimum touch target */
+  --touch-target-ideal: 48px;  /* Recommended touch target */
+  
+  /* Responsive Breakpoints */
+  --breakpoint-mobile: 320px;
+  --breakpoint-mobile-lg: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-tablet-lg: 1024px;
+  --breakpoint-desktop: 1200px;
+  --breakpoint-desktop-lg: 1440px;
 }
 
 html {
@@ -189,5 +210,163 @@ html {
   }
   to {
     text-shadow: 0 0 40px rgba(6, 182, 212, 0.8), 0 0 60px rgba(6, 182, 212, 0.4);
+  }
+}
+
+/* Mobile Responsiveness - 2025 Typography Standards */
+
+/* Fluid Typography System using CSS clamp() */
+.text-fluid-xs {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);    /* 12-14px */
+  line-height: 1.6;
+}
+
+.text-fluid-sm {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);     /* 14-16px */
+  line-height: 1.6;
+}
+
+.text-fluid-base {
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);  /* 18-20px mobile base */
+  line-height: 1.6;
+}
+
+.text-fluid-lg {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);      /* 20-24px */
+  line-height: 1.5;
+}
+
+.text-fluid-xl {
+  font-size: clamp(1.5rem, 4vw, 2rem);         /* 24-32px */
+  line-height: 1.4;
+}
+
+.text-fluid-2xl {
+  font-size: clamp(2rem, 5vw, 3rem);           /* 32-48px */
+  line-height: 1.3;
+}
+
+.text-fluid-3xl {
+  font-size: clamp(2.5rem, 6vw, 4rem);         /* 40-64px */
+  line-height: 1.2;
+}
+
+/* Mobile-First Spacing Utilities */
+.space-mobile {
+  padding: var(--spacing-sm);  /* 16px mobile */
+}
+
+.space-tablet {
+  padding: var(--spacing-md);  /* 24px tablet */
+}
+
+.space-desktop {
+  padding: var(--spacing-lg);  /* 32px desktop */
+}
+
+/* Responsive spacing that scales with screen size */
+.space-responsive {
+  padding: var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .space-responsive {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .space-responsive {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Touch Target Utilities */
+.touch-target {
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.touch-target-ideal {
+  min-height: var(--touch-target-ideal);
+  min-width: var(--touch-target-ideal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile-optimized button spacing */
+.btn-mobile {
+  padding: 12px 24px;
+  min-height: var(--touch-target-min);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.5;
+}
+
+/* Container max-widths for responsive design */
+.container-mobile {
+  max-width: 100%;
+  padding: 0 var(--spacing-sm);
+}
+
+.container-tablet {
+  max-width: 768px;
+  padding: 0 var(--spacing-md);
+  margin: 0 auto;
+}
+
+.container-desktop {
+  max-width: 1200px;
+  padding: 0 var(--spacing-lg);
+  margin: 0 auto;
+}
+
+/* Responsive text length for readability */
+.text-measure-mobile {
+  max-width: 35ch;  /* 30-40 characters mobile */
+}
+
+.text-measure-tablet {
+  max-width: 55ch;  /* 50-60 characters tablet */
+}
+
+.text-measure-desktop {
+  max-width: 70ch;  /* 60-75 characters desktop */
+}
+
+/* Responsive image utilities */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-mobile {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Grid system utilities */
+.grid-mobile {
+  display: grid;
+  gap: var(--spacing-sm);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-tablet {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-desktop {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
   }
 }

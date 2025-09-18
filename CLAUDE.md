@@ -235,3 +235,236 @@ This structure delivers:
 - **Future-ready** for content expansion
 
 The approach balances immediate SEO gains with long-term maintainability, following Next.js best practices while optimizing for both traditional search and AI-powered search experiences.
+
+## Mobile Responsiveness Standards (2025)
+
+### Core Principles
+Mobile responsiveness is critical for conversion - mobile users are 5x more likely to abandon non-optimized sites. Every design decision must prioritize mobile experience first, then scale up for larger screens.
+
+### Typography Standards
+
+**Base Font Sizes (2025 Updated):**
+- **Mobile**: 18-20px minimum (never below 16px for accessibility)
+- **Tablet**: 17-19px base
+- **Desktop**: 16-18px base
+- iOS default: 17px SF Pro, Material Design: 16px Roboto
+
+**Typography Hierarchy (Maximum 4 sizes):**
+1. **H1 Headers**: 24-32px mobile, 30-50px desktop
+2. **Body text**: 18-20px mobile, 16-18px desktop  
+3. **Secondary text**: 14-15px
+4. **Captions**: 12-13px (use sparingly)
+
+**Fluid Typography Implementation:**
+```css
+/* Use CSS clamp() for responsive scaling */
+h1 { font-size: clamp(1.5rem, 4vw, 3rem); }
+body { font-size: clamp(1.125rem, 2.5vw, 1.25rem); }
+```
+
+**Readability Requirements:**
+- Line height: 1.5-1.8x font size for optimal reading
+- Mobile: 30-40 characters per line
+- Tablet: 50-60 characters per line  
+- Desktop: 60-75 characters per line
+- Use rem/em units for accessibility and scaling
+
+### Responsive Breakpoints (2025)
+
+**Core Breakpoints:**
+- **Mobile**: 320-767px
+- **Tablet**: 768-1023px
+- **Desktop**: 1024px+
+- **Large Desktop**: 1440px+
+
+**Advanced Breakpoints for Precision:**
+- Small Mobile: 360px, 390px
+- Tablet variants: 768px, 810px
+- Desktop variants: 1366px, 1920px
+
+**Implementation Strategy:**
+- Mobile-first approach (min-width media queries)
+- Content-driven breakpoints (not device-specific)
+- Component-specific breakpoints when needed
+- Support both portrait and landscape orientations
+
+### Touch Targets & Interactive Elements
+
+**Size Requirements:**
+- **Minimum**: 44x44px (Apple/Google accessibility standard)
+- **Recommended**: 48x48px for primary CTAs
+- **Spacing**: 8-16px minimum between touch targets
+- **Thumb zones**: Position important actions in lower screen area
+
+**Touch Design Principles:**
+- No hover-dependent functionality (mobile has no hover)
+- Immediate visual feedback on tap (color change, animation)
+- Support swipe gestures where appropriate
+- Avoid small clustered links or buttons
+
+### Image Optimization (2025 Standards)
+
+**Next-Generation Format Strategy:**
+1. **AVIF primary** (60-70% smaller than JPEG)
+2. **WebP fallback** (broader browser support)
+3. **JPEG/PNG final fallback** (universal compatibility)
+
+**Implementation Pattern:**
+```html
+<picture>
+  <source srcset="image.avif" type="image/avif">
+  <source srcset="image.webp" type="image/webp">
+  <img src="image.jpg" alt="Description" width="600" height="400">
+</picture>
+```
+
+**Responsive Image Sizing:**
+- Mobile images: 320-720px width
+- Hero images: ~600px mobile, ~1200px tablet
+- Content images: ~480px mobile, ~800px tablet
+- Maximum width: 2560px (covers 4K/Retina displays)
+
+**Performance Requirements:**
+- Always specify width/height attributes (prevents CLS)
+- Use `loading="lazy"` for below-fold images
+- Use `fetchpriority="high"` for LCP (Largest Contentful Paint) images
+- Implement srcset for responsive delivery
+
+### Spacing & Layout System
+
+**8px Grid System:**
+- Base spacing unit: 8px
+- Mobile padding: 16px (2 units)
+- Tablet padding: 24px (3 units)
+- Desktop padding: 32px (4 units)
+- All component spacing: multiples of 8px
+
+**Fluid Layout Principles:**
+- Use % and vw/vh units for flexibility
+- Max-width containers to prevent excessive stretching
+- CSS Grid and Flexbox for responsive layouts
+- Container queries for component-level responsiveness
+
+### Core Web Vitals (2025 Targets)
+
+**Critical Performance Metrics:**
+- **LCP** (Largest Contentful Paint): < 2.5 seconds
+- **INP** (Interaction to Next Paint): < 200ms ✨ NEW - Replaced FID
+- **CLS** (Cumulative Layout Shift): < 0.1
+
+**INP Optimization (Key 2025 Focus):**
+- Minimize JavaScript execution time
+- Optimize event handlers for immediate response
+- Reduce third-party script impact
+- Use async processing for non-critical operations
+- Test at 75th percentile of mobile users
+
+### Mobile Navigation Patterns
+
+**Recommended Patterns:**
+- Hamburger menu or bottom navigation
+- Collapsible/slide-out drawer patterns
+- Clear, concise navigation labels
+- Smooth transitions and animations
+- Fixed or sticky positioning for key navigation
+
+**Avoid:**
+- Dropdowns that require hover
+- Too many navigation levels
+- Small tap targets in navigation
+- Complex mega-menus on mobile
+
+### Forms & Input Optimization
+
+**Mobile Form Best Practices:**
+- Use appropriate input types (email, tel, number, date)
+- Include autocomplete attributes
+- Large input fields (minimum 44px height)
+- Clear, immediate error messages
+- Single-column layout for simplicity
+- Minimize required fields
+
+### Performance Optimization Rules
+
+**Mobile Loading Strategy:**
+- Critical CSS inline in `<head>`
+- JavaScript defer/async for non-critical scripts
+- Font preloading for custom fonts
+- Progressive enhancement approach
+- Resource hints (preload, prefetch, preconnect)
+
+**Image Performance:**
+- Compress all images (target 60-70% size reduction)
+- Use CDN for global delivery
+- Implement lazy loading for below-fold content
+- Optimize for different pixel densities (1x, 2x, 3x)
+
+### Testing Requirements
+
+**Device Testing:**
+- Test on real devices, not just browser DevTools
+- Multiple orientations (portrait/landscape)
+- Various network speeds (3G, 4G, WiFi)
+- Different pixel densities and screen sizes
+- Cross-browser testing (Safari, Chrome, Firefox)
+
+**Accessibility Testing:**
+- 200% zoom capability without horizontal scroll
+- WCAG contrast ratios (4.5:1 normal text, 3:1 large text)
+- Screen reader compatibility
+- Keyboard navigation support
+- Voice control accessibility
+
+### Implementation Checklist
+
+**Typography:**
+✅ Font size ≥ 18px on mobile
+✅ Fluid typography with CSS clamp()
+✅ Line height 1.5-1.8x font size
+✅ Character limits enforced
+
+**Interactive Elements:**
+✅ Touch targets ≥ 44x44px  
+✅ 8-16px spacing between targets
+✅ No hover-dependent functionality
+✅ Visual feedback on interactions
+
+**Images:**
+✅ AVIF/WebP format implementation
+✅ Width/height attributes specified
+✅ Lazy loading for non-critical images
+✅ Responsive srcset implementation
+
+**Performance:**
+✅ INP < 200ms response time
+✅ LCP < 2.5 seconds
+✅ CLS < 0.1 layout shift
+✅ Mobile-first CSS architecture
+
+**Layout:**
+✅ 8px grid spacing system
+✅ Mobile-first breakpoints
+✅ No horizontal scroll on any device
+✅ Flexible, fluid layouts
+
+### Common Mobile Issues to Avoid
+
+**Performance Killers:**
+- Large unoptimized images
+- Render-blocking JavaScript
+- Too many third-party scripts
+- Excessive DOM elements
+
+**UX Problems:**
+- Small touch targets
+- Horizontal scrolling
+- Slow interactions (>200ms)
+- Content that requires zooming
+
+**Accessibility Issues:**
+- Poor contrast ratios
+- Missing alt text
+- Non-scalable text
+- Keyboard navigation problems
+
+This mobile responsiveness standard ensures the Peak Systems landing page delivers exceptional user experience across all devices while maintaining top performance scores and accessibility compliance.
