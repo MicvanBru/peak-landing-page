@@ -11,10 +11,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Peak Systems - Business Automation',
-    default: 'Peak Systems - Get Your Life Back Through AI Systems'
+    template: '%s | Peak Systems',
+    default: 'AI Automation for Business Owners | Peak Systems'
   },
-  description: "Stop working 70+ hour weeks. We build AI systems that automate your repetitive tasks and give business owners 5-15 hours back every week. Free systems audit available.",
+  description: "Stop working 70+ hour weeks. Peak Systems builds custom AI automation that gives business owners 5-15 hours back weekly. Free systems audit reveals your time-saving opportunities.",
   keywords: [
     "business automation",
     "AI systems", 
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "You Built a Business to Be Free. Now It Owns You.",
-    description: "Stop working 70+ hour weeks. We build AI systems that automate your repetitive tasks and give business owners 5-15 hours back every week.",
+    title: "You Don't Need More Hours, You Need Better Systems.",
+    description: "Stop working 70+ hour weeks. Peak Systems builds custom AI automation that gives business owners 5-15 hours back weekly. Free systems audit reveals your time-saving opportunities.",
     url: 'https://peak-systems.com',
     siteName: 'Peak Systems',
     type: "website",
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Peak Systems - Get Your Life Back Through AI Systems',
-    description: 'Stop working 70+ hour weeks. We build AI systems that give business owners 5-15 hours back every week. Free audit available.',
+    title: "You Don't Need More Hours, You Need Better Systems.",
+    description: 'Stop working 70+ hour weeks. Peak Systems builds custom AI automation that gives business owners 5-15 hours back weekly. Free systems audit reveals your time-saving opportunities.',
     images: ['/images/og-image.jpg'],
     creator: '@peak-systems',
   },

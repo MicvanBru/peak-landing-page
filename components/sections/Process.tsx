@@ -36,8 +36,8 @@ const processSteps = [
   },
   {
     number: "4",
-    title: "Relax",
-    description: "Relax while systems do what you used to do manually",
+    title: "Scale",
+    description: "Spend your time on things that grow your business while systems do what you used to do manually",
     details:
       "Your business runs smoothly without constant oversight. You finally have time to think strategically, spend time with family, or simply take a real vacation.",
   },
