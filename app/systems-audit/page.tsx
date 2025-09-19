@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Target, TrendingUp, CheckCircle2, Plus } from 'lucide-react';
 import { Button } from '@/components/buttons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { testimonials } from '@/components/testimonials/testimonialData';
 import CompactTestimonialCard from './components/CompactTestimonialCard';
 import FAQSchema, { systemsAuditFAQs } from '@/components/seo/FAQSchema';
@@ -53,6 +53,16 @@ const faqs = [
 
 export default function SystemsAuditPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <>
@@ -118,23 +128,25 @@ export default function SystemsAuditPage() {
             className="bg-card/50 backdrop-blur-sm rounded-3xl p-8 border border-secondary hover:border-accent/20 transition-all duration-300"
           >
             <div className="min-h-[600px] lg:min-h-[800px]">
-              <iframe 
-                src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ" 
-                width="100%"
-                height="1000"
-                style={{
-                  border: 'none',
-                  width: '100%',
-                  minHeight: '600',
-                  maxWidth: '100%'
-                }} 
-                frameBorder="0"
-                scrolling="no" 
-                loading="eager"
-                allow="payment"
-                title="Book Your Free Systems Audit"
-                id="booking-calendar"
-              />
+              {mounted && (
+                <iframe 
+                  src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ" 
+                  width="100%"
+                  height="1000"
+                  style={{
+                    border: 'none',
+                    width: '100%',
+                    minHeight: '600px',
+                    maxWidth: '100%'
+                  }} 
+                  frameBorder="0"
+                  scrolling="no" 
+                  loading="lazy"
+                  allow="payment"
+                  title="Book Your Free Systems Audit"
+                  id="booking-calendar"
+                />
+              )}
             </div>
           </motion.div>
         </div>
