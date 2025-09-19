@@ -4,11 +4,22 @@ import { useState } from 'react';
 import { Button } from '@/components/buttons';
 import { useROICalculator } from '../hooks/useROICalculator';
 
-interface CalculatorWizardProps {
-  onComplete?: (results: any) => void;
+interface CalculationResults {
+  annualOccurrences: number;
+  hoursPerTask: number;
+  annualHours: number;
+  annualCost: number;
+  totalSavings: number;
+  investment: number;
+  netROI: number;
+  roiMultiple: number;
 }
 
-export function CalculatorWizard({ onComplete }: CalculatorWizardProps) {
+interface CalculatorWizardProps {
+  onComplete?: (results: CalculationResults) => void;
+}
+
+export function CalculatorWizard({ }: CalculatorWizardProps) {
   const [currentStep, setCurrentStep] = useState(1);
   const [showAdvanced, setShowAdvanced] = useState(false);
   
@@ -65,7 +76,7 @@ export function CalculatorWizard({ onComplete }: CalculatorWizardProps) {
           What repetitive task is eating your time?
         </h2>
         <p className="text-foreground/80">
-          Let's see exactly how much this is costing you
+          Let&apos;s see exactly how much this is costing you
         </p>
       </div>
 
@@ -151,7 +162,7 @@ export function CalculatorWizard({ onComplete }: CalculatorWizardProps) {
     <div className="space-y-6 md:space-y-8">
       <div className="text-center mb-6 md:mb-8">
         <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3">
-          What's your time worth?
+          What&apos;s your time worth?
         </h2>
         <p className="text-foreground/80">
           This helps us calculate the true cost of this task
@@ -180,7 +191,7 @@ export function CalculatorWizard({ onComplete }: CalculatorWizardProps) {
 
       {/* Guidance */}
       <div className="bg-accent/10 rounded-lg p-6 border border-accent/20">
-        <p className="text-sm font-medium text-foreground mb-3">Don't know your hourly rate?</p>
+        <p className="text-sm font-medium text-foreground mb-3">Don&apos;t know your hourly rate?</p>
         <p className="text-sm text-foreground/80 mb-3">Business owners typically value their time at:</p>
         <div className="grid md:grid-cols-2 gap-3 text-sm text-foreground/80">
           <div>• Small business: $75-150/hour</div>
@@ -224,7 +235,7 @@ export function CalculatorWizard({ onComplete }: CalculatorWizardProps) {
           Worth {formatCurrency(calculations.annualCost)} of your time
         </div>
         <div className="text-sm text-foreground/80">
-          That's {getTimeContext(calculations.annualHours)} you could reclaim with automation
+          That&apos;s {getTimeContext(calculations.annualHours)} you could reclaim with automation
         </div>
       </div>
 
@@ -384,7 +395,7 @@ export function CalculatorWizard({ onComplete }: CalculatorWizardProps) {
             Ready to reclaim {formatNumber(calculations.annualHours)} hours per year?
           </h3>
           <p className="text-sm text-foreground/80">
-            Let's build your custom automation solution
+            Let&apos;s build your custom automation solution
           </p>
         </div>
         
