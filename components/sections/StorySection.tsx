@@ -72,7 +72,7 @@ export default function StorySection() {
         "• **Audit** where your time actually goes",
         "• **Optimize** your workflow to work smarter", 
         "• **Build** systems that run automatically",
-        "• **Relax** while systems handle the work"
+        "• **Scale** by doing the work that actually makes you money"
       ],
       delay: 800
     },

@@ -37,7 +37,7 @@ export default function Objections() {
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             <span className="block mt-2 text-accent">FAQs</span>
           </h2>
-          <p className="text-lg lg:text-xl text-muted max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-muted max-w-3xl mx-auto">
             Let&apos;s address the elephant in the room. Here&apos;s what&apos;s really on your mind.
           </p>
         </div>

@@ -370,3 +370,118 @@ html {
     gap: var(--spacing-lg);
   }
 }
+
+/* Design System Utility Classes - Common Patterns */
+
+/* Section Layout Utilities */
+.section-padding {
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding: 5rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+.container-standard {
+  max-width: 72rem; /* 1152px */
+  margin: 0 auto;
+}
+
+.container-narrow {
+  max-width: 56rem; /* 896px */
+  margin: 0 auto;
+}
+
+.container-wide {
+  max-width: 80rem; /* 1280px */
+  margin: 0 auto;
+}
+
+/* Typography Utilities */
+.heading-primary {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--color-foreground);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .heading-primary {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+}
+
+.heading-section {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--color-foreground);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .heading-section {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+}
+
+.text-body-standard {
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+/* Button Touch Target Utilities */
+.btn-touch-target {
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-touch-target-ideal {
+  min-height: var(--touch-target-ideal);
+  min-width: var(--touch-target-ideal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Standard spacing utilities */
+.mb-section {
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 640px) {
+  .mb-section {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mb-section {
+    margin-bottom: 6rem;
+  }
+}
+
+.mb-header {
+  margin-bottom: 2rem;
+}
+
+.mb-subheader {
+  margin-bottom: 1.5rem;
+}
+
+.mb-paragraph {
+  margin-bottom: 1rem;
+}

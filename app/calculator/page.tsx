@@ -43,7 +43,7 @@ export default function CalculatorPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3">
               Automation <span className="text-accent">ROI Calculator</span>
             </h1>
-            <p className="text-lg lg:text-xl text-foreground/80 max-w-2xl mx-auto">
+            <p className="text-lg lg:text-xl text-foreground/80 max-w-3xl mx-auto">
               Discover the true cost of repetitive tasks and potential savings from automation
             </p>
           </div>

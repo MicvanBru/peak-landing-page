@@ -78,7 +78,7 @@ export default function SystemsAuditPage() {
                 </span>
               </h1>
 
-              <p className="text-xl lg:text-2xl text-muted leading-relaxed max-w-2xl mx-auto">
+              <p className="text-xl lg:text-2xl text-muted leading-relaxed max-w-3xl mx-auto">
                 Discover exactly which tasks are stealing your time
               </p>
             </motion.div>
@@ -153,7 +153,7 @@ export default function SystemsAuditPage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               What You&apos;ll Get in Your <span className="text-accent">Systems Audit</span>
             </h2>
-            <p className="text-lg text-muted max-w-2xl mx-auto">
+            <p className="text-lg text-muted max-w-3xl mx-auto">
               A focused 30-minute call where we identify exactly what&apos;s eating your time
             </p>
           </motion.div>
@@ -275,7 +275,7 @@ export default function SystemsAuditPage() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >            
-            <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto">
               Ready to get started? Pick a time above that works for you.
             </p>
 

@@ -468,3 +468,23 @@ body { font-size: clamp(1.125rem, 2.5vw, 1.25rem); }
 - Keyboard navigation problems
 
 This mobile responsiveness standard ensures the Peak Systems landing page delivers exceptional user experience across all devices while maintaining top performance scores and accessibility compliance.
+
+## Design System Reference
+
+**📋 For all design decisions, colors, typography, and component patterns, refer to:**
+### **→ [DESIGN-SYSTEM.md](./DESIGN-SYSTEM.md)**
+
+The design system file contains:
+- **Typography hierarchy** with copy-paste ready classes
+- **Color palette** and approved gradients  
+- **Spacing standards** following 8px grid system
+- **Component patterns** for consistent UI
+- **Quick reference** for common layouts
+
+**Always check DESIGN-SYSTEM.md before:**
+- Adding new text styles or sizes
+- Creating custom colors or gradients
+- Building new components or sections
+- Making design-related decisions
+
+This ensures visual consistency and makes future development faster and more maintainable.

@@ -83,7 +83,7 @@ export default function TimeBackSection() {
                 That&apos;s why we build the systems for you.
               </p>
             </div>
-            <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed max-w-3xl mx-auto">
               Our custom AI systems handle the repetitive work that&apos;s eating your week. Not basic templates. Not simple N8N or Zapier automations.{' '}
               <span className="text-white font-bold">Real systems built for how YOUR business actually works</span>.
             </p>
