@@ -42,7 +42,7 @@ export function useROICalculator(inputs: CalculationInputs) {
     const annualHours = annualOccurrences * hoursPerTask;
     const annualCost = annualHours * rate;
     const totalSavings = annualCost * inputs.timeHorizon;
-    const investment = totalSavings * (inputs.investmentPercentage / 100);
+    const investment = annualCost * (inputs.investmentPercentage / 100);
     const netROI = totalSavings - investment;
     const roiMultiple = investment > 0 ? totalSavings / investment : 0;
 

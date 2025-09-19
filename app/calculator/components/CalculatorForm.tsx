@@ -31,6 +31,7 @@ export function CalculatorForm({
   investmentPercentage,
   setInvestmentPercentage,
 }: CalculatorFormProps) {
+
   return (
     <div className="space-y-8">
       {/* Task Frequency */}
