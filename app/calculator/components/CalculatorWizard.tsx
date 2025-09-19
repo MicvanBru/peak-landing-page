@@ -203,7 +203,7 @@ export function CalculatorWizard({ }: CalculatorWizardProps) {
 
       <div className="flex gap-4 justify-center">
         <Button
-          variant="outline"
+          variant="secondary"
           size="lg"
           onClick={() => setCurrentStep(1)}
           className="min-w-32"
@@ -428,7 +428,7 @@ export function CalculatorWizard({ }: CalculatorWizardProps) {
 
       <div className="text-center">
         <Button
-          variant="outline"
+          variant="secondary"
           size="md"
           onClick={() => setCurrentStep(1)}
         >
