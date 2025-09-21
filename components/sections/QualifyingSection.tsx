@@ -23,7 +23,7 @@ const notForYouPoints = [
 export default function QualifyingSection() {
   return (
     <section className="py-20 lg:py-32 relative overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-8">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

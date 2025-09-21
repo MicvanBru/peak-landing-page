@@ -71,7 +71,7 @@ export default function SystemsAuditPage() {
       <main className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative overflow-hidden w-full py-12 lg:py-20">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -104,7 +104,7 @@ export default function SystemsAuditPage() {
 
       {/* Booking Section */}
       <section id="booking-section" className="py-20 px-6 bg-card/20">
-        <div className="container mx-auto max-w-5xl">
+        <div className="w-full max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ export default function SystemsAuditPage() {
 
       {/* Value Stack Section */}
       <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
+        <div className="w-full max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -201,7 +201,7 @@ export default function SystemsAuditPage() {
 
       {/* Testimonials Section */}
       <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
+        <div className="w-full max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -228,7 +228,7 @@ export default function SystemsAuditPage() {
 
       {/* FAQ Section */}
       <section className="py-20 px-6 bg-card/10">
-        <div className="container mx-auto max-w-4xl">
+        <div className="w-full max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -279,7 +279,7 @@ export default function SystemsAuditPage() {
 
       {/* Final Reminder Section */}
       <section className="py-16 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
+        <div className="w-full max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

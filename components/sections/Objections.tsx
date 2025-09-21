@@ -31,7 +31,7 @@ export default function Objections() {
 
   return (
     <section className="py-20 lg:py-32 relative overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-8">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">

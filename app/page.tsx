@@ -43,7 +43,7 @@ export default function Home() {
       <main className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative overflow-hidden w-full">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center min-h-screen justify-center py-20 space-y-8">
             {/* Main Headlines */}
             <div className="space-y-4">

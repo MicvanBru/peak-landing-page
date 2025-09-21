@@ -99,7 +99,7 @@ export default function StorySection() {
       ref={sectionRef}
       className="relative py-20 lg:py-32 overflow-hidden"
     >
-      <div className="container mx-auto px-6 lg:px-8">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Section Title */}
           <div className={`mb-16 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

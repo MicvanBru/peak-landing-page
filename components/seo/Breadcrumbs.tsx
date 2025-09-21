@@ -48,7 +48,7 @@ export default function Breadcrumbs({ items, currentPage }: BreadcrumbsProps) {
         }}
       />
       <nav aria-label="Breadcrumb" className="py-4">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <ol className="flex items-center space-x-2 text-sm text-muted">
             <li className="flex items-center">
               <Link 

@@ -13,7 +13,7 @@ export default function CalculatorPage() {
       <div className="min-h-screen" style={{
         background: 'linear-gradient(135deg, hsl(270 25% 8%) 0%, hsl(270 20% 12%) 100%)'
       }}>
-      <div className="container mx-auto px-6 py-8 lg:py-12">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 lg:py-12">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
