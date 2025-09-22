@@ -8,6 +8,7 @@ import { testimonials } from '@/components/testimonials/testimonialData';
 import CompactTestimonialCard from './components/CompactTestimonialCard';
 import FAQSchema, { systemsAuditFAQs } from '@/components/seo/FAQSchema';
 import StructuredData from '@/components/seo/StructuredData';
+import Link from 'next/link';
 
 const auditDeliverables = [
   {
@@ -286,7 +287,7 @@ export default function SystemsAuditPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="space-y-6"
-          >            
+          >
             <p className="text-lg text-muted leading-relaxed max-w-3xl mx-auto">
               Ready to get started? Pick a time above that works for you.
             </p>
@@ -303,6 +304,16 @@ export default function SystemsAuditPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Back to Homepage */}
+      <div className="text-center mt-12 mb-12">
+        <Link
+          href="/"
+          className="inline-flex items-center text-accent hover:text-accent/80 transition-colors duration-300"
+        >
+          ← Back to Homepage
+        </Link>
+      </div>
 
       </main>
     </>

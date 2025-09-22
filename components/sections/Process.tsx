@@ -66,7 +66,7 @@ export default function Process() {
   }
 
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section id="process" className="py-20 lg:py-32 relative overflow-hidden">
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -88,7 +88,7 @@ export default function Process() {
 
         {/* Process Steps */}
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-12">
+          <div>
             {processSteps.map((step, index) => (
               <motion.div
                 key={step.number}

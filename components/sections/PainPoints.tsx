@@ -43,7 +43,7 @@ export default function PainPoints() {
           {/* Call to Action */}
           <div className="text-center mt-12">
             <Button
-              href="/system-audit"
+              href="/systems-audit"
               asLink
               variant="primary"
               size="lg"

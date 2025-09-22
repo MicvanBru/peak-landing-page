@@ -47,7 +47,7 @@ export default function QualifyingSection() {
             title="THIS IS FOR YOU IF:"
             delay={0.2}
             points={forYouPoints}
-            result="If you checked more green than red, we should talk."
+            result="If this sounds like you, we should talk."
           />
           
           <OptionCard
@@ -55,7 +55,7 @@ export default function QualifyingSection() {
             title="THIS IS NOT FOR YOU IF:"
             delay={0.2}
             points={notForYouPoints}
-            result="We probably won't be a good fit."
+            result="If this sounds like you, we probably won't be a good fit."
           />
         </div>
 

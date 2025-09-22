@@ -111,7 +111,7 @@ export default function OptionCard({
             <p className={`text-base font-medium ${
               isPositive ? 'text-cyan-300' : 'text-red-400/80'
             } ${isPositive ? '' : 'italic'}`}>
-              Result: {result}
+              {result}
             </p>
           </div>
         </div>

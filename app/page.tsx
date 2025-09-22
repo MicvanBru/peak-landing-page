@@ -55,7 +55,7 @@ export default function Home() {
                   You Don&apos;t Need More Hours.
                 </span>
                 <span className="block text-5xl sm:text-6xl lg:text-8xl font-black tracking-tight">
-                  You Need <span className="text-accent uppercase">AI SYSTEMS</span>.
+                  You Need <span className="sm:inline block"><span className="text-accent uppercase">AI SYSTEMS</span>.</span>
                 </span>
               </h1>
             </div>

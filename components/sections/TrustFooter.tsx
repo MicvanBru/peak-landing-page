@@ -29,23 +29,23 @@ export default function TrustFooter() {
                 Free Audit
               </Link>
               <Link
-                href="/calculator"
+                href="/roi-calculator"
                 className="text-sm text-gray-400 hover:text-accent transition-colors"
               >
                 ROI Calculator
               </Link>
-              <a
-                href="#testimonials"
+              <Link
+                href="/#testimonials"
                 className="text-sm text-gray-400 hover:text-accent transition-colors"
               >
                 Success Stories
-              </a>
-              <a
-                href="#process"
+              </Link>
+              <Link
+                href="/#process"
                 className="text-sm text-gray-400 hover:text-accent transition-colors"
               >
                 How It Works
-              </a>
+              </Link>
             </div>
           </div>
         </div>

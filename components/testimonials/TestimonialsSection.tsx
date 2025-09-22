@@ -97,7 +97,7 @@ export default function TestimonialsSection() {
   };
   
   return (
-    <section className="py-20 lg:py-32 px-6 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black">
+    <section id="testimonials" className="py-20 lg:py-32 px-6 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -256,7 +256,7 @@ const FeaturedLayout = ({ name, company, quote, initials, accentColor, image }: 
 
     <div className="relative z-10 space-y-8">
       {/* Testimonial text */}
-      <blockquote className="text-xl lg:text-2xl text-white leading-relaxed font-medium italic text-center">
+      <blockquote className="text-base sm:text-xl lg:text-2xl text-white leading-relaxed font-medium italic text-center">
         &quot;{quote}&quot;
       </blockquote>
 
