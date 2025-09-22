@@ -17,8 +17,8 @@ export function calculateROI(
   const workDays = Math.round((annualHours / 8) * 10) / 10; // Round to 1 decimal
   const annualCost = Math.round(annualHours * hourlyRate);
 
-  // Investment calculations (50% of annual cost)
-  const recommendedBudget = Math.round(annualCost * 0.5);
+  // Investment calculations (20% of annual cost)
+  const recommendedBudget = Math.round(annualCost * 0.2);
 
   // Payback and savings
   const monthlyBreakEven = 6; // Fixed 6-month payback period

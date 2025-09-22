@@ -6,7 +6,7 @@ import { Button } from '@/components/buttons';
 import {
   frequencySteps,
   durationSteps,
-  hourlyRateValues,
+  hourlyRateConfig,
   defaultFrequency,
   defaultDuration,
   defaultHourlyRate
@@ -16,23 +16,21 @@ import { calculateROI, formatCurrency, formatNumber } from './calculations';
 export default function SimpleCalculatorPage() {
   const [frequencyIndex, setFrequencyIndex] = useState(defaultFrequency);
   const [durationIndex, setDurationIndex] = useState(defaultDuration);
-  const [hourlyRateIndex, setHourlyRateIndex] = useState(defaultHourlyRate);
+  const [hourlyRate, setHourlyRate] = useState(defaultHourlyRate); // Direct value, not index
 
   const results = useMemo(() => {
     const frequency = frequencySteps[frequencyIndex];
     const duration = durationSteps[durationIndex];
-    const hourlyRate = hourlyRateValues[hourlyRateIndex];
 
     return calculateROI(
       frequency.annualOccurrences,
       duration.hours,
-      hourlyRate
+      hourlyRate // Direct value
     );
-  }, [frequencyIndex, durationIndex, hourlyRateIndex]);
+  }, [frequencyIndex, durationIndex, hourlyRate]);
 
   const currentFrequency = frequencySteps[frequencyIndex];
   const currentDuration = durationSteps[durationIndex];
-  const currentHourlyRate = hourlyRateValues[hourlyRateIndex];
 
   return (
     <div className="min-h-screen" style={{
@@ -108,15 +106,16 @@ export default function SimpleCalculatorPage() {
                 <div className="space-y-3">
                   <input
                     type="range"
-                    min="0"
-                    max={hourlyRateValues.length - 1}
-                    value={hourlyRateIndex}
-                    onChange={(e) => setHourlyRateIndex(parseInt(e.target.value))}
+                    min={hourlyRateConfig.min}
+                    max={hourlyRateConfig.max}
+                    step={hourlyRateConfig.step}
+                    value={hourlyRate}
+                    onChange={(e) => setHourlyRate(parseInt(e.target.value))}
                     className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer slider-accent"
                   />
                   <div className="text-center">
                     <span className="text-lg font-semibold text-accent">
-                      ${currentHourlyRate}/hour
+                      ${hourlyRate}/hour
                     </span>
                   </div>
                 </div>
@@ -161,7 +160,7 @@ export default function SimpleCalculatorPage() {
                   </div>
                 </div>
                 <div className="text-sm text-foreground/70 text-center">
-                  Guideline: your automation budget is around 50% of the yearly cost to reclaim
+                  Guideline: your automation budget is around 20% of the yearly cost to reclaim
                 </div>
               </div>
 
