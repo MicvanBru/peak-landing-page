@@ -18,6 +18,11 @@ export default function SimpleCalculatorPage() {
   const [durationIndex, setDurationIndex] = useState(defaultDuration);
   const [hourlyRate, setHourlyRate] = useState(defaultHourlyRate); // Direct value, not index
 
+  // Tooltip states for each slider
+  const [showFrequencyTooltip, setShowFrequencyTooltip] = useState(false);
+  const [showDurationTooltip, setShowDurationTooltip] = useState(false);
+  const [showHourlyRateTooltip, setShowHourlyRateTooltip] = useState(false);
+
   const results = useMemo(() => {
     const frequency = frequencySteps[frequencyIndex];
     const duration = durationSteps[durationIndex];
@@ -60,14 +65,30 @@ export default function SimpleCalculatorPage() {
                   How often do you do this task?
                 </label>
                 <div className="space-y-3">
-                  <input
-                    type="range"
-                    min="0"
-                    max={frequencySteps.length - 1}
-                    value={frequencyIndex}
-                    onChange={(e) => setFrequencyIndex(parseInt(e.target.value))}
-                    className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer slider-accent"
-                  />
+                  <div className="relative">
+                    <input
+                      type="range"
+                      min="0"
+                      max={frequencySteps.length - 1}
+                      value={frequencyIndex}
+                      onChange={(e) => setFrequencyIndex(parseInt(e.target.value))}
+                      onMouseDown={() => setShowFrequencyTooltip(true)}
+                      onMouseUp={() => setShowFrequencyTooltip(false)}
+                      onTouchStart={() => setShowFrequencyTooltip(true)}
+                      onTouchEnd={() => setShowFrequencyTooltip(false)}
+                      className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer slider-accent"
+                    />
+                    {showFrequencyTooltip && (
+                      <div
+                        className="absolute -top-14 transform -translate-x-1/2 bg-background border-2 border-accent text-accent px-3 py-2 rounded-lg text-base font-semibold whitespace-nowrap pointer-events-none z-10 shadow-xl"
+                        style={{
+                          left: `${(frequencyIndex / (frequencySteps.length - 1)) * 100}%`,
+                        }}
+                      >
+                        {currentFrequency.label}
+                      </div>
+                    )}
+                  </div>
                   <div className="text-center">
                     <span className="text-lg font-semibold text-accent">
                       {currentFrequency.label}
@@ -82,14 +103,30 @@ export default function SimpleCalculatorPage() {
                   How long does it take each time?
                 </label>
                 <div className="space-y-3">
-                  <input
-                    type="range"
-                    min="0"
-                    max={durationSteps.length - 1}
-                    value={durationIndex}
-                    onChange={(e) => setDurationIndex(parseInt(e.target.value))}
-                    className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer slider-accent"
-                  />
+                  <div className="relative">
+                    <input
+                      type="range"
+                      min="0"
+                      max={durationSteps.length - 1}
+                      value={durationIndex}
+                      onChange={(e) => setDurationIndex(parseInt(e.target.value))}
+                      onMouseDown={() => setShowDurationTooltip(true)}
+                      onMouseUp={() => setShowDurationTooltip(false)}
+                      onTouchStart={() => setShowDurationTooltip(true)}
+                      onTouchEnd={() => setShowDurationTooltip(false)}
+                      className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer slider-accent"
+                    />
+                    {showDurationTooltip && (
+                      <div
+                        className="absolute -top-14 transform -translate-x-1/2 bg-background border-2 border-accent text-accent px-3 py-2 rounded-lg text-base font-semibold whitespace-nowrap pointer-events-none z-10 shadow-xl"
+                        style={{
+                          left: `${(durationIndex / (durationSteps.length - 1)) * 100}%`,
+                        }}
+                      >
+                        {currentDuration.label}
+                      </div>
+                    )}
+                  </div>
                   <div className="text-center">
                     <span className="text-lg font-semibold text-accent">
                       {currentDuration.label}
@@ -104,15 +141,31 @@ export default function SimpleCalculatorPage() {
                   What&apos;s your time worth per hour?
                 </label>
                 <div className="space-y-3">
-                  <input
-                    type="range"
-                    min={hourlyRateConfig.min}
-                    max={hourlyRateConfig.max}
-                    step={hourlyRateConfig.step}
-                    value={hourlyRate}
-                    onChange={(e) => setHourlyRate(parseInt(e.target.value))}
-                    className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer slider-accent"
-                  />
+                  <div className="relative">
+                    <input
+                      type="range"
+                      min={hourlyRateConfig.min}
+                      max={hourlyRateConfig.max}
+                      step={hourlyRateConfig.step}
+                      value={hourlyRate}
+                      onChange={(e) => setHourlyRate(parseInt(e.target.value))}
+                      onMouseDown={() => setShowHourlyRateTooltip(true)}
+                      onMouseUp={() => setShowHourlyRateTooltip(false)}
+                      onTouchStart={() => setShowHourlyRateTooltip(true)}
+                      onTouchEnd={() => setShowHourlyRateTooltip(false)}
+                      className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer slider-accent"
+                    />
+                    {showHourlyRateTooltip && (
+                      <div
+                        className="absolute -top-14 transform -translate-x-1/2 bg-background border-2 border-accent text-accent px-3 py-2 rounded-lg text-base font-semibold whitespace-nowrap pointer-events-none z-10 shadow-xl"
+                        style={{
+                          left: `${((hourlyRate - hourlyRateConfig.min) / (hourlyRateConfig.max - hourlyRateConfig.min)) * 100}%`,
+                        }}
+                      >
+                        ${hourlyRate}/hour
+                      </div>
+                    )}
+                  </div>
                   <div className="text-center">
                     <span className="text-lg font-semibold text-accent">
                       ${hourlyRate}/hour

@@ -43,7 +43,7 @@ export const durationSteps: DurationStep[] = [
 export const hourlyRateConfig = {
   min: 10,
   max: 1000,
-  step: 1,
+  step: 5,
   default: 300
 };
 
