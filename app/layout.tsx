@@ -107,7 +107,7 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         <Analytics />
-        <SpeedInsights />
+        <SpeedInsights debug />
         <MetaPixel />
       </body>
     </html>
