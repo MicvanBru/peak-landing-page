@@ -8,6 +8,7 @@ import { testimonials } from '@/components/testimonials/testimonialData';
 import CompactTestimonialCard from './components/CompactTestimonialCard';
 import FAQSchema, { systemsAuditFAQs } from '@/components/seo/FAQSchema';
 import StructuredData from '@/components/seo/StructuredData';
+import { trackViewContent, trackSchedule } from '@/components/tracking/MetaPixel';
 import Link from 'next/link';
 
 const auditDeliverables = [
@@ -56,9 +57,11 @@ export default function SystemsAuditPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
 
-  // Prevent hydration mismatch
+  // Prevent hydration mismatch and track page view
   useEffect(() => {
     setMounted(true);
+    // Track systems audit page view
+    trackViewContent('Systems Audit Page');
   }, []);
 
   if (!mounted) {
@@ -130,8 +133,8 @@ export default function SystemsAuditPage() {
           >
             <div className="min-h-[600px] lg:min-h-[800px]">
               {mounted && (
-                <iframe 
-                  src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ" 
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ"
                   width="100%"
                   height="1000"
                   style={{
@@ -139,13 +142,17 @@ export default function SystemsAuditPage() {
                     width: '100%',
                     minHeight: '600px',
                     maxWidth: '100%'
-                  }} 
+                  }}
                   frameBorder="0"
-                  scrolling="no" 
+                  scrolling="no"
                   loading="lazy"
                   allow="payment"
                   title="Book Your Free Systems Audit"
                   id="booking-calendar"
+                  onLoad={() => {
+                    // Track when booking calendar loads (user engagement)
+                    trackSchedule();
+                  }}
                 />
               )}
             </div>
@@ -297,6 +304,7 @@ export default function SystemsAuditPage() {
                 variant="ghost"
                 size="md"
                 scrollTo="booking-section"
+                onClick={() => trackSchedule()}
               >
                 Back to Calendar
               </Button>

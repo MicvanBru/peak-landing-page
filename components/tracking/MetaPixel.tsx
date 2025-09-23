@@ -2,6 +2,38 @@
 
 import Script from 'next/script';
 
+// Global tracking functions
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
+
+// Utility functions for tracking events
+export const trackEvent = (eventName: string, parameters?: any) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('track', eventName, parameters);
+  }
+};
+
+export const trackViewContent = (contentName?: string) => {
+  trackEvent('ViewContent', contentName ? { content_name: contentName } : undefined);
+};
+
+export const trackLead = () => {
+  trackEvent('Lead');
+};
+
+export const trackSchedule = () => {
+  trackEvent('Schedule');
+};
+
+export const trackCustomEvent = (eventName: string, parameters?: any) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('trackCustom', eventName, parameters);
+  }
+};
+
 export default function MetaPixel() {
   return (
     <>
