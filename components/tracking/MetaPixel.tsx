@@ -5,12 +5,12 @@ import Script from 'next/script';
 // Global tracking functions
 declare global {
   interface Window {
-    fbq: any;
+    fbq: (command: string, ...args: unknown[]) => void;
   }
 }
 
 // Utility functions for tracking events
-export const trackEvent = (eventName: string, parameters?: any) => {
+export const trackEvent = (eventName: string, parameters?: Record<string, unknown>) => {
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', eventName, parameters);
   }
@@ -28,7 +28,7 @@ export const trackSchedule = () => {
   trackEvent('Schedule');
 };
 
-export const trackCustomEvent = (eventName: string, parameters?: any) => {
+export const trackCustomEvent = (eventName: string, parameters?: Record<string, unknown>) => {
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('trackCustom', eventName, parameters);
   }
