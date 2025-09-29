@@ -29,19 +29,25 @@ export default function HeroMedia({ url, caption }: HeroMediaProps) {
   // Minimal state for native video controls
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showMutedNotification, setShowMutedNotification] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   // Video tracking state - track milestones only once per session
   const [trackedMilestones, setTrackedMilestones] = useState<Set<number>>(new Set());
 
+  // Handle client-side mounting to prevent hydration issues
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Hide muted notification after 4 seconds - only for direct video URLs
   useEffect(() => {
-    if (!isDirectVideoUrl(url)) return;
+    if (!isDirectVideoUrl(url) || !mounted) return;
 
     const timer = setTimeout(() => {
       setShowMutedNotification(false);
     }, 4000);
     return () => clearTimeout(timer);
-  }, [url]);
+  }, [url, mounted]);
 
   // Video tracking handlers
   const handleVideoVolumeChange = () => {
@@ -135,18 +141,22 @@ export default function HeroMedia({ url, caption }: HeroMediaProps) {
   if (isDirectVideoUrl(url)) {
     return (
       <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden bg-card/50 backdrop-blur-sm border border-accent/20">
-        <video
-          ref={videoRef}
-          src={url}
-          className="w-full h-full object-cover"
-          controls
-          autoPlay
-          muted
-          playsInline
-          preload="metadata"
-          onVolumeChange={handleVideoVolumeChange}
-          onTimeUpdate={handleVideoTimeUpdate}
-        />
+        {mounted ? (
+          <video
+            ref={videoRef}
+            src={url}
+            className="w-full h-full object-cover"
+            controls
+            autoPlay
+            muted
+            playsInline
+            preload="metadata"
+            onVolumeChange={handleVideoVolumeChange}
+            onTimeUpdate={handleVideoTimeUpdate}
+          />
+        ) : (
+          <div className="w-full h-full bg-card/30 animate-pulse" />
+        )}
         
         {/* Muted notification */}
         {showMutedNotification && (
