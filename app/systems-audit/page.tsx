@@ -104,7 +104,7 @@ export default function SystemsAuditPage() {
       </section>
 
       {/* Booking Section */}
-      <section id="booking-section" className="py-20 px-6 bg-card/20">
+      <section id="booking-section" className="py-20 px-5 sm:px-6 lg:px-8 bg-card/20">
         <div className="w-full max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -121,31 +121,112 @@ export default function SystemsAuditPage() {
             </p>
           </motion.div>
 
+          {/* Small Mobile Calendar - 320-359px */}
+          <div className="block min-[360px]:hidden">
+            {mounted && (
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ"
+                style={{
+                  border: 'none',
+                  width: '100%',
+                  height: '900px',
+                  overflow: 'hidden'
+                }}
+                loading="lazy"
+                allow="payment"
+                title="Book Your Free Systems Audit"
+                id="booking-calendar-small-mobile"
+              />
+            )}
+          </div>
+
+          {/* Standard Mobile Calendar - 360-389px */}
+          <div className="hidden min-[360px]:block min-[390px]:hidden">
+            {mounted && (
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ"
+                style={{
+                  border: 'none',
+                  width: '100%',
+                  height: '580px',
+                  overflow: 'hidden'
+                }}
+                loading="lazy"
+                allow="payment"
+                title="Book Your Free Systems Audit"
+                id="booking-calendar-standard-mobile"
+              />
+            )}
+          </div>
+
+          {/* Large Mobile Calendar - 390-639px */}
+          <div className="hidden min-[390px]:block sm:hidden">
+            {mounted && (
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ"
+                style={{
+                  border: 'none',
+                  width: '100%',
+                  height: '600px',
+                  overflow: 'hidden'
+                }}
+                loading="lazy"
+                allow="payment"
+                title="Book Your Free Systems Audit"
+                id="booking-calendar-large-mobile"
+              />
+            )}
+          </div>
+
+          {/* Tablet Calendar - 640-1023px */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-card/50 backdrop-blur-sm rounded-3xl p-8 border border-secondary hover:border-accent/20 transition-all duration-300"
+            className="hidden sm:block lg:hidden bg-card/30 backdrop-blur-sm rounded-2xl p-6 border border-secondary hover:border-accent/20 transition-all duration-300"
           >
-            <div className="min-h-[600px] lg:min-h-[800px]">
+            <div className="min-h-[700px]">
               {mounted && (
                 <iframe
                   src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ"
-                  width="100%"
-                  height="1000"
                   style={{
                     border: 'none',
                     width: '100%',
-                    minHeight: '600px',
-                    maxWidth: '100%'
+                    height: '750px',
+                    overflow: 'hidden'
                   }}
-                  frameBorder="0"
-                  scrolling="no"
                   loading="lazy"
                   allow="payment"
                   title="Book Your Free Systems Audit"
-                  id="booking-calendar"
+                  id="booking-calendar-tablet"
+                />
+              )}
+            </div>
+          </motion.div>
+
+          {/* Desktop Calendar - 1024px+ */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hidden lg:block bg-card/50 backdrop-blur-sm rounded-3xl p-8 border border-secondary hover:border-accent/20 transition-all duration-300"
+          >
+            <div className="min-h-[800px]">
+              {mounted && (
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/booking/EGim70hSvPx7y3CSIkuZ"
+                  style={{
+                    border: 'none',
+                    width: '100%',
+                    height: '820px',
+                    overflow: 'hidden'
+                  }}
+                  loading="lazy"
+                  allow="payment"
+                  title="Book Your Free Systems Audit"
+                  id="booking-calendar-desktop"
                 />
               )}
             </div>
