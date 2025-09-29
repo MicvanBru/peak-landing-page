@@ -34,6 +34,31 @@ export const trackCustomEvent = (eventName: string, parameters?: Record<string, 
   }
 };
 
+// Video tracking functions
+export const trackVideoUnmuted = (videoName?: string) => {
+  trackCustomEvent('VideoUnmuted', videoName ? { video_name: videoName } : undefined);
+};
+
+export const trackVideo10Percent = (videoName?: string) => {
+  trackCustomEvent('Video10Percent', videoName ? { video_name: videoName } : undefined);
+};
+
+export const trackVideo25Percent = (videoName?: string) => {
+  trackCustomEvent('Video25Percent', videoName ? { video_name: videoName } : undefined);
+};
+
+export const trackVideo50Percent = (videoName?: string) => {
+  trackCustomEvent('Video50Percent', videoName ? { video_name: videoName } : undefined);
+};
+
+export const trackVideo75Percent = (videoName?: string) => {
+  trackCustomEvent('Video75Percent', videoName ? { video_name: videoName } : undefined);
+};
+
+export const trackVideoComplete = (videoName?: string) => {
+  trackCustomEvent('VideoComplete', videoName ? { video_name: videoName } : undefined);
+};
+
 export default function MetaPixel() {
   return (
     <>

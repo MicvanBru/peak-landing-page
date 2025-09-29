@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useRef, useState, useEffect } from 'react';
+import { trackVideoUnmuted, trackVideo10Percent, trackVideo25Percent, trackVideo50Percent, trackVideo75Percent, trackVideoComplete } from '@/components/tracking/MetaPixel';
 
 /**
  * HeroMedia Component - Automatically detects and displays YouTube videos or images
@@ -29,15 +30,55 @@ export default function HeroMedia({ url, caption }: HeroMediaProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showMutedNotification, setShowMutedNotification] = useState(true);
 
+  // Video tracking state - track milestones only once per session
+  const [trackedMilestones, setTrackedMilestones] = useState<Set<number>>(new Set());
+
   // Hide muted notification after 4 seconds - only for direct video URLs
   useEffect(() => {
     if (!isDirectVideoUrl(url)) return;
-    
+
     const timer = setTimeout(() => {
       setShowMutedNotification(false);
     }, 4000);
     return () => clearTimeout(timer);
   }, [url]);
+
+  // Video tracking handlers
+  const handleVideoVolumeChange = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Track when user unmutes (shows real engagement intent)
+    if (!video.muted && !trackedMilestones.has(0)) {
+      trackVideoUnmuted('VSL Hero Video');
+      setTrackedMilestones(prev => new Set(prev).add(0));
+    }
+  };
+
+  const handleVideoTimeUpdate = () => {
+    const video = videoRef.current;
+    if (!video || video.duration === 0) return;
+
+    const progressPercent = (video.currentTime / video.duration) * 100;
+
+    // Track milestones (only once each)
+    if (progressPercent >= 10 && !trackedMilestones.has(10)) {
+      trackVideo10Percent('VSL Hero Video');
+      setTrackedMilestones(prev => new Set(prev).add(10));
+    } else if (progressPercent >= 25 && !trackedMilestones.has(25)) {
+      trackVideo25Percent('VSL Hero Video');
+      setTrackedMilestones(prev => new Set(prev).add(25));
+    } else if (progressPercent >= 50 && !trackedMilestones.has(50)) {
+      trackVideo50Percent('VSL Hero Video');
+      setTrackedMilestones(prev => new Set(prev).add(50));
+    } else if (progressPercent >= 75 && !trackedMilestones.has(75)) {
+      trackVideo75Percent('VSL Hero Video');
+      setTrackedMilestones(prev => new Set(prev).add(75));
+    } else if (progressPercent >= 95 && !trackedMilestones.has(95)) {
+      trackVideoComplete('VSL Hero Video');
+      setTrackedMilestones(prev => new Set(prev).add(95));
+    }
+  };
 
   // Check if the URL is a YouTube video (contains youtube.com or youtu.be)
   const isYouTubeUrl = (url: string): boolean => {
@@ -103,6 +144,8 @@ export default function HeroMedia({ url, caption }: HeroMediaProps) {
           muted
           playsInline
           preload="metadata"
+          onVolumeChange={handleVideoVolumeChange}
+          onTimeUpdate={handleVideoTimeUpdate}
         />
         
         {/* Muted notification */}
