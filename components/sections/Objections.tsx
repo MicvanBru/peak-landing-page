@@ -104,6 +104,8 @@ export default function Objections() {
             variant="primary"
             size="lg"
             href="/systems-audit"
+            asLink
+            trackingLocation="objections"
           >
             I&apos;m Ready to Work Less &amp; Make More
           </Button>

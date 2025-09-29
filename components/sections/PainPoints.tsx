@@ -48,6 +48,7 @@ export default function PainPoints() {
               variant="primary"
               size="lg"
               className="text-black shadow-2xl"
+              trackingLocation="pain_points"
             >
               Get My Time Back Now
             </Button>

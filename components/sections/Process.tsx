@@ -204,6 +204,7 @@ export default function Process() {
             size="lg"
             href="/systems-audit"
             asLink
+            trackingLocation="process"
           >
             Start My Audit Today
           </Button>

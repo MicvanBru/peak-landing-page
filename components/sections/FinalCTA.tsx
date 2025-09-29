@@ -76,6 +76,7 @@ export default function FinalCTA() {
             href="/systems-audit"
             asLink
             className="relative group"
+            trackingLocation="final_cta"
           >
             {/* Animated background */}
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

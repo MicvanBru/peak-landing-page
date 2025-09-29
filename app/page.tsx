@@ -88,6 +88,7 @@ export default function Home() {
                 size="lg"
                 href="/systems-audit"
                 asLink
+                trackingLocation="hero"
               >
                 Get My Time Back
               </Button>

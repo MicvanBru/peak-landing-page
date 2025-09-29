@@ -72,6 +72,7 @@ export default function QualifyingSection() {
             size="lg"
             href="/systems-audit"
             asLink
+            trackingLocation="qualifying"
           >
             Start Building Your First System Now
           </Button>

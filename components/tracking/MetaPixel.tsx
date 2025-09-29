@@ -59,6 +59,21 @@ export const trackVideoComplete = (videoName?: string) => {
   trackCustomEvent('VideoComplete', videoName ? { video_name: videoName } : undefined);
 };
 
+// Button tracking function
+export const trackButtonClick = (location: string, buttonText: string, scrollDepth?: number) => {
+  const parameters: Record<string, unknown> = {
+    button_location: location,
+    button_text: buttonText,
+    page: typeof window !== 'undefined' ? window.location.pathname : undefined
+  };
+
+  if (scrollDepth !== undefined) {
+    parameters.scroll_depth = scrollDepth;
+  }
+
+  trackEvent('InitiateCheckout', parameters);
+};
+
 export default function MetaPixel() {
   return (
     <>

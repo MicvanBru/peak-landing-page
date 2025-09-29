@@ -3,6 +3,7 @@
 import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { trackButtonClick } from '@/components/tracking/MetaPixel'
 
 export interface ButtonProps {
   children: ReactNode
@@ -15,6 +16,7 @@ export interface ButtonProps {
   className?: string
   disabled?: boolean
   fullWidth?: boolean
+  trackingLocation?: string
 }
 
 const variantStyles = {
@@ -43,9 +45,25 @@ export default function Button({
   className,
   disabled = false,
   fullWidth = false,
+  trackingLocation,
   ...props
 }: ButtonProps) {
+  // Helper function to calculate scroll depth
+  const getScrollDepth = () => {
+    if (typeof window === 'undefined') return undefined;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    return docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+  };
+
   const handleClick = () => {
+    // Track button click if tracking location is provided and button leads to systems-audit
+    if (trackingLocation && (href === '/systems-audit' || href?.includes('systems-audit'))) {
+      const buttonText = typeof children === 'string' ? children : 'CTA Button';
+      const scrollDepth = getScrollDepth();
+      trackButtonClick(trackingLocation, buttonText, scrollDepth);
+    }
+
     if (scrollTo) {
       const element = document.getElementById(scrollTo)
       if (element) {
@@ -93,7 +111,7 @@ export default function Button({
   // Next.js Link
   if (href && asLink) {
     return (
-      <Link href={href} className={baseClasses}>
+      <Link href={href} className={baseClasses} onClick={handleClick}>
         {content}
       </Link>
     )

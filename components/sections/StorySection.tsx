@@ -158,6 +158,7 @@ export default function StorySection() {
                     size="lg"
                     href="/systems-audit"
                     asLink
+                    trackingLocation="story"
                   >
                     Save 5-15 Hours Now
                   </Button>
