@@ -71,7 +71,7 @@ export default function SystemsAuditPage() {
       <FAQSchema faqs={systemsAuditFAQs} page="Systems Audit" />
       <main className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative overflow-hidden w-full py-12 lg:py-20">
+      <section className="relative overflow-hidden w-full py-8 sm:py-12 lg:py-20">
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -81,15 +81,15 @@ export default function SystemsAuditPage() {
               className="space-y-6"
             >
               <h1 className="space-y-2">
-                <span className="block text-2xl sm:text-3xl lg:text-4xl font-semibold text-muted uppercase tracking-wider">
+                <span className="block text-fluid-lg sm:text-fluid-xl lg:text-fluid-2xl font-semibold text-muted uppercase tracking-wider leading-tight">
                   Stop Working 70+ Hours.
                 </span>
-                <span className="block text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight">
+                <span className="block text-fluid-xl sm:text-fluid-2xl lg:text-fluid-3xl font-black tracking-tight leading-tight">
                   Start Building <span className="text-accent">SYSTEMS</span>.
                 </span>
               </h1>
 
-              <p className="text-xl lg:text-2xl text-muted leading-relaxed max-w-3xl mx-auto">
+              <p className="text-fluid-base lg:text-fluid-lg text-muted leading-relaxed max-w-3xl mx-auto">
                 Discover exactly which tasks are stealing your time
               </p>
             </motion.div>
@@ -104,19 +104,19 @@ export default function SystemsAuditPage() {
       </section>
 
       {/* Booking Section */}
-      <section id="booking-section" className="py-20 px-5 sm:px-6 lg:px-8 bg-card/20">
+      <section id="booking-section" className="py-12 sm:py-16 lg:py-20 px-5 sm:px-6 lg:px-8 bg-card/20">
         <div className="w-full max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-6 sm:mb-8 lg:mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-fluid-xl sm:text-fluid-2xl lg:text-fluid-2xl font-bold text-foreground mb-4">
               Pick Your Time
             </h2>
-            <p className="text-lg text-muted">
+            <p className="text-fluid-base text-muted">
               Choose a time that works for you. We&apos;ll handle the rest.
             </p>
           </motion.div>
@@ -129,7 +129,7 @@ export default function SystemsAuditPage() {
                 style={{
                   border: 'none',
                   width: '100%',
-                  height: '900px',
+                  height: '500px',
                   overflow: 'hidden'
                 }}
                 loading="lazy"
