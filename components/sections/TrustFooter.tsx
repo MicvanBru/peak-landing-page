@@ -19,11 +19,6 @@ export default function TrustFooter() {
               <p className="text-xs text-gray-500 mt-1">
                 Building operational excellence, one system at a time.
               </p>
-              <p className="text-xs text-gray-500 mt-2">
-                <Link href="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link>
-                {' · '}
-                <Link href="/terms" className="hover:text-accent transition-colors">Terms of Service</Link>
-              </p>
             </div>
 
             <div className="flex items-center gap-6">
